@@ -1,1 +1,1 @@
-# wpf_TechMarketMangement
+# wpf_entity_TechMarketMangement
