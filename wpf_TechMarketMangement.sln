@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wpf_TechMarketMangement", "wpf_TechMarketMangement.csproj", "{F786A0F3-57A0-421C-8ABE-165667DB564D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F786A0F3-57A0-421C-8ABE-165667DB564D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F786A0F3-57A0-421C-8ABE-165667DB564D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F786A0F3-57A0-421C-8ABE-165667DB564D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F786A0F3-57A0-421C-8ABE-165667DB564D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24BB55EB-702B-4FA4-921B-4EA7215C96D5}
+	EndGlobalSection
+EndGlobal

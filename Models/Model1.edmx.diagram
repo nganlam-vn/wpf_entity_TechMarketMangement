@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="65c541c2558b4cedb048f00493477de7" Name="Diagram1" ZoomLevel="52">
+        <EntityTypeShape EntityType="TechMarketManagementModel.Customer" Width="1.5" PointX="6.625" PointY="8.25" />
+        <EntityTypeShape EntityType="TechMarketManagementModel.Input" Width="1.5" PointX="3.625" PointY="0.5" />
+        <EntityTypeShape EntityType="TechMarketManagementModel.InputInfo" Width="1.5" PointX="5.875" PointY="3.875" />
+        <EntityTypeShape EntityType="TechMarketManagementModel.Object" Width="1.5" PointX="3.625" PointY="3.75" />
+        <EntityTypeShape EntityType="TechMarketManagementModel.OuputInfo" Width="1.5" PointX="8.875" PointY="3.875" />
+        <EntityTypeShape EntityType="TechMarketManagementModel.Output" Width="1.5" PointX="6.625" PointY="0.875" />
+        <EntityTypeShape EntityType="TechMarketManagementModel.Supplier" Width="1.5" PointX="1.375" PointY="1" />
+        <EntityTypeShape EntityType="TechMarketManagementModel.sysdiagram" Width="1.5" PointX="1.375" PointY="7.75" />
+        <EntityTypeShape EntityType="TechMarketManagementModel.Unit" Width="1.5" PointX="1.375" PointY="4.5" />
+        <EntityTypeShape EntityType="TechMarketManagementModel.UserRole" Width="1.5" PointX="9.375" PointY="8.25" />
+        <EntityTypeShape EntityType="TechMarketManagementModel.User" Width="1.5" PointX="11.625" PointY="8" />
+        <AssociationConnector Association="TechMarketManagementModel.FK__OuputInfo__IdCus__4E88ABD4" />
+        <AssociationConnector Association="TechMarketManagementModel.FK__InputInfo__IdInp__4AB81AF0" />
+        <AssociationConnector Association="TechMarketManagementModel.FK__InputInfo__IdObj__4BAC3F29" />
+        <AssociationConnector Association="TechMarketManagementModel.FK__Object__IdSuppli__4D94879B" />
+        <AssociationConnector Association="TechMarketManagementModel.FK__Object__IdUnit__4CA06362" />
+        <AssociationConnector Association="TechMarketManagementModel.FK__OuputInfo__IdObj__5070F446" />
+        <AssociationConnector Association="TechMarketManagementModel.FK__OuputInfo__IdOut__4F7CD00D" />
+        <AssociationConnector Association="TechMarketManagementModel.FK__Users__IdRole__5165187F" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
