@@ -5,11 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_TechMarketMangement"
         xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         DataContext="{StaticResource MainVM}"
+        Name="mainWindow"
         Title="MainWindow" Height="600" Width="1200">
     <Grid>
         <!--using DataContext from mainViewModel-->
+       
 
     </Grid>
 </Window>

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_TechMarketMangement"
         xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:uc="clr-namespace:wpf_TechMarketMangement.UserControls"
         mc:Ignorable="d"
         Title="LoginWindow" Height="500" Width="800">
     <Grid Margin="10" Background="White">
@@ -33,11 +34,13 @@ Width="337" Height="66" VerticalAlignment="Top" />
 
             <Grid Grid.Row="2">
                 <TextBlock x:Name="lblUserName" Text="User Name:" FontWeight="DemiBold" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="15"/>
-                <TextBox x:Name="txtbUserName" Margin="105,0,83,0"/>
+                
+                <uc:UCTextbox  Margin="105,0,83,0"/>
             </Grid>
             <Grid Grid.Row="3">
                 <TextBlock x:Name="lblPassword" FontSize="15" Text="Password:" FontWeight="DemiBold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBox x:Name="txtPassword" Margin="105,0,83,0"/>
+                
+                <uc:UCTextbox Margin="105,0,83,0" />
             </Grid>
 
             <Grid Grid.Row="5">
