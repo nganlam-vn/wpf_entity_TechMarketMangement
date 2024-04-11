@@ -16,6 +16,6 @@
         <!--replace event click with command-->
         <Button x:Name="btnClear" Command="{Binding DeleteTextCommand}" CommandParameter="{Binding ElementName=ucTextBox}"
                 Width="30" HorizontalAlignment="Left" Content="X"
-                    Foreground="LightGray" Background="Transparent" BorderThickness="0" Click="btnClear_Click" Margin="170,0,0,3" VerticalAlignment="Bottom"/>
+                    Foreground="LightGray" Background="Transparent" BorderThickness="0" Margin="170,0,0,3" VerticalAlignment="Bottom"/>
     </Grid>
 </UserControl>
