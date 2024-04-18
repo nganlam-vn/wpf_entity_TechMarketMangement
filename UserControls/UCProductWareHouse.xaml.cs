@@ -17,17 +17,17 @@ using wpf_TechMarketMangement.ViewModels;
 namespace wpf_TechMarketMangement.UserControls
 {
     /// <summary>
-    /// Interaction logic for UCTextbox.xaml
+    /// Interaction logic for UCProductWareHouse.xaml
     /// </summary>
-    public partial class UCTextbox : UserControl
+    public partial class UCProductWareHouse : UserControl
     {
-       // Create independent ViewModel for this UserControl
-        public UCTextBoxViewModel ViewModel { get; set;}
-        public UCTextbox()
+        public UCProductWareHouseViewModel ViewModel { get; set; }
+        public UCProductWareHouse()
         {
             InitializeComponent();
-            this.DataContext = ViewModel = new UCTextBoxViewModel();
+            this.DataContext = ViewModel = new UCProductWareHouseViewModel();
         }
-        
+
+       
     }
 }

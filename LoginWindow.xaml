@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_TechMarketMangement"
         xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:i= "http://schemas.microsoft.com/xaml/behaviors"
         xmlns:uc="clr-namespace:wpf_TechMarketMangement.UserControls"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="500" Width="800">
+        Name="LoginView"
+        DataContext="{StaticResource LoginVM}"
+        Title="LoginView" Height="500" Width="800">
     <Grid Margin="10" Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.25*"/>
@@ -34,18 +37,33 @@ Width="337" Height="66" VerticalAlignment="Top" />
 
             <Grid Grid.Row="2">
                 <TextBlock x:Name="lblUserName" Text="User Name:" FontWeight="DemiBold" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="15"/>
-                
-                <uc:UCTextbox  Margin="105,0,83,0"/>
+                <TextBox x:Name="txtUserName" Margin="105,0,83,8" Text="{Binding UserName }"/>
+
             </Grid>
             <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="52*"/>
+                    <ColumnDefinition Width="359*"/>
+                </Grid.ColumnDefinitions>
+
+                <PasswordBox Margin="53,0,83,8" Grid.Column="1" x:Name="BPassWord">
+                    <i:Interaction.Triggers>
+                        <!--truyen su kien loaded cua window vao viewmodel-->
+                        <i:EventTrigger EventName="PasswordChanged">
+                            <i:InvokeCommandAction Command="{Binding PasswordChangedCommand}"
+                                CommandParameter="{Binding ElementName=BPassWord}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </PasswordBox>
                 <TextBlock x:Name="lblPassword" FontSize="15" Text="Password:" FontWeight="DemiBold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 
-                <uc:UCTextbox Margin="105,0,83,0" />
             </Grid>
 
             <Grid Grid.Row="5">
-                <Button x:Name="btnSignIn" Height="40" Width="100" Content="Sign In"
-        VerticalAlignment="Center" Foreground="White" Background="Black" FontWeight="DemiBold" />
+                <Button x:Name="btnSignIn" IsDefault="True" 
+                        Height="40" Width="100" Content="Sign In" Command="{Binding SignInCommand}" 
+                        CommandParameter="{Binding ElementName=LoginView}"
+                        VerticalAlignment="Center" Foreground="White" Background="Black" FontWeight="DemiBold" />
             </Grid>
 
         </Grid>
