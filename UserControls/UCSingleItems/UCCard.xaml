@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="WPF_TechMarketManagement.Views.UserControls.UCSingleItems.UCCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:userConrols="clr-namespace:WPF_TechMarketManagement.Views.UserControls.UCSingleItems"
+             xmlns:local="clr-namespace:WPF_TechMarketManagement.Views.UserControls.UCSingleItems"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:data="CardModel namespace"
+             xmlns:vm="CardDemoViewModel namespace"
+             mc:Ignorable="d" 
+             d:DesignHeight="240" d:DesignWidth="200">
+    <Grid>
+        <ListBox Margin="32" BorderThickness="0" Style="{DynamicResource WrapPanelHorizontalListBox}" ItemsSource="{Binding DataList}">
+            <ListBox.ItemTemplate>
+                <DataTemplate DataType="data:CardModel">
+                    <hc:Card MaxWidth="240" BorderThickness="0" Effect="{DynamicResource EffectShadow2}" Margin="8" Footer="{Binding Footer}">
+                        <!--Card Content section template-->
+                        <Border CornerRadius="4,4,0,0" Width="160" Height="160">
+                            <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Content}"/>
+                        </Border>
+                        <!--Card Footer section template-->
+                        <hc:Card.FooterTemplate>
+                            <DataTemplate>
+                                <StackPanel Margin="10" Width="160">
+                                    <!--Card First-level content-->
+                                    <TextBlock TextWrapping="NoWrap"  Style="{DynamicResource TextBlockLargeBold}" TextTrimming="CharacterEllipsis" 
+                                           Text="{Binding DataContext.Header,RelativeSource={RelativeSource AncestorType=hc:Card}}" 
+                                           HorizontalAlignment="Left"/>
+                                    <!--Card Secondary content-->
+                                    <TextBlock TextWrapping="NoWrap" Style="{DynamicResource TextBlockDefault}" TextTrimming="CharacterEllipsis" 
+                                           Text="{Binding}" Margin="0,6,0,0"
+                                           HorizontalAlignment="Left"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </hc:Card.FooterTemplate>
+                    </hc:Card>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>
