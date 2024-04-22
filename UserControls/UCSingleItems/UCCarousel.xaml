@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="wpf_TechMarketMangement.UserControls.UCSingleItems.UCCarousel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:wpf_TechMarketMangement.UserControls.UCSingleItems"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="1200">
+    <Grid>
+        <hc:Carousel Margin="32" IsCenter="True" AutoRun="True" Width="1200" Height="500" VerticalAlignment="Center">
+            <Image Width="1200" Stretch="UniformToFill" Source="/Assets/Carousel/wp5485213.jpg"/>
+            <hc:SimplePanel Width="1200">
+                <Image Stretch="UniformToFill" Source="/Assets/Carousel/laptop_ultra_4k_hd_desktop_background-3840x2160.jpg" />
+            </hc:SimplePanel>
+            <Image Width="1200" Stretch="UniformToFill" Source="/Assets/Carousel/ales-nesetril-Im7lZjxeLhg-unsplash.jpg" />
+        </hc:Carousel>
+    </Grid>
+</UserControl>
