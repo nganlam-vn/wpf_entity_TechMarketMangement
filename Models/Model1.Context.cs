@@ -32,6 +32,7 @@ namespace wpf_TechMarketMangement.Models
         public virtual DbSet<OuputInfo> OuputInfoes { get; set; }
         public virtual DbSet<Output> Outputs { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Unit> Units { get; set; }
         public virtual DbSet<UserRole> UserRoles { get; set; }
         public virtual DbSet<User> Users { get; set; }
