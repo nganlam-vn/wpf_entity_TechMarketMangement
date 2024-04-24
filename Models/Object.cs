@@ -24,6 +24,7 @@ namespace wpf_TechMarketMangement.Models
         public string Id { get; set; }
         public string DisplayName { get; set; }
         public string Brand { get; set; }
+        public string Type { get; set; }
         public int IdUnit { get; set; }
         public int IdSupplier { get; set; }
         public string QRCode { get; set; }

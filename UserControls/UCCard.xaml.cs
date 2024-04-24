@@ -16,16 +16,15 @@ using wpf_TechMarketMangement.ViewModels;
 
 namespace wpf_TechMarketMangement.UserControls
 {
-
-    public partial class UCProductWareHouse : UserControl
+    /// <summary>
+    /// Interaction logic for UCCard.xaml
+    /// </summary>
+    public partial class UCCard : UserControl
     {
-        public UCProductWareHouseViewModel ViewModel { get; set; }
-        public UCProductWareHouse()
+        
+        public UCCard()
         {
             InitializeComponent();
-            this.DataContext = ViewModel = new UCProductWareHouseViewModel();
         }
-
-       
     }
 }
