@@ -111,9 +111,7 @@
     <Compile Include="Models\Supplier.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\UCCardModel.cs" />
     <Compile Include="Models\Unit.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -123,13 +121,20 @@
     <Compile Include="Models\UserRole.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCCard.xaml.cs">
+      <DependentUpon>UCCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCProductWareHouse.xaml.cs">
       <DependentUpon>UCProductWareHouse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCProduct_Show.xaml.cs">
+      <DependentUpon>UCProduct_Show.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\UCProductWareHouseViewModel.cs" />
+    <Compile Include="ViewModels\UCProduct_ShowViewModel.cs" />
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -150,7 +155,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\UCCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\UCProductWareHouse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UCProduct_Show.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -189,12 +202,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

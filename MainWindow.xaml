@@ -21,6 +21,8 @@
             </i:EventTrigger>
         </i:Interaction.Triggers>
 
+        <uc:UCProduct_Show></uc:UCProduct_Show>
+
         <!--using DataContext from mainViewModel-->
        
     </Grid>

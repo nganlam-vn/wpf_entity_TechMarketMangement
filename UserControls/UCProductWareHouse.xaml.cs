@@ -16,9 +16,7 @@ using wpf_TechMarketMangement.ViewModels;
 
 namespace wpf_TechMarketMangement.UserControls
 {
-    /// <summary>
-    /// Interaction logic for UCProductWareHouse.xaml
-    /// </summary>
+
     public partial class UCProductWareHouse : UserControl
     {
         public UCProductWareHouseViewModel ViewModel { get; set; }

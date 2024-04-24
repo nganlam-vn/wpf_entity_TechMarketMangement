@@ -55,8 +55,8 @@ Width="337" Height="66" VerticalAlignment="Top" />
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </PasswordBox>
-                <TextBlock x:Name="lblPassword" FontSize="15" Text="Password:" FontWeight="DemiBold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                
+                <TextBlock x:Name="lblPassword" FontSize="15" Text="Password:" FontWeight="DemiBold" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="0,0,344,0"/>
+
             </Grid>
 
             <Grid Grid.Row="5">

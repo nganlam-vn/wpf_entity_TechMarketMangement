@@ -12,22 +12,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using wpf_TechMarketMangement.ViewModels;
 
-namespace TechMarket_Management.View.UserControls
+namespace wpf_TechMarketMangement.UserControls
 {
     /// <summary>
-    /// Interaction logic for UCMenu.xaml
+    /// Interaction logic for UCCard.xaml
     /// </summary>
-    public partial class UCMenu : UserControl
+    public partial class UCCard : UserControl
     {
-        public UCMenu()
+        
+        public UCCard()
         {
             InitializeComponent();
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            FProduct product = new FProduct();
         }
     }
 }
