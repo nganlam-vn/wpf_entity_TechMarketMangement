@@ -27,7 +27,9 @@ namespace wpf_TechMarketMangement.Models
         public string Email { get; set; }
         public string MoreInfo { get; set; }
         public Nullable<System.DateTime> ContractDate { get; set; }
+        public Nullable<int> IdUser { get; set; }
     
+        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OuputInfo> OuputInfoes { get; set; }
     }

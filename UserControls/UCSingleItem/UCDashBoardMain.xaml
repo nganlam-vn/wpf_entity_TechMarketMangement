@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="wpf_TechMarketMangement.UserControls.UCSingleItem.UCDashBoardMain"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:wpf_TechMarketMangement.UserControls.UCSingleItem"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="200"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <TextBlock Text="Directory" FontFamily="Arial" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Menu>
+                <Menu.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel Orientation="Vertical"/>
+                    </ItemsPanelTemplate>
+                </Menu.ItemsPanel>
+                <MenuItem Header="Home" FontFamily="Arial" FontSize="13"/>
+                <MenuItem Header="Products" FontFamily="Arial" FontSize="13"/>
+                <MenuItem Header="      Laptops" FontFamily="Arial" FontSize="13"/>
+                <MenuItem Header="      Phones" FontFamily="Arial" FontSize="13"/>
+                <MenuItem Header="      PC" FontFamily="Arial" FontSize="13" />
+                <MenuItem Header="      Others" FontFamily="Arial" FontSize="13"/>
+            </Menu>
+        </Grid>
+    </Grid>
+</UserControl>
