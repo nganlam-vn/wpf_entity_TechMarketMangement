@@ -159,11 +159,15 @@
     <Compile Include="UserControls\UCSingleItem\UCMenu.xaml.cs">
       <DependentUpon>UCMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCUnit.xaml.cs">
+      <DependentUpon>UCUnit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\UCProductWareHouseViewModel.cs" />
     <Compile Include="ViewModels\UCProduct_ShowViewModel.cs" />
+    <Compile Include="ViewModels\UCUnitViewModel.cs" />
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -225,6 +229,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\UCSingleItem\UCMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UCUnit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
