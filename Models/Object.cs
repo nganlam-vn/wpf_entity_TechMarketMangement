@@ -29,6 +29,9 @@ namespace wpf_TechMarketMangement.Models
         public int IdSupplier { get; set; }
         public string QRCode { get; set; }
         public string BarCode { get; set; }
+        public string Img1 { get; set; }
+        public string Img2 { get; set; }
+        public string Img3 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<InputInfo> InputInfoes { get; set; }
