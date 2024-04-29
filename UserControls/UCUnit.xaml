@@ -6,17 +6,49 @@
              xmlns:local="clr-namespace:wpf_TechMarketMangement.UserControls"
              mc:Ignorable="d" 
              DataContext="{StaticResource UCUnitVM}"
+             Name="UnitView"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <ListView ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" >
-            <ListView.View >
-                <GridView>
-                    <GridViewColumn Header="Id" Width="auto" DisplayMemberBinding="{Binding Id}" />
-                    <GridViewColumn Header="Unit" Width="auto" DisplayMemberBinding="{Binding DisplayName}"/>
-                    
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <!--two way binding is when the data is updated in the view model and the view is updated automatically-->
+            <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="0,0,0,52"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <ListView ItemsSource="{Binding List,Mode=TwoWay}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" >
+                <ListView.View >
+                    <GridView>
+                        <GridViewColumn Header="Id" Width="auto" DisplayMemberBinding="{Binding Id}" />
+                        <GridViewColumn Header="Unit" Width="auto" DisplayMemberBinding="{Binding DisplayName}"/>
+
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+        <Grid Grid.Row="2">
+            <StackPanel Orientation="Horizontal" Margin="50,0,30,0">
+                <Button x:Name="btnAdd" IsDefault="True" 
+                         Height="40" Width="100" Content="Add" Command="{Binding AddCommand}" 
+                            CommandParameter="{Binding ElementName=UnitView}"
+                                VerticalAlignment="Center" Foreground="White" Background="Black" FontWeight="DemiBold" Margin="50,0,0,0" />
+                <Button x:Name="btnUpdate" IsDefault="True" 
+                        Height="40" Width="100" Content="Update" Command="{Binding UpdateCommand}" 
+                            CommandParameter="{Binding ElementName=UnitView}"
+                                VerticalAlignment="Center" Foreground="White" Background="Black" FontWeight="DemiBold" Margin="50,0,0,0" />
+                <Button x:Name="btnDelete" IsDefault="True" 
+                        Height="40" Width="100" Content="Delete" Command="{Binding DeleteCommand}" 
+                            CommandParameter="{Binding ElementName=UnitView}"
+                                VerticalAlignment="Center" Foreground="White" Background="Black" FontWeight="DemiBold" Margin="50,0,0,0" />
+
+            </StackPanel>
+        </Grid>
+
+
+
 
     </Grid>
 </UserControl>
