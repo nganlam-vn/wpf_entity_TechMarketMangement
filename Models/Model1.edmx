@@ -49,6 +49,9 @@
           <Property Name="IdSupplier" Type="int" Nullable="false" />
           <Property Name="QRCode" Type="nvarchar(max)" />
           <Property Name="BarCode" Type="nvarchar(max)" />
+          <Property Name="Img1" Type="varchar(max)" />
+          <Property Name="Img2" Type="varchar(max)" />
+          <Property Name="Img3" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="OuputInfo">
           <Key>
@@ -81,16 +84,6 @@
           <Property Name="ContractDate" Type="datetime" />
           <Property Name="IdUser" Type="int" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="Unit">
           <Key>
             <PropertyRef Name="Id" />
@@ -114,6 +107,7 @@
           <Property Name="UserName" Type="nvarchar" MaxLength="100" />
           <Property Name="Password" Type="nvarchar(max)" />
           <Property Name="IdRole" Type="int" Nullable="false" />
+          <Property Name="StarRate" Type="float" />
         </EntityType>
         <Association Name="FK__Customer__IdUser__52593CB8">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
@@ -243,7 +237,6 @@
           <EntitySet Name="OuputInfo" EntityType="Self.OuputInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Output" EntityType="Self.Output" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
@@ -342,6 +335,9 @@
           <Property Name="IdSupplier" Type="Int32" Nullable="false" />
           <Property Name="QRCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="BarCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Img1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Img2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Img3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="InputInfoes" Relationship="Self.FK__InputInfo__IdObj__4BAC3F29" FromRole="Object" ToRole="InputInfo" />
           <NavigationProperty Name="Supplier" Relationship="Self.FK__Object__IdSuppli__4CA06362" FromRole="Object" ToRole="Supplier" />
           <NavigationProperty Name="Unit" Relationship="Self.FK__Object__IdUnit__4D94879B" FromRole="Object" ToRole="Unit" />
@@ -384,16 +380,6 @@
           <NavigationProperty Name="Objects" Relationship="Self.FK__Object__IdSuppli__4CA06362" FromRole="Supplier" ToRole="Object" />
           <NavigationProperty Name="User" Relationship="Self.FK__Supplier__IdUser__534D60F1" FromRole="Supplier" ToRole="Users" />
         </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <EntityType Name="Unit">
           <Key>
             <PropertyRef Name="Id" />
@@ -419,6 +405,7 @@
           <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IdRole" Type="Int32" Nullable="false" />
+          <Property Name="StarRate" Type="Double" />
           <NavigationProperty Name="Customers" Relationship="Self.FK__Customer__IdUser__52593CB8" FromRole="Users" ToRole="Customer" />
           <NavigationProperty Name="Suppliers" Relationship="Self.FK__Supplier__IdUser__534D60F1" FromRole="Users" ToRole="Supplier" />
           <NavigationProperty Name="UserRole" Relationship="Self.FK__Users__IdRole__5165187F" FromRole="Users" ToRole="UserRole" />
@@ -551,7 +538,6 @@
           <EntitySet Name="OuputInfoes" EntityType="Self.OuputInfo" />
           <EntitySet Name="Outputs" EntityType="Self.Output" />
           <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Units" EntityType="Self.Unit" />
           <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
           <EntitySet Name="Users" EntityType="Self.User" />
@@ -648,6 +634,9 @@
                 <ScalarProperty Name="IdSupplier" ColumnName="IdSupplier" />
                 <ScalarProperty Name="QRCode" ColumnName="QRCode" />
                 <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+                <ScalarProperty Name="Img1" ColumnName="Img1" />
+                <ScalarProperty Name="Img2" ColumnName="Img2" />
+                <ScalarProperty Name="Img3" ColumnName="Img3" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -685,17 +674,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="TechMarketManagementModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Units">
             <EntityTypeMapping TypeName="TechMarketManagementModel.Unit">
               <MappingFragment StoreEntitySet="Unit">
@@ -720,6 +698,7 @@
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+                <ScalarProperty Name="StarRate" ColumnName="StarRate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

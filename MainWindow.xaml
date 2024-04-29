@@ -20,8 +20,9 @@
                                        CommandParameter="{Binding ElementName=mainWindow}"/>
             </i:EventTrigger>
         </i:Interaction.Triggers>
-
-        <uc:UCUnit></uc:UCUnit>
+        <ScrollViewer>
+            <uc:UCProduct_Show></uc:UCProduct_Show>
+        </ScrollViewer>
         <!--using DataContext from mainViewModel-->
        
     </Grid>
