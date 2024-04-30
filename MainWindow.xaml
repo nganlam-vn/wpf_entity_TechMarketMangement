@@ -21,9 +21,8 @@
             </i:EventTrigger>
         </i:Interaction.Triggers>
         <ScrollViewer>
-            <uc:UCProduct_Show></uc:UCProduct_Show>
+            <uc:UCProduct_Show/>
         </ScrollViewer>
-        <!--using DataContext from mainViewModel-->
        
     </Grid>
 </Window>

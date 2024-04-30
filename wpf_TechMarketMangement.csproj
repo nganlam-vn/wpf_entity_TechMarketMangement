@@ -72,7 +72,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\UCProductDetail.cs" />
     <Compile Include="Models\UCProductUploadingModel.cs" />
+    <Compile Include="UserControls\FProductDetail.xaml.cs">
+      <DependentUpon>FProductDetail.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\FSupplier.xaml.cs">
       <DependentUpon>FSupplier.xaml</DependentUpon>
     </Compile>
@@ -145,6 +149,9 @@
     <Compile Include="UserControls\UCSingleItem\UCCarousel.xaml.cs">
       <DependentUpon>UCCarousel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCSingleItem\UCCarouselProduct.xaml.cs">
+      <DependentUpon>UCCarouselProduct.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCSingleItem\UCDashBoardLaptop.xaml.cs">
       <DependentUpon>UCDashBoardLaptop.xaml</DependentUpon>
     </Compile>
@@ -168,10 +175,15 @@
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\SupplierViewModel.cs" />
+    <Compile Include="ViewModels\UCCardDetail.cs" />
     <Compile Include="ViewModels\UCProductUploadingViewModel.cs" />
     <Compile Include="ViewModels\UCProductWareHouseViewModel.cs" />
     <Compile Include="ViewModels\UCProduct_ShowViewModel.cs" />
     <Compile Include="ViewModels\UCUnitViewModel.cs" />
+    <Page Include="UserControls\FProductDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\FSupplier.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -217,6 +229,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\UCSingleItem\UCCarousel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UCSingleItem\UCCarouselProduct.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -267,6 +283,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Asset\Products\Laptop\logo.webp" />
     <None Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
@@ -283,6 +300,55 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Asset\Carousel\ales-nesetril-Im7lZjxeLhg-unsplash.jpg" />
+    <Resource Include="Asset\Carousel\laptop_ultra_4k_hd_desktop_background-3840x2160.jpg" />
+    <Resource Include="Asset\Carousel\wp5485213.jpg" />
+    <Resource Include="Asset\Background\65c247234c9ca9c9c29b795085f5db67.jpg" />
+    <Resource Include="Asset\Background\blackgray.jpg" />
+    <Resource Include="Asset\Cats\1.jpg" />
+    <Resource Include="Asset\Cats\2.jpg" />
+    <Resource Include="Asset\Cats\3.jpg" />
+    <Resource Include="Asset\Cats\4.jpg" />
+    <Resource Include="Asset\Cats\5.jpg" />
+    <Resource Include="Asset\Cats\6.jpg" />
+    <Resource Include="Asset\Cats\7.jpg" />
+    <Resource Include="Asset\Cats\8.jpg" />
+    <Resource Include="Asset\Cats\BaConMeo.jpg" />
+    <Resource Include="Asset\Cats\catFoot.jpg" />
+    <Resource Include="Asset\Cats\catFoot2.jpg" />
+    <Resource Include="Asset\Cats\CuteCatSignIn.jpg" />
+    <Resource Include="Asset\Cats\MeoCaoTuong.jpg" />
+    <Resource Include="Asset\Cats\MeoTrenCay.jpg" />
+    <Resource Include="Asset\Icons\add_to_basket.png" />
+    <Resource Include="Asset\Icons\avatar.png" />
+    <Resource Include="Asset\Icons\find.jpg" />
+    <Resource Include="Asset\Icons\logo.jpg" />
+    <Resource Include="Asset\Products\Laptop\air_2014.jpg" />
+    <Resource Include="Asset\Products\Laptop\air_2016.jpg" />
+    <Resource Include="Asset\Products\Laptop\asp7.jpg" />
+    <Resource Include="Asset\Products\Laptop\asp71.jpg" />
+    <Resource Include="Asset\Products\Laptop\aspire3.jpg" />
+    <Resource Include="Asset\Products\Laptop\ideapad_5pro.jpg" />
+    <Resource Include="Asset\Products\Laptop\laptop.jpg" />
+    <Resource Include="Asset\Products\Laptop\legion5.jpg" />
+    <Resource Include="Asset\Products\Laptop\lenovo-legion-5-pro.jpg" />
+    <Resource Include="Asset\Products\Laptop\mac_air.jpg" />
+    <Resource Include="Asset\Products\Laptop\mac_pro.jpg" />
+    <Resource Include="Asset\Products\Laptop\nitro5.jpg" />
+    <Resource Include="Asset\Products\Laptop\nitro7.jpg" />
+    <Resource Include="Asset\Products\Laptop\pro_16.jpg" />
+    <Resource Include="Asset\Products\Laptop\pro_2016.jpg" />
+    <Resource Include="Asset\Products\Laptop\pro_2018.jpg" />
+    <Resource Include="Asset\Products\Laptop\pro_m1.jpg" />
+    <Resource Include="Asset\Products\Laptop\pro_m2.jpg" />
+    <Resource Include="Asset\Products\Laptop\ROG_G.jpg" />
+    <Resource Include="Asset\Products\Laptop\ScriROG.png" />
+    <Resource Include="Asset\Products\Laptop\slim_ideapad.jpg" />
+    <Resource Include="Asset\Products\Laptop\thinkpad.jpg" />
+    <Resource Include="Asset\Products\Laptop\thinkpadT40.jpg" />
+    <Resource Include="Asset\Products\Laptop\y70.jpg" />
+    <Resource Include="Asset\Products\Laptop\yoga.jpg" />
+    <Resource Include="Asset\Products\Laptop\zephyrus.jpg" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
