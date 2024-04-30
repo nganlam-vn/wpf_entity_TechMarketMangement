@@ -6,9 +6,10 @@
              xmlns:hc="https://handyorg.github.io/handycontrol"
              xmlns:local="clr-namespace:wpf_TechMarketMangement.UserControls"
              mc:Ignorable="d" 
+             Name="ViewCardDetail"
              d:DesignHeight="260" d:DesignWidth="220">
     <Grid>
-        <Button Height="225" Width="170" Background="WhiteSmoke" >
+        <Button Height="225" Width="170" Background="WhiteSmoke" x:Name="btnDetail" >
             <Border Background="White"  CornerRadius="20" Height="225" Width="196" Cursor="Hand" >
                 <StackPanel Height="210" Width="190">
                     <StackPanel Height="140" VerticalAlignment="Top">

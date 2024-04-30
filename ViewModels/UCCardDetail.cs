@@ -11,7 +11,5 @@ namespace wpf_TechMarketMangement.ViewModels
 {
     public class UCCardDetail:BaseViewModel
     {
-        private ObservableCollection<UCProductDetail> _ProductDetail; //link model to viewmodel
-        public ObservableCollection<UCProductDetail> ProductDetails { get => _ProductDetail; set ; }
     }
 }

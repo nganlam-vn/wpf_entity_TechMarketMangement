@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HandyControl.Tools.Extension;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using wpf_TechMarketMangement.UserControls;
 
 namespace wpf_TechMarketMangement
 {
@@ -22,6 +24,13 @@ namespace wpf_TechMarketMangement
         public LoginWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnSignUp_Click(object sender, RoutedEventArgs e)
+        {
+            FProductDetail detail = new FProductDetail();
+            detail.Show();
+
         }
     }
 }

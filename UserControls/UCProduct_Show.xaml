@@ -6,9 +6,10 @@
              xmlns:local="clr-namespace:wpf_TechMarketMangement.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <Grid Background="white">
         <WrapPanel Name="wpCard">
             
         </WrapPanel>
+        <local:FProductDetail x:Name="FProductDetail" Visibility="Collapsed"/>
     </Grid>
 </UserControl>
