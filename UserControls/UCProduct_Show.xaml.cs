@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HandyControl.Tools.Extension;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -38,6 +39,12 @@ namespace wpf_TechMarketMangement.UserControls
             InitializeComponent();
             LoadCardData();
         }
+        public void setActiveUserControl(FProductDetail userControl)
+        {
+            FProductDetail.Visibility= Visibility.Collapsed;  
+            userControl.Visibility= Visibility.Visible; 
+        }
+
         private void LoadCardData()
         {
             // Load data from database
@@ -50,16 +57,20 @@ namespace wpf_TechMarketMangement.UserControls
                 foreach (var item2 in inputList)
                 {
                     UCCard uccard = new UCCard(); //ui element
+
                     uccard.txtType.Text = item.Type;
                     uccard.txtbName.Text = item.DisplayName;
                     uccard.txtbPrice.Text = item2.OutputPrice.ToString() + "VND";
                     wpCard.Children.Add(uccard);
+
+                    uccard.btnDetail.Click += (sender, e) =>
+                    {
+                        FProductDetail detail = new FProductDetail();
+                        detail.nameProduct.Text = item.DisplayName;
+                        detail.Show();
+                    };
                 }
-
             }
-
         }
-
-
     }
 }

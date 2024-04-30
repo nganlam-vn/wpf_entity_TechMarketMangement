@@ -20,9 +20,6 @@
                                        CommandParameter="{Binding ElementName=mainWindow}"/>
             </i:EventTrigger>
         </i:Interaction.Triggers>
-        <ScrollViewer>
-            <uc:UCProduct_Show/>
-        </ScrollViewer>
-       
+            <uc:UCProduct_Show x:Name="FProduct" Visibility="Visible"/>
     </Grid>
 </Window>
