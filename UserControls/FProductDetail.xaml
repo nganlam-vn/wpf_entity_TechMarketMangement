@@ -23,6 +23,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0" Grid.Row="1">
+                    <userControl:UCCarouselProduct/>
                 </Grid>
                 <Grid Grid.Row="1" Grid.Column="2">
                     <Grid.RowDefinitions>
@@ -41,22 +42,22 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0">
-                        <TextBlock x:Name="nameProduct" Text="MACBOOK PRO M3" FontFamily="Arial" FontSize="30" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock x:Name="nameProduct" Text="" FontFamily="Arial" FontSize="30" VerticalAlignment="Center" FontWeight="Bold" />
                     </Grid>
                     <Grid Grid.Row="1">
                         <TextBlock FontFamily="Arial" FontSize="14" VerticalAlignment="Center">
                     <Run Text="ID: "/>
-                    <Run x:Name="id" Text="L123" FontWeight="Bold"/>
+                    <Run x:Name="idProduct" Text="L123" FontWeight="Bold"/>
                         </TextBlock>
                     </Grid>
                     <Grid Grid.Row="2">
                         <TextBlock FontFamily="Arial" FontSize="14" VerticalAlignment="Center">
                     <Run Text="Brand: "/>
-                    <Run x:Name="brand" Text="Apple" FontWeight="Bold" Foreground="OrangeRed"/>
+                    <Run x:Name="brandProduct" Text="Apple" FontWeight="Bold" Foreground="OrangeRed"/>
                         </TextBlock>
                     </Grid>
                     <Grid Grid.Row="3">
-                        <hc:Rate DefaultValue="3" IsReadOnly="True" AllowHalf="True" Margin="0,5,0,0" Foreground="{DynamicResource WarningBrush}"/>
+                        <hc:Rate DefaultValue="4.5" IsReadOnly="True" AllowHalf="True" Margin="0,5,0,0" Foreground="{DynamicResource WarningBrush}"/>
                     </Grid>
                     <Grid Grid.Row="4">
                         <TextBlock FontFamily="Arial" FontSize="20" FontWeight="Bold" Text="40.000.000đ" VerticalAlignment="Center"/>
@@ -64,7 +65,7 @@
                     <Grid Grid.Row="5">
                         <TextBlock FontFamily="Arial" FontSize="14" FontWeight="Bold" VerticalAlignment="Center">
                     <Run Text="Condition "/>
-                    <Run x:Name="condition"  Text="Like New" Foreground="OrangeRed"/>
+                    <Run x:Name="percentProduct"  Text="Like New" Foreground="OrangeRed"/>
                         </TextBlock>
                     </Grid>
                     <Grid Grid.Row="6">
@@ -73,15 +74,12 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <Grid Grid.Column="0">
-                            <TextBlock Text="Version: " FontFamily="Arial" FontSize="14" FontWeight="Bold" VerticalAlignment="Center"/>
+                            <TextBlock Text="Color: " FontFamily="Arial" FontSize="14" FontWeight="Bold" VerticalAlignment="Center"/>
                         </Grid>
                         <Grid Grid.Column="1">
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
                                 <hc:ButtonGroup  Orientation="Horizontal">
-                                    <RadioButton Content="Silver" IsChecked="True"/>
-                                    <RadioButton Content="Black" />
-                                    <RadioButton Content="Red"/>
-                                    <RadioButton Content="White"/>
+                                    <RadioButton x:Name="colorProduct" Content="Silver" IsChecked="True"/>
                                 </hc:ButtonGroup>
                             </StackPanel>
                         </Grid>
@@ -148,105 +146,168 @@
                 <Grid Grid.Column="1">
                     <hc:TabControl IsAnimationEnabled="True" IsDraggable="True" IsTabFillEnabled="True" Width="1160" Height="500">
                         <hc:TabItem Header="Description">
+                            <FlowDocumentReader UseLayoutRounding="True" SnapsToDevicePixels="True">
+                                <FlowDocumentReader.Resources>
+                                    <Style TargetType="TableCell">
+                                        <Setter Property="TextAlignment" Value="Center"/>
+                                    </Style>
+                                </FlowDocumentReader.Resources>
+                                <FlowDocument>
+                                    <Table CellSpacing="0">
+                                        <Table.Columns>
+                                            <TableColumn/>
+                                            <TableColumn/>
+                                            <TableColumn/>
+                                            <TableColumn/>
+                                        </Table.Columns>
+                                        <TableRowGroup>
+                                            <TableRow>
+                                                <TableCell BorderBrush="Black" BorderThickness="1">
+                                                    <Paragraph FontWeight="Bold">Category</Paragraph>
+                                                </TableCell>
+                                                <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                                    <Paragraph FontWeight="Bold">A</Paragraph>
+                                                </TableCell>
+                                                <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                                    <Paragraph FontWeight="Bold">B</Paragraph>
+                                                </TableCell>
+                                                <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                                    <Paragraph FontWeight="Bold">C</Paragraph>
+                                                </TableCell>
+                                            </TableRow>
+                                            <TableRow>
+                                                <TableCell BorderBrush="Black" BorderThickness="1,0,1,1">
+                                                    <Paragraph FontWeight="Bold">Subscription</Paragraph>
+                                                </TableCell>
+                                                <TableCell BorderBrush="Black" BorderThickness="0,0,1,1">
+                                                    <Paragraph>Monthly</Paragraph>
+                                                </TableCell>
+                                                <TableCell BorderBrush="Black" BorderThickness="0,0,1,1">
+                                                    <Paragraph>Yearly</Paragraph>
+                                                </TableCell>
+                                                <TableCell BorderBrush="Black" BorderThickness="0,0,1,1">
+                                                    <Paragraph>Monthly</Paragraph>
+                                                </TableCell>
+                                            </TableRow>
+                                            <TableRow>
+                                                <TableCell BorderBrush="Black" BorderThickness="1,0,1,1" TextAlignment="Center">
+                                                    <Paragraph FontWeight="Bold">Price</Paragraph>
+                                                </TableCell>
+                                                <TableCell BorderBrush="Black" BorderThickness="0,0,1,1">
+                                                    <Paragraph>$120.00</Paragraph>
+                                                </TableCell>
+                                                <TableCell BorderBrush="Black" BorderThickness="0,0,1,1">
+                                                    <Paragraph>$1000.00</Paragraph>
+                                                </TableCell>
+                                                <TableCell BorderBrush="Black" BorderThickness="0,0,1,1">
+                                                    <Paragraph>$130.00</Paragraph>
+                                                </TableCell>
+                                            </TableRow>
+                                        </TableRowGroup>
+                                    </Table>
+                                </FlowDocument>
+                            </FlowDocumentReader>
                         </hc:TabItem>
-                        <hc:TabItem IsSelected="True" Header="Comment">
-                            <StackPanel Orientation="Horizontal" Height="500">
-                                <StackPanel Orientation="Vertical">
-                                    <TextBlock Foreground="Green" FontSize="20" FontWeight="Bold" FontFamily="Arial">
+                        <hc:TabItem IsSelected="True" Header="Comment" >
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal" Height="135" Background="#F2F8EA" VerticalAlignment="Top" >
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBlock Foreground="Green" FontSize="20" FontWeight="Bold" FontFamily="Arial" Margin="0,25,0,0">
                                         <Run Text="                  "/>
                                         <Run x:Name="avgRate" Text="5/5"/>
-                                    </TextBlock>
-                                    <hc:Rate DefaultValue="5" IsReadOnly="True" AllowHalf="True" Margin="0,5,0,0" Foreground="{DynamicResource WarningBrush}" Width="229" HorizontalAlignment="Center"/>
-                                    <TextBlock Height="50"/>
-                                    <Button Content="Submit your review" Width="231" Height="31" Background="Green" Foreground="White" HorizontalAlignment="Left"/>
-                                </StackPanel>
-                                <Button Width="110" Height="30" VerticalAlignment="Top" Margin="0,0,10,0">
-                                    <Button.Template>
-                                        <ControlTemplate TargetType="Button">
-                                            <Border Background="White" BorderBrush="Green" BorderThickness="1" CornerRadius="5">
-                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                    <Button.Content>
-                                        <TextBlock Text="All comments" Foreground="Green" FontWeight="Bold" FontSize="16"/>
-                                    </Button.Content>
-                                </Button>
-                                <Button Width="110" Height="30" VerticalAlignment="Top" Margin="0,0,10,0" >
-                                    <Button.Template>
-                                        <ControlTemplate TargetType="Button">
-                                            <Border Background="White" BorderBrush="Green" BorderThickness="1" CornerRadius="5">
-                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                    <Button.Content>
-                                        <TextBlock Foreground="Green" FontWeight="Bold" FontSize="16">
+                                        </TextBlock>
+                                        <hc:Rate DefaultValue="5" IsReadOnly="True" AllowHalf="True" Margin="0,5,0,0" Foreground="{DynamicResource WarningBrush}" Width="149" HorizontalAlignment="Center"/>
+                                        <TextBlock Height="18"/>
+                                        <Button Content="Submit your review" Width="231" Height="31" Background="Green" Foreground="White" HorizontalAlignment="Left"/>
+                                    </StackPanel>
+                                    <Button Width="110" Height="30" VerticalAlignment="Top" Margin="0,25,10,0">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="White" BorderBrush="Green" BorderThickness="1" CornerRadius="5">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                        <Button.Content>
+                                            <TextBlock Text="All comments" Foreground="Green" FontWeight="Bold" FontSize="16"/>
+                                        </Button.Content>
+                                    </Button>
+                                    <Button Width="110" Height="30" VerticalAlignment="Top" Margin="0,25,10,0" >
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="White" BorderBrush="Green" BorderThickness="1" CornerRadius="5">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                        <Button.Content>
+                                            <TextBlock Foreground="Green" FontWeight="Bold" FontSize="16">
                                             <Run Text="5 points"/>
                                             <Run x:Name="count5star" Text="(1)"/>
-                                        </TextBlock>
-                                    </Button.Content>
-                                </Button>
-                                <Button Width="110" Height="30" VerticalAlignment="Top" Margin="0,0,10,0">
-                                    <Button.Template>
-                                        <ControlTemplate TargetType="Button">
-                                            <Border Background="White" BorderBrush="Green" BorderThickness="1" CornerRadius="5">
-                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                    <Button.Content>
-                                        <TextBlock Foreground="Green" FontWeight="Bold" FontSize="16" Margin="0,0,10,0">
+                                            </TextBlock>
+                                        </Button.Content>
+                                    </Button>
+                                    <Button Width="110" Height="30" VerticalAlignment="Top" Margin="0,25,10,0">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="White" BorderBrush="Green" BorderThickness="1" CornerRadius="5">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                        <Button.Content>
+                                            <TextBlock Foreground="Green" FontWeight="Bold" FontSize="16" Margin="0,0,10,0">
                                             <Run Text="4 points"/>
                                             <Run x:Name="count4star" Text="(1)"/>
-                                        </TextBlock>
-                                    </Button.Content>
-                                </Button>
-                                <Button Width="110" Height="30" VerticalAlignment="Top" Margin="0,0,10,0">
-                                    <Button.Template>
-                                        <ControlTemplate TargetType="Button">
-                                            <Border Background="White" BorderBrush="Green" BorderThickness="1" CornerRadius="5">
-                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                    <Button.Content>
-                                        <TextBlock Foreground="Green" FontWeight="Bold" FontSize="16">
+                                            </TextBlock>
+                                        </Button.Content>
+                                    </Button>
+                                    <Button Width="110" Height="30" VerticalAlignment="Top" Margin="0,25,10,0">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="White" BorderBrush="Green" BorderThickness="1" CornerRadius="5">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                        <Button.Content>
+                                            <TextBlock Foreground="Green" FontWeight="Bold" FontSize="16">
                                             <Run Text="3 points"/>
                                             <Run x:Name="count3star" Text="(1)"/>
-                                        </TextBlock>
-                                    </Button.Content>
-                                </Button>
-                                <Button Width="110" Height="30" VerticalAlignment="Top" Margin="0,0,10,0">
-                                    <Button.Template>
-                                        <ControlTemplate TargetType="Button">
-                                            <Border Background="White" BorderBrush="Green" BorderThickness="1" CornerRadius="5">
-                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                    <Button.Content>
-                                        <TextBlock Foreground="Green" FontWeight="Bold" FontSize="16">
+                                            </TextBlock>
+                                        </Button.Content>
+                                    </Button>
+                                    <Button Width="110" Height="30" VerticalAlignment="Top" Margin="0,25,10,0">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="White" BorderBrush="Green" BorderThickness="1" CornerRadius="5">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                        <Button.Content>
+                                            <TextBlock Foreground="Green" FontWeight="Bold" FontSize="16">
                                             <Run Text="2 points"/>
                                             <Run x:Name="count2star" Text="(1)"/>
-                                        </TextBlock>
-                                    </Button.Content>
-                                </Button>
-                                <Button Width="110" Height="30" VerticalAlignment="Top">
-                                    <Button.Template>
-                                        <ControlTemplate TargetType="Button">
-                                            <Border Background="White" BorderBrush="Green" BorderThickness="1" CornerRadius="5">
-                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                    <Button.Content>
-                                        <TextBlock Foreground="Green" FontWeight="Bold" FontSize="16">
+                                            </TextBlock>
+                                        </Button.Content>
+                                    </Button>
+                                    <Button Width="110" Height="30" VerticalAlignment="Top" Margin="0,25,0,0">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="White" BorderBrush="Green" BorderThickness="1" CornerRadius="5">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                        <Button.Content>
+                                            <TextBlock Foreground="Green" FontWeight="Bold" FontSize="16">
                                             <Run Text="1 points"/>
                                             <Run x:Name="count1star" Text="(1)"/>
-                                        </TextBlock>
-                                    </Button.Content>
-                                </Button>
+                                            </TextBlock>
+                                        </Button.Content>
+                                    </Button>
+                                </StackPanel>
                             </StackPanel>
                         </hc:TabItem>
                     </hc:TabControl>
