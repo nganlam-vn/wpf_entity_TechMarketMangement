@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="wpf_TechMarketMangement.UserControls.UCSingleItem.UCCarouselProduct"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:wpf_TechMarketMangement.UserControls.UCSingleItem"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500">
+    <Grid>
+        <hc:Carousel Margin="32" IsCenter="True" AutoRun="True" Width="500" Height="400" VerticalAlignment="Center">
+            <Image Width="600"  x:Name="image_detail_1" Source="/Asset/Carousel/ales-nesetril-Im7lZjxeLhg-unsplash.jpg" Stretch="UniformToFill"/>
+
+            <hc:SimplePanel Width="500">
+                <Image x:Name="igame_detail_2" Stretch="UniformToFill"  Source="/Asset/Carousel/laptop_ultra_4k_hd_desktop_background-3840x2160.jpg" />
+            </hc:SimplePanel>
+            <Image Width="500" x:Name="image_detail_3" Stretch="UniformToFill" Source="/Asset/Carousel/wp5485213.jpg" />
+        </hc:Carousel>
+    </Grid>
+</UserControl>
