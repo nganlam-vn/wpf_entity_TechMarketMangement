@@ -37,10 +37,7 @@ namespace wpf_TechMarketMangement.UserControls
         {
             InitializeComponent();
             LoadCardData();
-
-
         }
-
         private void LoadCardData()
         {
             // Load data from database
