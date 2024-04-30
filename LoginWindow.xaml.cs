@@ -26,11 +26,5 @@ namespace wpf_TechMarketMangement
             InitializeComponent();
         }
 
-        private void btnSignUp_Click(object sender, RoutedEventArgs e)
-        {
-            FProductDetail detail = new FProductDetail();
-            detail.Show();
-
-        }
     }
 }

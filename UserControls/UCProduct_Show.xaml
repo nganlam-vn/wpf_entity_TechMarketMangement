@@ -3,13 +3,63 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:userControl="clr-namespace:wpf_TechMarketMangement.UserControls.UCSingleItem"
              xmlns:local="clr-namespace:wpf_TechMarketMangement.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="white">
-        <WrapPanel Name="wpCard">
-            
-        </WrapPanel>
-        <local:FProductDetail x:Name="FProductDetail" Visibility="Collapsed"/>
-    </Grid>
+
+    <ScrollViewer>
+        <Grid Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="340"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="170"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <TextBlock Text="Directory" FontFamily="Arial" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Menu>
+                            <Menu.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <VirtualizingStackPanel Orientation="Vertical"/>
+                                </ItemsPanelTemplate>
+                            </Menu.ItemsPanel>
+                            <MenuItem Header="Home" FontFamily="Arial" FontSize="13" />
+                            <MenuItem Header="Products" FontFamily="Arial" FontSize="13" Click="MenuItem_Click"/>
+                            <MenuItem Header="      Laptops" FontFamily="Arial" FontSize="13" Click="Click_Laptop"/>
+                            <MenuItem Header="      Phones" FontFamily="Arial" FontSize="13" Click="Click_Phone"/>
+                            <MenuItem Header="      PC" FontFamily="Arial" FontSize="13" />
+                            <MenuItem Header="      Others" FontFamily="Arial" FontSize="13" Click="Click_Other"/>
+                        </Menu>
+                        <Line X1="10" X2="190" Y1="155" Y2="155" StrokeThickness="2" Stroke="WhiteSmoke"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <userControl:UCDashBoardPhone x:Name="dbPhone" Visibility="Collapsed"/>
+                    <userControl:UCDashBoardLaptop x:Name="dbLaptop" Visibility="Visible"/>
+                    <userControl:UCDashBoardOthers x:Name="dbOther" Visibility="Collapsed"/>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Line X1="0" X2="0" Y1="0" Y2="1000" StrokeThickness="1" Stroke="WhiteSmoke"/>
+                <WrapPanel Name="wpCard">
+
+                </WrapPanel>
+
+            </Grid>
+        </Grid>
+    </ScrollViewer>
 </UserControl>
+

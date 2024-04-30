@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace wpf_TechMarketMangement.UserControls.UCSingleItem
 {
     /// <summary>
-    /// Interaction logic for UCDashBoard.xaml
+    /// Interaction logic for UCDashBoardLaptop.xaml
     /// </summary>
-    public partial class UCDashBoard : UserControl
+    public partial class UCDashBoardLaptop : UserControl
     {
-        public UCDashBoard()
+        public UCDashBoardLaptop()
         {
             InitializeComponent();
         }

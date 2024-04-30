@@ -1,4 +1,5 @@
-﻿using HandyControl.Tools.Extension;
+﻿using HandyControl.Themes;
+using HandyControl.Tools.Extension;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -33,18 +34,39 @@ namespace wpf_TechMarketMangement.UserControls
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        public void setActiveUserControl(UserControl userControl)
+        {
+            dbPhone.Visibility = Visibility.Collapsed;
+            dbLaptop.Visibility = Visibility.Collapsed;
+            dbOther.Visibility = Visibility.Collapsed;
+            userControl.Visibility = Visibility.Visible;
+        }
 
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            setActiveUserControl(dbLaptop);
+        }
+
+        private void Click_Laptop(object sender, RoutedEventArgs e)
+        {
+            setActiveUserControl(dbLaptop);
+
+        }
+
+        private void Click_Phone(object sender, RoutedEventArgs e)
+        {
+            setActiveUserControl(dbPhone);
+        }
+
+        private void Click_Other(object sender, RoutedEventArgs e)
+        {
+            setActiveUserControl(dbOther);
+        }
         public UCProduct_Show()
         {
             InitializeComponent();
             LoadCardData();
         }
-        public void setActiveUserControl(FProductDetail userControl)
-        {
-            FProductDetail.Visibility= Visibility.Collapsed;  
-            userControl.Visibility= Visibility.Visible; 
-        }
-
         private void LoadCardData()
         {
             // Load data from database
@@ -62,13 +84,6 @@ namespace wpf_TechMarketMangement.UserControls
                     uccard.txtbName.Text = item.DisplayName;
                     uccard.txtbPrice.Text = item2.OutputPrice.ToString() + "VND";
                     wpCard.Children.Add(uccard);
-
-                    uccard.btnDetail.Click += (sender, e) =>
-                    {
-                        FProductDetail detail = new FProductDetail();
-                        detail.nameProduct.Text = item.DisplayName;
-                        detail.Show();
-                    };
                 }
             }
         }
