@@ -79,7 +79,7 @@ Width="337" Height="66" VerticalAlignment="Top" />
             <TextBlock x:Name="lblSignUpNote2" Text="Your best TechMarket ever!"
                     FontSize="13" FontWeight="DemiBold" Foreground="White"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,187,0,0" />
             <Button x:Name="btnSignUp" Height="40" Width="100" Content="Sign Up"
-                        VerticalAlignment="Top" Foreground="Black" Background="White" FontWeight="DemiBold" HorizontalAlignment="Center" Margin="0,274,0,0" Click="btnSignUp_Click"  />
+                        VerticalAlignment="Top" Foreground="Black" Background="White" FontWeight="DemiBold" HorizontalAlignment="Center" Margin="0,274,0,0" />
         </Grid>
 
     </Grid>
