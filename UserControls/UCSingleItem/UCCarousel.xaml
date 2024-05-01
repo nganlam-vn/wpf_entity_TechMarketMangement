@@ -8,12 +8,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="1200">
     <Grid>
-        <hc:Carousel Margin="32" IsCenter="True" AutoRun="True" Width="1200" Height="500" VerticalAlignment="Center">
-            <Image Width="1200" Stretch="UniformToFill" />
+        <hc:Carousel Margin="32" IsCenter="True" AutoRun="True" Width="1100" Height="500" VerticalAlignment="Center">
+            <Image Width="1200" Stretch="UniformToFill" Source="/Asset/Carousel/ales-nesetril-Im7lZjxeLhg-unsplash.jpg" />
             <hc:SimplePanel Width="1200">
-                <Image Stretch="UniformToFill"  />
+                <Image Stretch="UniformToFill" Source="/Asset/Carousel/laptop_ultra_4k_hd_desktop_background-3840x2160.jpg" />
             </hc:SimplePanel>
-            <Image Width="1200" Stretch="UniformToFill"  />
+            <Image Width="1200" Stretch="UniformToFill" Source="/Asset/Carousel/wp5485213.jpg"  />
         </hc:Carousel>
     </Grid>
 </UserControl>
