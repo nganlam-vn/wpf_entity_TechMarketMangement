@@ -122,6 +122,9 @@
     <Compile Include="Models\UserRole.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\FCart.xaml.cs">
+      <DependentUpon>FCart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Fhome.xaml.cs">
       <DependentUpon>Fhome.xaml</DependentUpon>
     </Compile>
@@ -186,6 +189,10 @@
     <Compile Include="ViewModels\UCProductWareHouseViewModel.cs" />
     <Compile Include="ViewModels\UCProduct_ShowViewModel.cs" />
     <Compile Include="ViewModels\UCUnitViewModel.cs" />
+    <Page Include="UserControls\FCart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\Fhome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
