@@ -130,7 +130,7 @@
                                                   VerticalAlignment="Center"
                                                   Margin="35,0,0,0" />
                                 <Grid x:Name="Highlighter"
-                                      Height="35"
+                                      Height="16"
                                       Width="2"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Center"
@@ -188,10 +188,10 @@
                                 <Image Source="/Asset/Icons/avatar.png"
                        Stretch="Uniform" Margin="0,0,-5,0"/>
                             </MenuItem.Icon>
-                            <MenuItem Header="Information" Style="{StaticResource Services_Sub_MenuItem}"/>
+                            <MenuItem Header="Information" Style="{StaticResource Services_Sub_MenuItem}"  Click="Click_Account"/>
                             <MenuItem Header="Logout" Style="{StaticResource Services_Sub_MenuItem}"/>
                         </MenuItem>
-                        <MenuItem Header="Cart" Height="40" Width="86" FontSize="11" Style="{StaticResource Main_MenuItem}">
+                        <MenuItem Click="Click_Cart" Header="Cart" Height="40" Width="86" FontSize="11" Style="{StaticResource Main_MenuItem}">
 
                             <MenuItem.Icon>
                                 <Image Source="/Asset/Icons/add_to_basket.png" 
@@ -212,24 +212,28 @@
             <Menu HorizontalAlignment="Center" Height="40" Grid.Row="1" VerticalAlignment="Center" Width="600">
                 <MenuItem Header="          HOME" HorizontalAlignment="Center"
                     Height="40"
-                    Width="115"/>
+                    Width="115" Click="Click_home"/>
                 <MenuItem Header="     PRODUCTS "
                     Height="40"
-                    Width="115" >
+                    Width="115" Click="MenuItem_Click" >
                 </MenuItem>
                 <MenuItem Header=" POST A NEW PRODUCT"
                     Height="40"
-                    Width="150"/>
+                    Width="150" Click="Click_Product"/>
                 <MenuItem Header="   WARRANTY"
                     Height="40"
                     Width="110"/>
                 <MenuItem Header="   ABOUT US"
                     Height="40"
-                    Width="95"/>
+                    Width="95" />
             </Menu>
         </Grid>
         <Grid Grid.Row="1">
-            <userControl:Fhome Visibility="Visible"/>
+                <userControl:Fhome x:Name="fHome" Visibility="Visible"/>
+                <userControl:UCProduct_Show x:Name="fProduct" Visibility="Collapsed"/>
+                <userControl:UCProductUploading x:Name="fAddProduct" Visibility="Collapsed"/>
+                <userControl:UCAccount x:Name="fAccount" Visibility="Collapsed"/>
+                <userControl:FCart x:Name="fCart" Visibility="Collapsed"/>
         </Grid>
     </Grid>
 </Window>

@@ -24,5 +24,40 @@ namespace wpf_TechMarketMangement
         {
             InitializeComponent();
         }
+        public void setActiveUserControl(UserControl userControl)
+        {
+            fHome.Visibility = Visibility.Collapsed;  
+            fAccount.Visibility = Visibility.Collapsed;
+            fProduct.Visibility = Visibility.Collapsed;
+            fAddProduct.Visibility = Visibility.Collapsed;
+            fCart.Visibility = Visibility.Collapsed;
+            userControl.Visibility = Visibility.Visible;
+        }
+
+
+        private void Click_home(object sender, RoutedEventArgs e)
+        {
+            setActiveUserControl(fHome);
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            setActiveUserControl(fProduct);
+        }
+
+        private void Click_Product(object sender, RoutedEventArgs e)
+        {
+            setActiveUserControl(fAddProduct);
+        }
+
+        private void Click_Account(object sender, RoutedEventArgs e)
+        {
+            setActiveUserControl(fAccount);
+        }
+
+        private void Click_Cart(object sender, RoutedEventArgs e)
+        {
+            setActiveUserControl(fCart);
+        }
     }
 }
