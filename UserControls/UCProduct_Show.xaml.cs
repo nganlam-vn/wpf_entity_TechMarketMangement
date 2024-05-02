@@ -40,6 +40,11 @@ namespace wpf_TechMarketMangement.UserControls
             dbOther.Visibility = Visibility.Collapsed;
             userControl.Visibility = Visibility.Visible;
         }
+        public void setActiveProductDetail(UserControl userControl)
+        {
+            fdetail.Visibility = Visibility.Collapsed;
+            userControl.Visibility= Visibility.Visible;
+        }
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             setActiveUserControl(dbLaptop);
@@ -73,12 +78,12 @@ namespace wpf_TechMarketMangement.UserControls
                 foreach (var item2 in inputList)
                 {
                     UCCard uccard = new UCCard(); //ui element
-
                     uccard.txtType.Text = item.Type;
                     uccard.txtbName.Text = item.DisplayName;
                     uccard.txtbPrice.Text = item2.OutputPrice.ToString() + "VND";
                     wpCard.Children.Add(uccard);
                 }
+
             }
         }
     }
