@@ -78,7 +78,8 @@ namespace wpf_TechMarketMangement.UserControls
                 foreach (var item2 in inputList)
                 {
                     UCCard uccard = new UCCard(); //ui element
-                    uccard.imgCard.ImageSource = new BitmapImage(new Uri(item.Img1));
+                    uccard.imgCard.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img1, UriKind.Relative));
+                    //uccard.imgCard.ImageSource = new BitmapImage(new Uri(item.Img1));
                     uccard.txtType.Text = item.Unit.DisplayName;
                     uccard.txtbName.Text = item.DisplayName;
                     uccard.txtbPrice.Text = item2.OutputPrice.ToString() + "VND";
@@ -89,10 +90,15 @@ namespace wpf_TechMarketMangement.UserControls
                         //detail.ShowDialog();
                         ucProductDetail.Visibility = Visibility.Visible;
                         ProductDetail.price.Text = item2.OutputPrice.ToString() + "VND"; 
+                        ProductDetail.nameProduct.Text = item.DisplayName;
                         ProductDetail.idProduct.Text = item.Id.ToString();
                         ProductDetail.brandProduct.Text = item.Brand;
                         ProductDetail.conditionProduct.Text = item2.Condition.ToString();
                         ProductDetail.colorProduct.Content = item2.Color.ToString();
+                       
+                        //ProductDetail.imgDetail.image_detail_1.ImageSource = new BitmapImage(new Uri(item.Img1, UriKind.Relative));
+                        //ProductDetail.imgDetail.image_detail_2.Source = new BitmapImage(new Uri(item.Img2, UriKind.Relative));
+                        //ProductDetail.imgDetail.image_detail_3.Source = new BitmapImage(new Uri(item.Img3, UriKind.Relative));
 
                         //MessageBox.Show(item.DisplayName);
                     };  
