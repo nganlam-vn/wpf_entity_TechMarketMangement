@@ -146,6 +146,12 @@
     <Compile Include="UserControls\UCCard.xaml.cs">
       <DependentUpon>UCCard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCInput.xaml.cs">
+      <DependentUpon>UCInput.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCInputInfo.xaml.cs">
+      <DependentUpon>UCInputInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCProductUploading.xaml.cs">
       <DependentUpon>UCProductUploading.xaml</DependentUpon>
     </Compile>
@@ -184,7 +190,8 @@
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\SupplierViewModel.cs" />
-    <Compile Include="ViewModels\UCCardDetail.cs" />
+    <Compile Include="ViewModels\UCInputInfoViewModel.cs" />
+    <Compile Include="ViewModels\UCProductDetailViewModel.cs" />
     <Compile Include="ViewModels\UCProductUploadingViewModel.cs" />
     <Compile Include="ViewModels\UCProductWareHouseViewModel.cs" />
     <Compile Include="ViewModels\UCProduct_ShowViewModel.cs" />
@@ -230,6 +237,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\UCCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UCInput.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UCInputInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
