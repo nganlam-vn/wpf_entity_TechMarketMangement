@@ -7,7 +7,7 @@
              xmlns:hc="https://handyorg.github.io/handycontrol"
              xmlns:userControl="clr-namespace:wpf_TechMarketMangement.UserControls.UCSingleItem"
              mc:Ignorable="d" 
-             d:DesignHeight="5000" d:DesignWidth="1200">
+             d:DesignHeight="1200" d:DesignWidth="1200">
     <ScrollViewer>
         <Grid Background="White">
             <Grid.RowDefinitions>
@@ -23,7 +23,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0" Grid.Row="1">
-                    <userControl:UCCarouselProduct/>
+                    <userControl:UCCarouselProduct x:Name="h"/>
                 </Grid>
                 <Grid Grid.Row="1" Grid.Column="2">
                     <Grid.RowDefinitions>
@@ -60,12 +60,12 @@
                         <hc:Rate DefaultValue="4.5" IsReadOnly="True" AllowHalf="True" Margin="0,5,0,0" Foreground="{DynamicResource WarningBrush}"/>
                     </Grid>
                     <Grid Grid.Row="4">
-                        <TextBlock FontFamily="Arial" FontSize="20" FontWeight="Bold" Text="40.000.000đ" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="price" FontFamily="Arial" FontSize="20" FontWeight="Bold" Text="40.000.000đ" VerticalAlignment="Center"/>
                     </Grid>
                     <Grid Grid.Row="5">
                         <TextBlock FontFamily="Arial" FontSize="14" FontWeight="Bold" VerticalAlignment="Center">
                     <Run Text="Condition "/>
-                    <Run x:Name="percentProduct"  Text="Like New" Foreground="OrangeRed"/>
+                    <Run x:Name="conditionProduct"  Text="Like New" Foreground="OrangeRed"/>
                         </TextBlock>
                     </Grid>
                     <Grid Grid.Row="6">

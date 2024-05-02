@@ -13,6 +13,17 @@
             <Border Background="White"  CornerRadius="20" Height="225" Width="196" Cursor="Hand" >
                 <StackPanel Height="210" Width="190">
                     <StackPanel Height="140" VerticalAlignment="Top">
+                        <Border
+                                                Width="100"
+                                                Height="100"
+                                                Padding="3,0,3,0"
+                                                BorderBrush="Gray"
+                                                BorderThickness="1.6"
+                                                CornerRadius="10">
+                            <Border.Background>
+                                <ImageBrush x:Name="imgCard" Stretch="None" />
+                            </Border.Background>
+                        </Border>
                     </StackPanel>
                     <TextBlock Name="txtType" Text="LAPTOP" FontSize="15" FontWeight="ExtraLight"  HorizontalAlignment="Center" Foreground="Gray" FontFamily="Source Code Pro"/>
                     <TextBlock Name="txtbName" Text="MACBOOK M3" FontSize="20" FontWeight="Bold"  HorizontalAlignment="Center" MaxWidth="150" TextWrapping="NoWrap"/>
