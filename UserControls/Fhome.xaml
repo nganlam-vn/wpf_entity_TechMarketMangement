@@ -61,7 +61,7 @@
             </Grid>
             <Grid Grid.Row="6" Margin="50,0,50,0">
                 <Border BorderThickness="1" BorderBrush="{DynamicResource BorderBrush}">
-                    <hc:ScrollViewer Margin="50,0,50,0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" IsInertiaEnabled="True">
+                    <hc:ScrollViewer  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" IsInertiaEnabled="True">
                         <StackPanel Orientation="Horizontal" x:Name="stOrther" VerticalAlignment="Top">
                             <usercontroll:UCCard/>
                         </StackPanel>

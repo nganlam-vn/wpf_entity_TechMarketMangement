@@ -52,6 +52,7 @@ namespace wpf_TechMarketMangement
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             setActiveUserControl(fProduct);
+
         }
 
         private void Click_Product(object sender, RoutedEventArgs e)

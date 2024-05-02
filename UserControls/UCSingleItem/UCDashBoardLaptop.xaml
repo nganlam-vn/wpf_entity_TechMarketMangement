@@ -37,25 +37,25 @@
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <CheckBox Height="20">
-                        <TextBlock Text=" Apple"/>
+                        <TextBlock Text=" Apple" x:Name="Apple"/>
                     </CheckBox>
                 </Grid>
 
                 <Grid Grid.Row="1">
                     <CheckBox Height="20">
-                        <TextBlock Text=" Asus"/>
+                        <TextBlock Text=" Asus" x:Name="Asus"/>
                     </CheckBox>
                 </Grid>
 
                 <Grid Grid.Row="2">
                     <CheckBox Height="20">
-                        <TextBlock Text=" Acer"/>
+                        <TextBlock Text=" Acer" x:Name="Acer"/>
                     </CheckBox>
                 </Grid>
 
                 <Grid Grid.Row="3">
                     <CheckBox Height="20">
-                        <TextBlock Text=" Lenovo"/>
+                        <TextBlock Text=" Lenovo" x:Name="Lenovo"/>
                     </CheckBox>
                 </Grid>
 

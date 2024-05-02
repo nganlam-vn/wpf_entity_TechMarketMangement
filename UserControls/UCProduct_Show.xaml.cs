@@ -24,7 +24,7 @@ using wpf_TechMarketMangement.ViewModels;
 namespace wpf_TechMarketMangement.UserControls
 {
     //su dung code behind vi binding 2 cai (card va show) 
-    public partial class UCProduct_Show : UserControl 
+    public partial class UCProduct_Show : UserControl
     {
         private ObservableCollection<UCCardModel> _CardList; //link model to viewmodel
         public ObservableCollection<UCCardModel> CardList { get => _CardList; set { _CardList = value; OnPropertyChanged(nameof(_CardList)); } }
@@ -40,11 +40,6 @@ namespace wpf_TechMarketMangement.UserControls
             dbOther.Visibility = Visibility.Collapsed;
             userControl.Visibility = Visibility.Visible;
         }
-        public void setActiveProductDetail(UserControl userControl)
-        {
-            fdetail.Visibility = Visibility.Collapsed;
-            userControl.Visibility= Visibility.Visible;
-        }
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             setActiveUserControl(dbLaptop);
@@ -52,23 +47,29 @@ namespace wpf_TechMarketMangement.UserControls
         private void Click_Laptop(object sender, RoutedEventArgs e)
         {
             setActiveUserControl(dbLaptop);
+            LoadCardDataLaptop();
 
         }
         private void Click_Phone(object sender, RoutedEventArgs e)
         {
             setActiveUserControl(dbPhone);
+            LoadCardDataPhone();
         }
         private void Click_Other(object sender, RoutedEventArgs e)
         {
             setActiveUserControl(dbOther);
+            LoadCardDataOther();
         }
         public UCProduct_Show()
         {
             InitializeComponent();
             LoadCardData();
+            backFHome.Visibility = Visibility.Collapsed;
         }
         private void LoadCardData()
         {
+            wpCard.Children.Clear();
+
             // Load data from database
             CardList = new ObservableCollection<UCCardModel>();
             var objectList = DataProvider.Ins.DB.Objects;
@@ -78,8 +79,6 @@ namespace wpf_TechMarketMangement.UserControls
                 foreach (var item2 in inputList)
                 {
                     UCCard uccard = new UCCard(); //ui element
-                    uccard.imgCard.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img1, UriKind.Relative));
-                    //uccard.imgCard.ImageSource = new BitmapImage(new Uri(item.Img1));
                     uccard.txtType.Text = item.Unit.DisplayName;
                     uccard.txtbName.Text = item.DisplayName;
                     uccard.txtbPrice.Text = item2.OutputPrice.ToString() + "VND";
@@ -89,20 +88,132 @@ namespace wpf_TechMarketMangement.UserControls
                         //detail.DataContext = new UCProduct_DetailViewModel(item);
                         //detail.ShowDialog();
                         ucProductDetail.Visibility = Visibility.Visible;
-                        ProductDetail.price.Text = item2.OutputPrice.ToString() + "VND"; 
-                        ProductDetail.nameProduct.Text = item.DisplayName;
+                        ProductDetail.price.Text = item2.OutputPrice.ToString() + "VND";
                         ProductDetail.idProduct.Text = item.Id.ToString();
                         ProductDetail.brandProduct.Text = item.Brand;
                         ProductDetail.conditionProduct.Text = item2.Condition.ToString();
                         ProductDetail.colorProduct.Content = item2.Color.ToString();
-                       
-                        //ProductDetail.imgDetail.image_detail_1.ImageSource = new BitmapImage(new Uri(item.Img1, UriKind.Relative));
-                        //ProductDetail.imgDetail.image_detail_2.Source = new BitmapImage(new Uri(item.Img2, UriKind.Relative));
-                        //ProductDetail.imgDetail.image_detail_3.Source = new BitmapImage(new Uri(item.Img3, UriKind.Relative));
 
                         //MessageBox.Show(item.DisplayName);
-                    };  
+                    };
                     wpCard.Children.Add(uccard);
+                }
+            }
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            backFHome.Visibility = Visibility.Visible;
+        }
+        private void LoadCardDataLaptop()
+        {
+            wpCard.Children.Clear();
+
+            // Load data from database
+            CardList = new ObservableCollection<UCCardModel>();
+            var objectList = DataProvider.Ins.DB.Objects;
+            foreach (var item in objectList)
+            {
+                if (item.IdUnit == 1)
+                {
+                    var inputList = DataProvider.Ins.DB.InputInfoes.Where(p => p.IdObject == item.Id);
+                    foreach (var item2 in inputList)
+                    {
+                        UCCard uccard = new UCCard(); //ui element
+                        uccard.txtType.Text = item.Unit.DisplayName;
+                        uccard.txtbName.Text = item.DisplayName;
+                        uccard.txtbPrice.Text = item2.OutputPrice.ToString() + "VND";
+                        uccard.btnDetail.Click += (sender, e) =>
+                        {
+                            //var detail = new UCProduct_Detail();
+                            //detail.DataContext = new UCProduct_DetailViewModel(item);
+                            //detail.ShowDialog();
+                            ucProductDetail.Visibility = Visibility.Visible;
+                            ProductDetail.price.Text = item2.OutputPrice.ToString() + "VND";
+                            ProductDetail.idProduct.Text = item.Id.ToString();
+                            ProductDetail.brandProduct.Text = item.Brand;
+                            ProductDetail.conditionProduct.Text = item2.Condition.ToString();
+                            ProductDetail.colorProduct.Content = item2.Color.ToString();
+
+                            //MessageBox.Show(item.DisplayName);
+                        };
+                        wpCard.Children.Add(uccard);
+                    }
+                }
+            }
+        }
+        private void LoadCardDataPhone()
+        {
+            wpCard.Children.Clear();
+
+            // Load data from database
+            CardList = new ObservableCollection<UCCardModel>();
+            var objectList = DataProvider.Ins.DB.Objects;
+            foreach (var item in objectList)
+            {
+                if (item.IdUnit == 2)
+                {
+                    var inputList = DataProvider.Ins.DB.InputInfoes.Where(p => p.IdObject == item.Id);
+                    foreach (var item2 in inputList)
+                    {
+                        UCCard uccard = new UCCard(); //ui element
+                        uccard.txtType.Text = item.Unit.DisplayName;
+                        uccard.txtbName.Text = item.DisplayName;
+                        uccard.txtbPrice.Text = item2.OutputPrice.ToString() + "VND";
+                        uccard.btnDetail.Click += (sender, e) =>
+                        {
+                            //var detail = new UCProduct_Detail();
+                            //detail.DataContext = new UCProduct_DetailViewModel(item);
+                            //detail.ShowDialog();
+                            ucProductDetail.Visibility = Visibility.Visible;
+                            ProductDetail.price.Text = item2.OutputPrice.ToString() + "VND";
+                            ProductDetail.idProduct.Text = item.Id.ToString();
+                            ProductDetail.brandProduct.Text = item.Brand;
+                            ProductDetail.conditionProduct.Text = item2.Condition.ToString();
+                            ProductDetail.colorProduct.Content = item2.Color.ToString();
+
+                            //MessageBox.Show(item.DisplayName);
+                        };
+                        wpCard.Children.Add(uccard);
+                    }
+                }
+            }
+        }
+
+        private void LoadCardDataOther()
+        {
+            wpCard.Children.Clear();
+
+            // Load data from database
+            CardList = new ObservableCollection<UCCardModel>();
+            var objectList = DataProvider.Ins.DB.Objects;
+            foreach (var item in objectList)
+            {
+                if (item.IdUnit == 3)
+                {
+                    var inputList = DataProvider.Ins.DB.InputInfoes.Where(p => p.IdObject == item.Id);
+                    foreach (var item2 in inputList)
+                    {
+                        UCCard uccard = new UCCard(); //ui element
+                        uccard.txtType.Text = item.Unit.DisplayName;
+                        uccard.txtbName.Text = item.DisplayName;
+                        uccard.txtbPrice.Text = item2.OutputPrice.ToString() + "VND";
+                        uccard.btnDetail.Click += (sender, e) =>
+                        {
+                            //var detail = new UCProduct_Detail();
+                            //detail.DataContext = new UCProduct_DetailViewModel(item);
+                            //detail.ShowDialog();
+                            ucProductDetail.Visibility = Visibility.Visible;
+                            ProductDetail.price.Text = item2.OutputPrice.ToString() + "VND";
+                            ProductDetail.idProduct.Text = item.Id.ToString();
+                            ProductDetail.brandProduct.Text = item.Brand;
+                            ProductDetail.conditionProduct.Text = item2.Condition.ToString();
+                            ProductDetail.colorProduct.Content = item2.Color.ToString();
+
+                            //MessageBox.Show(item.DisplayName);
+                        };
+                        wpCard.Children.Add(uccard);
+                    }
                 }
             }
         }

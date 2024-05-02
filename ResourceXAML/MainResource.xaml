@@ -6,6 +6,7 @@
     <viewmodel:UCUnitViewModel x:Key="UCUnitVM"></viewmodel:UCUnitViewModel>
     <viewmodel:UCProductUploadingViewModel x:Key="UCProductUploadingVM"></viewmodel:UCProductUploadingViewModel>
     <viewmodel:FSupplierViewModel x:Key="FSupplierVM"></viewmodel:FSupplierViewModel>
+    <viewmodel:FindViewModel x:Key="FindVM"></viewmodel:FindViewModel>
     <viewmodel:UCProductDetailViewModel x:Key="UCProductDetailVM"></viewmodel:UCProductDetailViewModel>
     <viewmodel:UCInputInfoViewModel x:Key="UCInputInfoVM"></viewmodel:UCInputInfoViewModel>
     
