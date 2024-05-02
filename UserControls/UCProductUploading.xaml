@@ -10,121 +10,133 @@
              d:DesignHeight="500" d:DesignWidth="1200">
     <Grid>
         <ScrollViewer >
-            <Border Background="White"  Height="800" Width="770" Margin="0,10,0,0" >
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+            <UniformGrid>
+                <Border Style="{StaticResource BorderRegion}" Width="800" Height="1200" Background="White" >
+                    <ScrollViewer Margin="4,4,4,4" >
+                        <Border Background="White"  Height="800" Width="770"  >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
 
-                    <Grid Grid.Column="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="0.5*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Grid Grid.Row="0">
-                            <TextBlock Text="PRODUCT FORM" FontWeight="DemiBold" FontSize="24" Margin="129,1,-129,-1" />
-                        </Grid>
-                        <Grid Grid.Row="1">
-                            <TextBlock Text="Product Name " FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <TextBox Width="200" HorizontalAlignment="Left" VerticalAlignment="Bottom"
-                                         Text="{Binding ProductNameText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
-                        </Grid>
-                        <Grid Grid.Row="2">
-                            <TextBlock Text="Brand" FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <TextBox Width="200" HorizontalAlignment="Left" VerticalAlignment="Bottom" 
-                                         Text="{Binding BrandText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
-                        </Grid>
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="0.5*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
+                                        <TextBlock Text="PRODUCT FORM" FontWeight="DemiBold" FontSize="24" Margin="129,1,-129,-1" />
+                                    </Grid>
+                                    <Grid Grid.Row="1">
+                                        <TextBlock Text="Product Name " FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                        <TextBox Width="200" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                     Text="{Binding ProductNameText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                                    </Grid>
+                                    <Grid Grid.Row="2">
+                                        <TextBlock Text="Brand" FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                        <TextBox Width="200" HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+                                     Text="{Binding BrandText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                                    </Grid>
 
-                        <Grid Grid.Row="3">
-                            <TextBlock Text="Type " FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <TextBox Width="200" HorizontalAlignment="Left" VerticalAlignment="Bottom"
-                                         Text="{Binding TypeText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
-                        </Grid>
+                                    <Grid Grid.Row="3">
+                                        <TextBlock Text="Type " FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                        <ComboBox Width="200" HorizontalAlignment="Left" VerticalAlignment="Bottom" ItemsSource="{Binding UnitList}" DisplayMemberPath="DisplayName" 
+                                       SelectedValue="{Binding UnitText}">
 
-                        <Grid Grid.Row="4">
-                            <TextBlock Text="Original Price " FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <TextBox Width="200" HorizontalAlignment="Left" VerticalAlignment="Bottom" 
-                                         Text="{Binding OriginalPriceText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
-                        </Grid>
+                                        </ComboBox>
+                                        <!--<TextBox Width="200" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                     Text="{Binding TypeText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>-->
+                                    </Grid>
 
-                        <Grid Grid.Row="5">
-                            <TextBlock Text="Product Description " FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <TextBox Width="209" Height="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="-4,0,0,-76" TextWrapping="Wrap"
-                                         Text="{Binding DescriptionText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
-                        </Grid>
-                    </Grid>
+                                    <Grid Grid.Row="4">
+                                        <TextBlock Text="Original Price " FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                        <TextBox Width="200" HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+                                     Text="{Binding OriginalPriceText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                                    </Grid>
 
-                    <Grid Grid.Column="2">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="0.5*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Grid Grid.Row="1">
-                            <TextBlock Text="Condition (%) " FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <TextBox Width="200" HorizontalAlignment="Left" VerticalAlignment="Bottom" 
-                                         Text="{Binding ConditionText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
-                        </Grid>
-                        <Grid Grid.Row="2">
-                            <TextBlock Text="Quantity " FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <TextBox Width="200" HorizontalAlignment="Left" VerticalAlignment="Bottom"
-                                         Text="{Binding QuantityText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
-                        </Grid>
+                                    <Grid Grid.Row="5">
+                                    </Grid>
+                                </Grid>
 
-                        <Grid Grid.Row="3">
-                            <TextBlock Text="Bought Year " FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <TextBox Width="200" HorizontalAlignment="Left" VerticalAlignment="Bottom" 
-                                         Text="{Binding BoughtYearText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
-                        </Grid>
+                                <Grid Grid.Column="2">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="0.5*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="1">
+                                        <TextBlock Text="Condition (%) " FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                        <TextBox Width="200" HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+                                     Text="{Binding ConditionText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                                    </Grid>
+                                    <Grid Grid.Row="2">
+                                        <TextBlock Text="Supplier " FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                        <ComboBox ItemsSource="{Binding SuppilierList}" DisplayMemberPath="DisplayName" Width="200" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                     SelectedValue="{Binding SupplierText}"/>
+                                    </Grid>
 
-                        <Grid Grid.Row="4">
-                            <TextBlock Text="Sale Price" FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <TextBox Width="200" HorizontalAlignment="Left" VerticalAlignment="Bottom" 
-                                         Text="{Binding SalePriceText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
-                        </Grid>
+                                    <Grid Grid.Row="3">
+                                        <TextBlock Text="Picture of Product " FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                        <StackPanel Orientation="Horizontal">
 
-                        <Grid Grid.Row="5">
-                            <TextBlock Text="Picture of Product" FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,8,0,0"/>
-                            <StackPanel Orientation="Horizontal">
+                                        </StackPanel>
+                                    </Grid>
 
-                            </StackPanel>
-                            <Image x:Name="img1" Source="{Binding Img1Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="1,72,147,-73" Stretch="UniformToFill"/>
-                            <Image x:Name="img2" Source="{Binding Img2Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="120,73,28,-73" Stretch="UniformToFill"/>
-                            <Image x:Name="img3" Source="{Binding Img2Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="120,168,29,-170" Stretch="UniformToFill"/>
-                            <!--<TextBlock Text="sscscs" Name="tblImg" Width="267" Height="57" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="-4,0,0,-33" />-->
-                            <Button Content="Browse your pictures" Height="28" Width="138" Foreground="White" Background="Black" FontWeight="DemiBold"
-                                        HorizontalAlignment="Left" Margin="2,0,0,0"  
-                                        Command="{Binding BrowseCommand}" 
-                                            CommandParameter="{Binding ElementName=UCProductUploadingView}"
-                                        />
-                            <!--Click="Button_Click"-->
-                            <!--Command="{Binding ImgCommand}" 
-    CommandParameter="{Binding ElementName=UploadingView}"-->
-                        </Grid>
-                    </Grid>
-                    <Button x:Name="btnSignUp" Content="Send" Height="40" Width="100" Foreground="White" Background="Black" FontWeight="DemiBold"
-                                 Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Margin="160,678,0,0" VerticalAlignment="Top" 
-                                 Command="{Binding AddCommand}" 
-                                    CommandParameter="{Binding ElementName=UCProductUploadingView}"/>
+                                    <Grid Grid.Row="4">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image x:Name="img2" Source="{Binding Img2Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Stretch="UniformToFill" Width="100"/>
+                                            <Image x:Name="img3" Source="{Binding Img3Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Stretch="UniformToFill" Width="100"/>
+                                            <Image x:Name="img4" Source="{Binding Img4Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Stretch="UniformToFill" Width="100"/>
 
-                </Grid>
-            </Border>
+                                        </StackPanel>
+                                        <!--<Image x:Name="img1" Source="{Binding Img1Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="0,29,15,-30" Stretch="UniformToFill" Grid.ColumnSpan="2"/>-->
+                                    </Grid>
+
+                                    <Grid Grid.Row="5">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Content="Browse" Height="28" Width="80" Foreground="White" Background="Black" FontWeight="DemiBold"
+                                        HorizontalAlignment="Left" Margin="2,0,25,0" Command="{Binding BrowseCommand1}" CommandParameter="{Binding ElementName=UCProductUploadingView}"/>
+
+                                            <Button Content="Browse" Height="28" Width="80" Foreground="White" Background="Black" FontWeight="DemiBold"
+                                        HorizontalAlignment="Left" Margin="2,0,25,0" Command="{Binding BrowseCommand2}" CommandParameter="{Binding ElementName=UCProductUploadingView}"/>
+
+                                            <Button Content="Browse" Height="28" Width="80" Foreground="White" Background="Black" FontWeight="DemiBold"
+                                        HorizontalAlignment="Left" Margin="2,0,0,0" Command="{Binding BrowseCommand3}" CommandParameter="{Binding ElementName=UCProductUploadingView}"/>
+
+                                        </StackPanel>
+
+                                        <!--Click="Button_Click"-->
+                                        <!--Command="{Binding ImgCommand}" 
+CommandParameter="{Binding ElementName=UploadingView}"-->
+                                    </Grid>
+                                </Grid>
+                                <Button x:Name="btnSignUp" Content="Send" Height="40" Width="100" Foreground="White" Background="Black" FontWeight="DemiBold"
+                             Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Margin="160,678,0,0" VerticalAlignment="Top" 
+                             Command="{Binding AddCommand}" 
+                                CommandParameter="{Binding ElementName=UCProductUploadingView}"
+                                   />
+
+                            </Grid>
+                        </Border>
+                    </ScrollViewer>
+                </Border>
+                </UniformGrid>
         </ScrollViewer>
 
     </Grid>

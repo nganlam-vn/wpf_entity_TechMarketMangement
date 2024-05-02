@@ -391,5 +391,8 @@
     <Resource Include="UserControls\UCSingleItem\pngwing.com.png" />
     <Resource Include="UserControls\UCSingleItem\find-icon-vector-13483346.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Asset\Carousel_Product\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -78,12 +78,26 @@ namespace wpf_TechMarketMangement.UserControls
                 foreach (var item2 in inputList)
                 {
                     UCCard uccard = new UCCard(); //ui element
-                    uccard.txtType.Text = item.Type;
+                    uccard.imgCard.ImageSource = new BitmapImage(new Uri(item.Img1));
+                    uccard.txtType.Text = item.Unit.DisplayName;
                     uccard.txtbName.Text = item.DisplayName;
                     uccard.txtbPrice.Text = item2.OutputPrice.ToString() + "VND";
+                    uccard.btnDetail.Click += (sender, e) =>
+                    {
+                        //var detail = new UCProduct_Detail();
+                        //detail.DataContext = new UCProduct_DetailViewModel(item);
+                        //detail.ShowDialog();
+                        ucProductDetail.Visibility = Visibility.Visible;
+                        ProductDetail.price.Text = item2.OutputPrice.ToString() + "VND"; 
+                        ProductDetail.idProduct.Text = item.Id.ToString();
+                        ProductDetail.brandProduct.Text = item.Brand;
+                        ProductDetail.conditionProduct.Text = item2.Condition.ToString();
+                        ProductDetail.colorProduct.Content = item2.Color.ToString();
+
+                        //MessageBox.Show(item.DisplayName);
+                    };  
                     wpCard.Children.Add(uccard);
                 }
-
             }
         }
     }
