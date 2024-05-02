@@ -173,6 +173,9 @@
     <Compile Include="UserControls\UCSingleItem\UCDashBoardPhone.xaml.cs">
       <DependentUpon>UCDashBoardPhone.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCSingleItem\UCFind.xaml.cs">
+      <DependentUpon>UCFind.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCSingleItem\UCMenu.xaml.cs">
       <DependentUpon>UCMenu.xaml</DependentUpon>
     </Compile>
@@ -266,6 +269,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\UCSingleItem\UCDashBoardPhone.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UCSingleItem\UCFind.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -378,6 +385,14 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="pngwing.com.png" />
+    <Resource Include="UserControls\UCSingleItem\—Pngtree—vector cross icon_4184842.png" />
+    <Resource Include="UserControls\UCSingleItem\kisspng-computer-icons-vector-graphics-christian-cross-x-m-multiplication-sign-svg-png-icon-free-download-2-5c036fab1589f1.3760144715437290670882.jpg" />
+    <Resource Include="UserControls\UCSingleItem\pngwing.com.png" />
+    <Resource Include="UserControls\UCSingleItem\find-icon-vector-13483346.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Asset\Carousel_Product\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -40,6 +40,11 @@ namespace wpf_TechMarketMangement.UserControls
             dbOther.Visibility = Visibility.Collapsed;
             userControl.Visibility = Visibility.Visible;
         }
+        public void setActiveProductDetail(UserControl userControl)
+        {
+            fdetail.Visibility = Visibility.Collapsed;
+            userControl.Visibility= Visibility.Visible;
+        }
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             setActiveUserControl(dbLaptop);
