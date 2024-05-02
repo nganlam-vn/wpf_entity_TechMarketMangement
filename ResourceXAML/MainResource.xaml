@@ -7,4 +7,5 @@
     <viewmodel:UCProductUploadingViewModel x:Key="UCProductUploadingVM"></viewmodel:UCProductUploadingViewModel>
     <viewmodel:FSupplierViewModel x:Key="FSupplierVM"></viewmodel:FSupplierViewModel>
     <viewmodel:UCCardDetail x:Key="FProductDetail"></viewmodel:UCCardDetail>
+    <viewmodel:FindViewModel x:Key="FindVM"></viewmodel:FindViewModel>
 </ResourceDictionary>

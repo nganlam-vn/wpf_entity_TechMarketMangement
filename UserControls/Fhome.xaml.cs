@@ -40,6 +40,7 @@ namespace wpf_TechMarketMangement.UserControls
         private void LoadCardData()
         {
             // Load data from database
+          
             CardList = new ObservableCollection<UCCardModel>();
             var objectList = DataProvider.Ins.DB.Objects;
             foreach (var item in objectList)
@@ -48,7 +49,6 @@ namespace wpf_TechMarketMangement.UserControls
                 foreach (var item2 in inputList)
                 {
                     UCCard uccard = new UCCard(); //ui element
-
                     uccard.txtType.Text = item.Type;
                     uccard.txtbName.Text = item.DisplayName;
                     uccard.txtbPrice.Text = item2.OutputPrice.ToString() + "VND";

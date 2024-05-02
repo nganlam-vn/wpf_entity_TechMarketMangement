@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="wpf_TechMarketMangement.UserControls.UCSingleItem.UCCart"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:wpf_TechMarketMangement.UserControls.UCSingleItem"
+             mc:Ignorable="d" 
+             d:DesignHeight="120" d:DesignWidth="700">
+    <Grid>
+        <Border CornerRadius="20" Cursor="Hand" Background="White" Height="120" Width="700" >
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Width="10"/>
+                <Image Source="/Asset/Products/Laptop/mac_air.jpg" Height="95" Width="97"></Image>
+                <TextBlock Width="10"/>
+                <StackPanel Orientation="Vertical" Width="248">
+                    <TextBlock Height="10"/>
+                    <TextBlock Text="Macbook air M1" FontSize="14" Height="23" Width="244" FontWeight="Bold"/>
+                    <TextBlock Text="Silver" FontSize="12" FontFamily="Arial" Foreground="#B7B7B7" Height="33"/>
+                    <Button Content="Remove" Height="30" FontSize="14" HorizontalAlignment="Left"/>
+                </StackPanel>
+                <TextBlock Text="8.000.000đ" FontSize="14" Height="24" Width="164" FontWeight="Bold" Foreground="#FF567798" VerticalAlignment="Center"/>
+                <Button Content="-" />
+                <TextBox Width="40" TextAlignment="Center" Text="{Binding Number, UpdateSourceTrigger=PropertyChanged}" Height="30"/>
+                <Button Content="+"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

@@ -78,6 +78,7 @@
     <Compile Include="Models\Customer.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Find.cs" />
     <Compile Include="Models\Input.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -161,6 +162,9 @@
     <Compile Include="UserControls\UCSingleItem\UCCarouselProduct.xaml.cs">
       <DependentUpon>UCCarouselProduct.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCSingleItem\UCCart.xaml.cs">
+      <DependentUpon>UCCart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCSingleItem\UCDashBoardLaptop.xaml.cs">
       <DependentUpon>UCDashBoardLaptop.xaml</DependentUpon>
     </Compile>
@@ -183,9 +187,11 @@
       <DependentUpon>UCUnit.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\FindViewModel.cs" />
     <Compile Include="ViewModels\FSupplierViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\PriceFilter.cs" />
     <Compile Include="ViewModels\SupplierViewModel.cs" />
     <Compile Include="ViewModels\UCCardDetail.cs" />
     <Compile Include="ViewModels\UCProductUploadingViewModel.cs" />
@@ -253,6 +259,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\UCSingleItem\UCCarouselProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UCSingleItem\UCCart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -375,6 +385,16 @@
     <Resource Include="Asset\Products\Laptop\zephyrus.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="pngwing.com.png" />
+    <Resource Include="UserControls\UCSingleItem\—Pngtree—vector cross icon_4184842.png" />
+    <Resource Include="UserControls\UCSingleItem\kisspng-computer-icons-vector-graphics-christian-cross-x-m-multiplication-sign-svg-png-icon-free-download-2-5c036fab1589f1.3760144715437290670882.jpg" />
+    <Resource Include="UserControls\UCSingleItem\pngwing.com.png" />
+    <Resource Include="UserControls\UCSingleItem\find-icon-vector-13483346.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Asset\Carousel_Product\" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -385,14 +405,6 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Resource Include="pngwing.com.png" />
-    <Resource Include="UserControls\UCSingleItem\—Pngtree—vector cross icon_4184842.png" />
-    <Resource Include="UserControls\UCSingleItem\kisspng-computer-icons-vector-graphics-christian-cross-x-m-multiplication-sign-svg-png-icon-free-download-2-5c036fab1589f1.3760144715437290670882.jpg" />
-    <Resource Include="UserControls\UCSingleItem\pngwing.com.png" />
-    <Resource Include="UserControls\UCSingleItem\find-icon-vector-13483346.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Asset\Carousel_Product\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

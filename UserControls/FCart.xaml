@@ -4,9 +4,76 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:wpf_TechMarketMangement.UserControls"
+             xmlns:userControl="clr-namespace:wpf_TechMarketMangement.UserControls.UCSingleItem"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             d:DesignHeight="500" d:DesignWidth="1200">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <TextBlock Text="Home > Cart" FontSize="16" FontWeight="Bold" FontFamily="Arial" VerticalAlignment="Center" />
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <TextBlock FontSize="16" FontFamily="Arial" VerticalAlignment="Center">
+                <Run Text="CART" FontWeight="Bold"/>
+                <Run Text="(1 product)"/>
+            </TextBlock>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="800"/>
+                <ColumnDefinition Width="380"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <StackPanel>
+                    <userControl:UCCart/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <TextBlock FontFamily="Arial" FontSize="16" FontWeight="BOld">
+                        <Run Text="Provisional:"/>
+                        <Run Text="                "/>
+                        <Run x:Name="provisional" Text="850.000 đ"/>
+                    </TextBlock>
+                    <Line X1="0" X2="250" Y2="50" Y1="50"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <TextBlock FontFamily="Arial" FontSize="16" FontWeight="Bold">
+                        <Run Text="Into menoney:"/>
+                        <Run Text="            "/>
+                        <Run x:Name="into_menoney" Text="850.000 đ"/>
+                    </TextBlock>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Button Content="ADD TO CART" Width="250" Height="54" Background="Black" Foreground="White" HorizontalAlignment="Left"/>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Button Width="249" Height="50" HorizontalAlignment="Left">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                        <Button.Content>
+                            <TextBlock Text="CONTINUE TO BUY" Foreground="Black" FontWeight="Bold" FontSize="16"/>
+                        </Button.Content>
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>
