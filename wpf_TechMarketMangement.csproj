@@ -123,6 +123,9 @@
     <Compile Include="Models\UserRole.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\FBilling.xaml.cs">
+      <DependentUpon>FBilling.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\FCart.xaml.cs">
       <DependentUpon>FCart.xaml</DependentUpon>
     </Compile>
@@ -189,6 +192,9 @@
     <Compile Include="UserControls\UCSingleItem\UCMenu.xaml.cs">
       <DependentUpon>UCMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCSingleItem\UCMiniCart.xaml.cs">
+      <DependentUpon>UCMiniCart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCUnit.xaml.cs">
       <DependentUpon>UCUnit.xaml</DependentUpon>
     </Compile>
@@ -205,6 +211,10 @@
     <Compile Include="ViewModels\UCProductWareHouseViewModel.cs" />
     <Compile Include="ViewModels\UCProduct_ShowViewModel.cs" />
     <Compile Include="ViewModels\UCUnitViewModel.cs" />
+    <Page Include="UserControls\FBilling.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\FCart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -302,6 +312,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\UCSingleItem\UCMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UCSingleItem\UCMiniCart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
