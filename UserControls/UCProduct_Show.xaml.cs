@@ -114,7 +114,7 @@ namespace wpf_TechMarketMangement.UserControls
             var objectList = DataProvider.Ins.DB.Objects;
             foreach (var item in objectList)
             {
-                if (item.Type == "Laptop")
+                if (item.IdUnit == 1)
                 {
                     var inputList = DataProvider.Ins.DB.InputInfoes.Where(p => p.IdObject == item.Id);
                     foreach (var item2 in inputList)
@@ -151,7 +151,7 @@ namespace wpf_TechMarketMangement.UserControls
             var objectList = DataProvider.Ins.DB.Objects;
             foreach (var item in objectList)
             {
-                if (item.Type == "Phone")
+                if (item.IdUnit == 2)
                 {
                     var inputList = DataProvider.Ins.DB.InputInfoes.Where(p => p.IdObject == item.Id);
                     foreach (var item2 in inputList)
@@ -189,7 +189,7 @@ namespace wpf_TechMarketMangement.UserControls
             var objectList = DataProvider.Ins.DB.Objects;
             foreach (var item in objectList)
             {
-                if (item.Type == "Other")
+                if (item.IdUnit == 3)
                 {
                     var inputList = DataProvider.Ins.DB.InputInfoes.Where(p => p.IdObject == item.Id);
                     foreach (var item2 in inputList)
@@ -216,10 +216,6 @@ namespace wpf_TechMarketMangement.UserControls
                     }
                 }
             }
-        }
-        private void LoadBrandLaptop()
-        {
-
         }
     }
 }

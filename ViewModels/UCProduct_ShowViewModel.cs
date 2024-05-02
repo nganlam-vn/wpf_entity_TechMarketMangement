@@ -33,7 +33,7 @@ namespace wpf_TechMarketMangement.ViewModels
                     UCCard uccard = new UCCard();
                     UCProduct_Show show = new UCProduct_Show();
 
-                    uccard.txtType.Text = item.Type;
+                   // uccard.txtType.Text = item.Type;
                     uccard.txtbName.Text = item.DisplayName;
                     uccard.txtbPrice.Text = item2.OutputPrice.ToString() + "VND";
                     show.wpCard.Children.Add(uccard);

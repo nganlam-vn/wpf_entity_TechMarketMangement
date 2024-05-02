@@ -104,15 +104,11 @@ namespace wpf_TechMarketMangement.ViewModels
                         //uc.img3.Source = new BitmapImage(uri);
                         //copy file to path
                         string sourceFile = ofd.FileName; //lay duong dan file tu bat ki vi tri trong may
-                        string destinationFile = "./Asset/Products/Laptop/" + System.IO.Path.GetFileName(ofd.FileName);
+                        string destinationFile = "D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + System.IO.Path.GetFileName(ofd.FileName);
                         System.IO.File.Copy(sourceFile, destinationFile, true);
                         Img2Text = System.IO.Path.GetFileName(ofd.FileName);
 
-                        //UCProductUploadingModel uploading = new UCProductUploadingModel();
-                        //uploading.Object.Img1 = System.IO.Path.GetFileName(ofd.FileName);
-                        //List.Add(uploading); //add vao list  
-                        //DataProvider.Ins.DB.Objects.Add(uploading.Object); //add vao
-                        //DataProvider.Ins.DB.SaveChanges(); //luu lai tron database
+                       
                     }
 
 
@@ -143,11 +139,7 @@ namespace wpf_TechMarketMangement.ViewModels
                         System.IO.File.Copy(sourceFile, destinationFile, true);
                         Img3Text = System.IO.Path.GetFileName(ofd.FileName);
 
-                        //UCProductUploadingModel uploading = new UCProductUploadingModel();
-                        //uploading.Object.Img1 = System.IO.Path.GetFileName(ofd.FileName);
-                        //List.Add(uploading); //add vao list  
-                        //DataProvider.Ins.DB.Objects.Add(uploading.Object); //add vao
-                        //DataProvider.Ins.DB.SaveChanges(); //luu lai tron database
+                       
                     }
 
 
@@ -178,11 +170,7 @@ namespace wpf_TechMarketMangement.ViewModels
                         System.IO.File.Copy(sourceFile, destinationFile, true);
                         Img4Text = System.IO.Path.GetFileName(ofd.FileName);
 
-                        //UCProductUploadingModel uploading = new UCProductUploadingModel();
-                        //uploading.Object.Img1 = System.IO.Path.GetFileName(ofd.FileName);
-                        //List.Add(uploading); //add vao list  
-                        //DataProvider.Ins.DB.Objects.Add(uploading.Object); //add vao
-                        //DataProvider.Ins.DB.SaveChanges(); //luu lai tron database
+                      
                     }
 
 

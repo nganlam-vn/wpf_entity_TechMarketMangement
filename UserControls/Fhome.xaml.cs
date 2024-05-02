@@ -49,7 +49,7 @@ namespace wpf_TechMarketMangement.UserControls
                 foreach (var item2 in inputList)
                 {
                     UCCard uccard = new UCCard(); //ui element
-                    uccard.txtType.Text = item.Type;
+                    //uccard.txtType.Text = item.IdUnit;
                     uccard.txtbName.Text = item.DisplayName;
                     uccard.txtbPrice.Text = item2.OutputPrice.ToString() + "VND";
                     stInrestingProduct.Children.Add(uccard);

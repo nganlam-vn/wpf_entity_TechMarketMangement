@@ -63,7 +63,6 @@
           <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="DisplayName" Type="nvarchar(max)" />
           <Property Name="Brand" Type="nvarchar(max)" />
-          <Property Name="Type" Type="nvarchar(max)" />
           <Property Name="IdUnit" Type="int" Nullable="false" />
           <Property Name="IdSupplier" Type="int" Nullable="false" />
           <Property Name="QRCode" Type="nvarchar(max)" />
@@ -402,7 +401,6 @@
           <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Brand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IdUnit" Type="Int32" Nullable="false" />
           <Property Name="IdSupplier" Type="Int32" Nullable="false" />
           <Property Name="QRCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -755,7 +753,6 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
                 <ScalarProperty Name="Brand" ColumnName="Brand" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="IdUnit" ColumnName="IdUnit" />
                 <ScalarProperty Name="IdSupplier" ColumnName="IdSupplier" />
                 <ScalarProperty Name="QRCode" ColumnName="QRCode" />
