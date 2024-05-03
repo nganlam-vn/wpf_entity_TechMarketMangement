@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices; //add the System.Runtime.CompilerServices
 using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace wpf_TechMarketManagemnet.ViewModels
@@ -17,6 +18,7 @@ namespace wpf_TechMarketManagemnet.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        
     }
 
     class RelayCommand<T> : ICommand
