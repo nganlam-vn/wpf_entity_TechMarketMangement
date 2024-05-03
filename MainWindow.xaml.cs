@@ -24,6 +24,7 @@ namespace wpf_TechMarketMangement
         {
             InitializeComponent();
         }
+        
         public void setActiveUserControl(UserControl userControl)
         {
             fHome.Visibility = Visibility.Collapsed;  
@@ -35,7 +36,7 @@ namespace wpf_TechMarketMangement
         }
         public void setActiveFind(UserControl userControl)
         {
-            fFind.Visibility = Visibility.Collapsed;
+            //fFind.Visibility = Visibility.Collapsed;
             userControl.Visibility = Visibility.Visible;
         }
 
@@ -70,9 +71,7 @@ namespace wpf_TechMarketMangement
             setActiveUserControl(fCart);
         }
 
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
-        {
-            setActiveFind(fFind);
-        }
+       
+        
     }
 }

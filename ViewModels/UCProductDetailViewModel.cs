@@ -14,11 +14,18 @@ namespace wpf_TechMarketMangement.ViewModels
     {
         public bool IsLoaded = false;
         public ICommand AddCartCommand { get; set; }
+        public ICommand BackCommand { get; set; }
         public UCProductDetailViewModel()
         {
             AddCartCommand = new RelayCommand<UserControl>((p) => { return true; }, (p) =>
             {
                 MessageBox.Show("Successfully add to cart!");
+            });
+
+            BackCommand = new RelayCommand<UserControl>((p) => { return true; }, (p) =>
+            {
+               
+
             });
 
         }

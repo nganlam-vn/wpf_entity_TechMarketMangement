@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -20,14 +21,24 @@ using System.Windows.Shapes;
 using wpf_TechMarketManagemnet.ViewModels;
 using wpf_TechMarketMangement.Models;
 using wpf_TechMarketMangement.ViewModels;
+using Object = wpf_TechMarketMangement.Models.Object;
 
 namespace wpf_TechMarketMangement.UserControls
 {
+    //bug chua get all lai sau filter dc
     //su dung code behind vi binding 2 cai (card va show) 
     public partial class UCProduct_Show : UserControl
     {
+       
+
+        private List<Object> _ObjList; //link model to viewmodel
+        public List<Object> ObjList { get => _ObjList; set { _ObjList = value; OnPropertyChanged(nameof(ObjList)); } }
+
+        private string _FilterName;
+        public string FilterName { get => _FilterName; set { _FilterName = value; OnPropertyChanged(nameof(FilterName)); ObjList = Filter(value); LoadCardData(); } }
+
         private ObservableCollection<UCCardModel> _CardList; //link model to viewmodel
-        public ObservableCollection<UCCardModel> CardList { get => _CardList; set { _CardList = value; OnPropertyChanged(nameof(_CardList)); } }
+        public ObservableCollection<UCCardModel> CardList { get => _CardList; set { _CardList = value; OnPropertyChanged(nameof(CardList)); } }
         public event PropertyChangedEventHandler PropertyChanged;
         public virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
@@ -63,17 +74,31 @@ namespace wpf_TechMarketMangement.UserControls
         public UCProduct_Show()
         {
             InitializeComponent();
+            this.DataContext = this;
+            ObjList = new List<Object>();
+            ObjList = DataProvider.Ins.DB.Objects.ToList();
             LoadCardData();
             backFHome.Visibility = Visibility.Collapsed;
+           
         }
+        public List<Object> Filter(string name)
+        {
+            var objs = DataProvider.Ins.DB.Objects
+                                         .Where(t => t.DisplayName.ToLower().Contains(name.ToLower()))
+                                         .AsNoTracking()
+                                         .ToList();
+            return objs;
+
+        }
+       
         private void LoadCardData()
         {
             wpCard.Children.Clear();
 
             // Load data from database
             CardList = new ObservableCollection<UCCardModel>();
-            var objectList = DataProvider.Ins.DB.Objects;
-            foreach (var item in objectList)
+           
+           foreach (var item in ObjList)
             {
                 var inputList = DataProvider.Ins.DB.InputInfoes.Where(p => p.IdObject == item.Id);
                 foreach (var item2 in inputList)
@@ -82,6 +107,7 @@ namespace wpf_TechMarketMangement.UserControls
                     uccard.txtType.Text = item.Unit.DisplayName;
                     uccard.txtbName.Text = item.DisplayName;
                     uccard.txtbPrice.Text = item2.OutputPrice.ToString() + "VND";
+                    uccard.imgCard.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" +  item.Img1));
                     uccard.btnDetail.Click += (sender, e) =>
                     {
                         //var detail = new UCProduct_Detail();
@@ -93,6 +119,8 @@ namespace wpf_TechMarketMangement.UserControls
                         ProductDetail.brandProduct.Text = item.Brand;
                         ProductDetail.conditionProduct.Text = item2.Condition.ToString();
                         ProductDetail.colorProduct.Content = item2.Color.ToString();
+                        ProductDetail.nameProduct.Text = item.DisplayName;
+                        
 
                         //MessageBox.Show(item.DisplayName);
                     };
@@ -216,6 +244,11 @@ namespace wpf_TechMarketMangement.UserControls
                     }
                 }
             }
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            ucProductDetail.Visibility = Visibility.Collapsed;
         }
     }
 }

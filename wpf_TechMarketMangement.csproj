@@ -204,7 +204,6 @@
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\PriceFilter.cs" />
-    <Compile Include="ViewModels\SupplierViewModel.cs" />
     <Compile Include="ViewModels\UCInputInfoViewModel.cs" />
     <Compile Include="ViewModels\UCProductDetailViewModel.cs" />
     <Compile Include="ViewModels\UCProductUploadingViewModel.cs" />
