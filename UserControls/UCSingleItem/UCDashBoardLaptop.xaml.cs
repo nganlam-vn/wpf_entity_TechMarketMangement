@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HandyControl.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,11 @@ namespace wpf_TechMarketMangement.UserControls.UCSingleItem
         public UCDashBoardLaptop()
         {
             InitializeComponent();
+        }
+
+        private void RangeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<HandyControl.Data.DoubleRange> e)
+        {
+            
         }
     }
 }

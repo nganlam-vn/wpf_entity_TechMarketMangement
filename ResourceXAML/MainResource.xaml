@@ -8,8 +8,12 @@
     <viewmodel:FSupplierViewModel x:Key="FSupplierVM"></viewmodel:FSupplierViewModel>
     <viewmodel:FindViewModel x:Key="FindVM"></viewmodel:FindViewModel>
     <viewmodel:UCProductDetailViewModel x:Key="UCProductDetailVM"></viewmodel:UCProductDetailViewModel>
+<<<<<<< HEAD
     <viewmodel:UCInputViewModel x:Key="UCInputVM"></viewmodel:UCInputViewModel>
     <viewmodel:UCAccountViewModel x:Key="UCAccountVM"></viewmodel:UCAccountViewModel>
 
 
+=======
+    <viewmodel:UCInputInfoViewModel x:Key="UCInputInfoVM"></viewmodel:UCInputInfoViewModel>
+>>>>>>> aa673366ee369abfda94db7f801835d8b0883385
 </ResourceDictionary>
