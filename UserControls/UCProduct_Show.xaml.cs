@@ -249,5 +249,6 @@ namespace wpf_TechMarketMangement.UserControls
         {
             ucProductDetail.Visibility = Visibility.Collapsed;
         }
+
     }
 }

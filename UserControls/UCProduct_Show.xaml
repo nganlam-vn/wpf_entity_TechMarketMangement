@@ -60,7 +60,7 @@
                     </Grid>
                     <Grid Grid.Row="1">
                         <userControl:UCDashBoardPhone x:Name="dbPhone" Visibility="Collapsed"/>
-                        <userControl:UCDashBoardLaptop x:Name="dbLaptop" Visibility="Visible"/>
+                        <userControl:UCDashBoardLaptop x:Name="dbLaptop" Visibility="Visible" Loaded="dbLaptop_Loaded"/>
                         <userControl:UCDashBoardOthers x:Name="dbOther" Visibility="Collapsed"/>
                     </Grid>
                 </Grid>

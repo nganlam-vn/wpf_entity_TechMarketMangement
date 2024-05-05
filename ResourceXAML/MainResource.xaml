@@ -9,5 +9,4 @@
     <viewmodel:FindViewModel x:Key="FindVM"></viewmodel:FindViewModel>
     <viewmodel:UCProductDetailViewModel x:Key="UCProductDetailVM"></viewmodel:UCProductDetailViewModel>
     <viewmodel:UCInputInfoViewModel x:Key="UCInputInfoVM"></viewmodel:UCInputInfoViewModel>
-   
 </ResourceDictionary>
