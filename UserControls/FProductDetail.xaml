@@ -131,9 +131,9 @@
                         </StackPanel>
                     </Grid>
                     <Grid Grid.Row="11">
-                        <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,-49">
                             <Image Source="/Screenshot 2024-04-25 191416.png" Width="47" Height="50"/>
-                            <TextBlock Text="  WARRANTY POLICY" VerticalAlignment="Center" Foreground="SkyBlue"/>
+                            <hc:RangeSlider Width="200" hc:TipElement.Visibility="Visible" hc:TipElement.Placement="Bottom" hc:TipElement.StringFormat="#0.00" ValueEnd="5" TickPlacement="Both" Margin="0,32,0,0"/>
                         </StackPanel>
                     </Grid>
                     <Grid Grid.Row="12">

@@ -17,7 +17,7 @@
             <Grid Background="White">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="10"/>
-                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="300"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
@@ -49,8 +49,8 @@
                                         <VirtualizingStackPanel Orientation="Vertical"/>
                                     </ItemsPanelTemplate>
                                 </Menu.ItemsPanel>
-                                <MenuItem Header="Home" FontFamily="Arial" FontSize="13" Click="MenuItem_Click_1" />
-                                <MenuItem Header="Products" FontFamily="Arial" FontSize="13" Click="MenuItem_Click"/>
+                                <MenuItem Header="Product" FontFamily="Arial" FontSize="13" />
+                                <MenuItem Header="      All Products" FontFamily="Arial" FontSize="13" Click="MenuItem_Click"/>
                                 <MenuItem Header="      Laptops" FontFamily="Arial" FontSize="13" Click="Click_Laptop"/>
                                 <MenuItem Header="      Phones" FontFamily="Arial" FontSize="13" Click="Click_Phone"/>
                                 <MenuItem Header="      Others" FontFamily="Arial" FontSize="13" Click="Click_Other"/>
@@ -77,8 +77,6 @@
                     </WrapPanel>
                 </Grid>
             </Grid>
-
-            <local:Fhome x:Name="backFHome" Visibility="Collapsed"/>
         </Grid>
     </ScrollViewer>
 </UserControl>

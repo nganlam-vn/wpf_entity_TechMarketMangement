@@ -78,17 +78,19 @@ namespace wpf_TechMarketMangement.UserControls
             ObjList = new List<Object>();
             ObjList = DataProvider.Ins.DB.Objects.ToList();
             LoadCardData();
-            backFHome.Visibility = Visibility.Collapsed;
            
         }
         public List<Object> Filter(string name)
-        {
+        { 
             var objs = DataProvider.Ins.DB.Objects
                                          .Where(t => t.DisplayName.ToLower().Contains(name.ToLower()))
                                          .AsNoTracking()
                                          .ToList();
-            return objs;
-
+            if (name == "")
+            {
+                objs=DataProvider.Ins.DB.Objects.ToList ();
+            }
+             return objs;
         }
        
         private void LoadCardData()
@@ -107,7 +109,8 @@ namespace wpf_TechMarketMangement.UserControls
                     uccard.txtType.Text = item.Unit.DisplayName;
                     uccard.txtbName.Text = item.DisplayName;
                     uccard.txtbPrice.Text = item2.OutputPrice.ToString() + "VND";
-                    uccard.imgCard.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" +  item.Img1));
+                    //"D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\
+                    //uccard.imgCard.ImageSource = new BitmapImage(new Uri(item.Img1));
                     uccard.btnDetail.Click += (sender, e) =>
                     {
                         //var detail = new UCProduct_Detail();
@@ -129,10 +132,6 @@ namespace wpf_TechMarketMangement.UserControls
             }
         }
 
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
-        {
-            backFHome.Visibility = Visibility.Visible;
-        }
         private void LoadCardDataLaptop()
         {
             wpCard.Children.Clear();
