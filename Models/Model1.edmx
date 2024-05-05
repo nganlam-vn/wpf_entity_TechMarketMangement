@@ -19,7 +19,7 @@
           <Property Name="Img1" Type="varchar(max)" />
           <Property Name="Img2" Type="varchar(max)" />
           <Property Name="Img3" Type="varchar(max)" />
-          <Property Name="IdObject" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="IdObject" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -38,16 +38,16 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DateInput" Type="datetime" />
         </EntityType>
         <EntityType Name="InputInfo">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="IdObject" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="IdInput" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdObject" Type="int" Nullable="false" />
+          <Property Name="IdInput" Type="int" Nullable="false" />
           <Property Name="Counts" Type="int" />
           <Property Name="InputPrice" Type="float" />
           <Property Name="OutputPrice" Type="float" />
@@ -60,13 +60,15 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DisplayName" Type="nvarchar(max)" />
           <Property Name="Brand" Type="nvarchar(max)" />
           <Property Name="IdUnit" Type="int" Nullable="false" />
           <Property Name="IdSupplier" Type="int" Nullable="false" />
-          <Property Name="QRCode" Type="nvarchar(max)" />
-          <Property Name="BarCode" Type="nvarchar(max)" />
+          <Property Name="RAM" Type="int" />
+          <Property Name="ROM" Type="int" />
+          <Property Name="Battery" Type="int" />
+          <Property Name="OS" Type="nvarchar(max)" />
           <Property Name="Img1" Type="varchar(max)" />
           <Property Name="Img2" Type="varchar(max)" />
           <Property Name="Img3" Type="varchar(max)" />
@@ -75,9 +77,9 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="IdObject" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="IdOutput" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdObject" Type="int" Nullable="false" />
+          <Property Name="IdOutput" Type="int" Nullable="false" />
           <Property Name="Counts" Type="int" />
           <Property Name="IdCustomer" Type="int" />
           <Property Name="Status" Type="nvarchar(max)" />
@@ -86,7 +88,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DateInput" Type="datetime" />
         </EntityType>
         <EntityType Name="Supplier">
@@ -350,7 +352,7 @@
           <Property Name="Img1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Img2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Img3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="IdObject" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdObject" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Object" Relationship="Self.FK__Comment__IdObjec__4CA06362" FromRole="Comment" ToRole="Object" />
           <NavigationProperty Name="User" Relationship="Self.FK__Comment__IdUser__4D94879B" FromRole="Comment" ToRole="Users" />
         </EntityType>
@@ -373,7 +375,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DateInput" Type="DateTime" Precision="3" />
           <NavigationProperty Name="InputInfoes" Relationship="Self.FK__InputInfo__IdInp__4F7CD00D" FromRole="Input" ToRole="InputInfo" />
         </EntityType>
@@ -381,9 +383,9 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="IdObject" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="IdInput" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdObject" Type="Int32" Nullable="false" />
+          <Property Name="IdInput" Type="Int32" Nullable="false" />
           <Property Name="Counts" Type="Int32" />
           <Property Name="InputPrice" Type="Double" />
           <Property Name="OutputPrice" Type="Double" />
@@ -398,13 +400,15 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Brand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IdUnit" Type="Int32" Nullable="false" />
           <Property Name="IdSupplier" Type="Int32" Nullable="false" />
-          <Property Name="QRCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="BarCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RAM" Type="Int32" />
+          <Property Name="ROM" Type="Int32" />
+          <Property Name="Battery" Type="Int32" />
+          <Property Name="OS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Img1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Img2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Img3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -418,9 +422,9 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="IdObject" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="IdOutput" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdObject" Type="Int32" Nullable="false" />
+          <Property Name="IdOutput" Type="Int32" Nullable="false" />
           <Property Name="Counts" Type="Int32" />
           <Property Name="IdCustomer" Type="Int32" />
           <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -432,7 +436,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DateInput" Type="DateTime" Precision="3" />
           <NavigationProperty Name="OuputInfoes" Relationship="Self.FK__OuputInfo__IdOut__5535A963" FromRole="Output" ToRole="OuputInfo" />
         </EntityType>
@@ -755,8 +759,10 @@
                 <ScalarProperty Name="Brand" ColumnName="Brand" />
                 <ScalarProperty Name="IdUnit" ColumnName="IdUnit" />
                 <ScalarProperty Name="IdSupplier" ColumnName="IdSupplier" />
-                <ScalarProperty Name="QRCode" ColumnName="QRCode" />
-                <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+                <ScalarProperty Name="RAM" ColumnName="RAM" />
+                <ScalarProperty Name="ROM" ColumnName="ROM" />
+                <ScalarProperty Name="Battery" ColumnName="Battery" />
+                <ScalarProperty Name="OS" ColumnName="OS" />
                 <ScalarProperty Name="Img1" ColumnName="Img1" />
                 <ScalarProperty Name="Img2" ColumnName="Img2" />
                 <ScalarProperty Name="Img3" ColumnName="Img3" />

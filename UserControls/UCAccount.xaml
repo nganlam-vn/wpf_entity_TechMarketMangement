@@ -5,6 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:wpf_TechMarketMangement.UserControls"
              mc:Ignorable="d" 
+             DataContext="{StaticResource UCAccountVM}"
+            Name="UCAccountView"
              d:DesignHeight="500" d:DesignWidth="1200">
     <Grid Background="white">
         <Grid.ColumnDefinitions>
@@ -77,37 +79,34 @@
                 <TextBlock HorizontalAlignment="Left"  Height="29" TextWrapping="Wrap" Width="280"
                    FontFamily="Arial"
                    FontSize="16">
-                    <Run Text="Full Name:" FontWeight="Bold"/>
-                    <Run x:Name="txtFullName" Text="{Binding Path}"/>
+                    <Run Text="Account Name:" FontWeight="Bold"/>
+                    <Run x:Name="txtAccountName" Text="{Binding Path}"/>
                 </TextBlock>
             </Grid>
             <Grid Grid.Row="4">
                 <TextBlock HorizontalAlignment="Left"  Height="29" TextWrapping="Wrap" Width="280"
                    FontFamily="Arial"
                    FontSize="16">
-                    <Run Text="Email:" FontWeight="Bold"/>
-                    <Run x:Name="txtEmail" Text="{Binding Path}"/>
+                    <Run Text="User Name:" FontWeight="Bold"/>
+                    <Run x:Name="txtUserName" Text="{Binding Path}"/>
                 </TextBlock>
             </Grid>
             <Grid Grid.Row="5">
                 <TextBlock HorizontalAlignment="Left"  Height="29" TextWrapping="Wrap" Width="280"
                    FontFamily="Arial"
                    FontSize="16">
-                    <Run Text="Phone Number:" FontWeight="Bold"/>
-                    <Run x:Name="txtPhone" Text="{Binding Path}"/>
+                    <Run Text="Role:" FontWeight="Bold"/>
+                    <Run x:Name="txtRole" Text="{Binding Path}"/>
                 </TextBlock>
             </Grid>
             <Grid Grid.Row="6">
-                <TextBlock HorizontalAlignment="Left"  Height="29" TextWrapping="Wrap" Width="280"
-                   FontFamily="Arial"
-                   FontSize="16">
-                    <Run Text="Adress:" FontWeight="Bold"/>
-                    <Run x:Name="txtAdress" Text="{Binding Path}"/>
-                </TextBlock>
+                
+                
             </Grid>
             <Grid Grid.Row="7"/>
             <Grid Grid.Row="8">
-                <Button x:Name="sellproduct_Form" Content="Add a new product to your shop" FontFamily="Arial" FontSize="18" FontWeight="Bold" Width="332" Height="46" />
+                <Button x:Name="sellproduct_Form" Content="Register to Sell something" FontFamily="Arial" FontSize="18"
+                        Foreground="WhiteSmoke"  FontWeight="Bold" Width="332" Height="46" Background="Black"/>
             </Grid>
         </Grid>
     </Grid>

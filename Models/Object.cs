@@ -22,13 +22,15 @@ namespace wpf_TechMarketMangement.Models
             this.OuputInfoes = new HashSet<OuputInfo>();
         }
     
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string DisplayName { get; set; }
         public string Brand { get; set; }
         public int IdUnit { get; set; }
         public int IdSupplier { get; set; }
-        public string QRCode { get; set; }
-        public string BarCode { get; set; }
+        public Nullable<int> RAM { get; set; }
+        public Nullable<int> ROM { get; set; }
+        public Nullable<int> Battery { get; set; }
+        public string OS { get; set; }
         public string Img1 { get; set; }
         public string Img2 { get; set; }
         public string Img3 { get; set; }

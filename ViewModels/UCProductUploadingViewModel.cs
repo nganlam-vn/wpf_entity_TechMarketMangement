@@ -47,7 +47,12 @@ namespace wpf_TechMarketMangement.ViewModels
 
         private string _Img3Text;
         public string Img3Text { get => _Img3Text; set { _Img3Text = value; OnPropertyChanged(); } }
-
+        private int _RAMText;
+        public int RAMText { get => _RAMText; set { _RAMText = value; OnPropertyChanged(); } }
+        private int _ROMText;
+        public int ROMText { get => _ROMText; set { _ROMText = value; OnPropertyChanged(); } }
+        private int _BatteryText;
+        public int BatteryText { get => _BatteryText; set { _BatteryText = value; OnPropertyChanged(); } }
 
         public ICommand BrowseCommand1 { get; set; }
         public ICommand BrowseCommand2 { get; set; }
@@ -61,13 +66,16 @@ namespace wpf_TechMarketMangement.ViewModels
 
             AddCommand = new RelayCommand<object>((p) =>
             {
-
+                if (ProductNameText == null || BrandText == null || SupplierText == null || UnitText == null || Img4Text == null || Img2Text == null || Img3Text == null || RAMText == 0 || ROMText == 0 || BatteryText == 0)
+                {
+                    //MessageBox.Show("Please fill in all the information!");
+                    return false;
+                }
                 return true;
             }, (p) =>
             {
                 var obj = new Object()
-                {
-                    Id = Guid.NewGuid().ToString(),
+                { 
                     DisplayName = ProductNameText,
                     Brand = BrandText,
                     //Type = TypeText.Type,
@@ -76,6 +84,9 @@ namespace wpf_TechMarketMangement.ViewModels
                     Img1 = Img4Text,
                     Img2 = Img2Text,
                     Img3 = Img3Text,
+                    RAM = RAMText,
+                    ROM = ROMText,
+                    Battery = BatteryText,
                 };
                 DataProvider.Ins.DB.Objects.Add(obj); //add vao
                 DataProvider.Ins.DB.SaveChanges(); //luu lai tron database
@@ -107,13 +118,8 @@ namespace wpf_TechMarketMangement.ViewModels
                         string destinationFile = "D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + System.IO.Path.GetFileName(ofd.FileName);
                         System.IO.File.Copy(sourceFile, destinationFile, true);
                         Img2Text = System.IO.Path.GetFileName(ofd.FileName);
-
-                       
                     }
-
-
                 }
-
             });
 
             BrowseCommand2 = new RelayCommand<object>((x) => { return true; }, (x) =>
@@ -137,12 +143,8 @@ namespace wpf_TechMarketMangement.ViewModels
                         string sourceFile = ofd.FileName; //lay duong dan file tu bat ki vi tri trong may
                         string destinationFile = "D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + System.IO.Path.GetFileName(ofd.FileName);
                         System.IO.File.Copy(sourceFile, destinationFile, true);
-                        Img3Text = System.IO.Path.GetFileName(ofd.FileName);
-
-                       
+                        Img3Text = System.IO.Path.GetFileName(ofd.FileName);                      
                     }
-
-
                 }
 
             });
@@ -168,14 +170,9 @@ namespace wpf_TechMarketMangement.ViewModels
                         string sourceFile = ofd.FileName; //lay duong dan file tu bat ki vi tri trong may
                         string destinationFile = "D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + System.IO.Path.GetFileName(ofd.FileName);
                         System.IO.File.Copy(sourceFile, destinationFile, true);
-                        Img4Text = System.IO.Path.GetFileName(ofd.FileName);
-
-                      
+                        Img4Text = System.IO.Path.GetFileName(ofd.FileName);                      
                     }
-
-
                 }
-
             });
         }
     }

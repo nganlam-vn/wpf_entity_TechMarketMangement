@@ -24,7 +24,7 @@ namespace wpf_TechMarketMangement.Models
         public string Img1 { get; set; }
         public string Img2 { get; set; }
         public string Img3 { get; set; }
-        public string IdObject { get; set; }
+        public int IdObject { get; set; }
     
         public virtual Object Object { get; set; }
         public virtual User User { get; set; }

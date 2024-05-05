@@ -7,7 +7,8 @@ using wpf_TechMarketManagemnet.ViewModels;
 using System.Windows; //add the System.Windows namespace
 using wpf_TechMarketMangement.Models;
 using System.Windows.Input;
-using System.Security.Cryptography.X509Certificates; //add the System.Windows.Input namespace
+using System.Security.Cryptography.X509Certificates;
+using System.Runtime.CompilerServices; //add the System.Windows.Input namespace
 
 
 namespace wpf_TechMarketMangement.ViewModels
@@ -16,30 +17,23 @@ namespace wpf_TechMarketMangement.ViewModels
     {
         public bool IsLoaded = false;
         public ICommand LoadedWindowCommand { get; set; } //load
-        public ICommand UnitCommand { get; set; }
-        public ICommand SupplierCommand { get; set; }
-        public ICommand CustomerCommand { get; set; }
-        public ICommand ObjectCommand { get; set; }
-        public ICommand InputCommand { get; set; }
-        public ICommand OutputCommand { get; set; }
-        public ICommand UserCommand { get; set; }
+      
         public MainViewModel()
         {
             LoadedWindowCommand = new RelayCommand<Window>((p) => { return true; }, (p) =>
             {
                 IsLoaded = true;
-                if (p == null) //check null
+                if (p == null)
                     return;
-                //Hien login window len truoc
                 p.Hide();
                 LoginWindow loginWindow = new LoginWindow();
-                loginWindow.ShowDialog(); /*chi tuong tac voi LoginWindow khong tuong tac voi mainWindow*/
-               
+                loginWindow.ShowDialog();
+
                 if (loginWindow.DataContext == null)
                     return;
-
                 var loginVM = loginWindow.DataContext as LoginViewModel;
-                if(loginVM.IsSignIn) //method in SignInViewModel
+
+                if (loginVM.IsSignIn)
                 {
                     p.Show();
                 }
@@ -47,6 +41,7 @@ namespace wpf_TechMarketMangement.ViewModels
                 {
                     p.Close();
                 }
+            
             });
             
 

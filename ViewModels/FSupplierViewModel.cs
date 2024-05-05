@@ -19,8 +19,8 @@ namespace wpf_TechMarketMangement.ViewModels
         private string _NameText;
         public string NameText { get => _NameText; set { _NameText = value; OnPropertyChanged(); } }
 
-        private string _IDText;
-        public string IDText { get => _IDText; set { _IDText = value; OnPropertyChanged(); } }
+        private int _IDText;
+        public int IDText { get => _IDText; set { _IDText = value; OnPropertyChanged(); } }
 
         private string _EmailText;
         public string EmailText { get => _EmailText; set { _EmailText = value; OnPropertyChanged(); } }
@@ -42,10 +42,18 @@ namespace wpf_TechMarketMangement.ViewModels
         {
             List = new ObservableCollection<Supplier>(DataProvider.Ins.DB.Suppliers); //lay du lieu tu database va hien thi
 
-            AddCommand = new RelayCommand<object>((p) =>{return true;}, (p) => {
+            AddCommand = new RelayCommand<object>((p) =>
+            {
+                if(NameText == null || IDText == 0 || EmailText == null || AddressText == null || PhoneText == null || ContractDateText == null || InfoText == null)
+                {
+                    //MessageBox.Show("Please fill in all the information!");
+                    return false;
+                }
+                return true;
+            }, (p) => {
                 var supplier = new Supplier() { 
                     DisplayName =  NameText,
-                    IdUser = int.Parse(IDText),
+                    IdUser = IDText,
                     Email = EmailText,
                     Address = AddressText,
                     Phone = PhoneText,

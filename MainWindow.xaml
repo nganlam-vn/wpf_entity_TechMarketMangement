@@ -13,7 +13,14 @@
         DataContext="{StaticResource MainVM}"
         Name="mainWindow"
         Title="MainWindow" Height="600" Width="1200">
+     <i:Interaction.Triggers>
+      <i:EventTrigger EventName="Loaded">
+         <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}"
+                                CommandParameter="{Binding mainWindow}"/>
+      </i:EventTrigger>
+ </i:Interaction.Triggers>
     <Window.Resources>
+       
         <!--// Menu Style Templates //-->
         <Style x:Key="Main_MenuItem"
                TargetType="{x:Type MenuItem}">
@@ -153,6 +160,8 @@
         </Style>
     </Window.Resources>
     <Grid>
+       
+
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition/>
