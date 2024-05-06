@@ -25,6 +25,7 @@ namespace wpf_TechMarketMangement.ViewModels
         public ICommand UserCommand { get; set; }
         public MainViewModel()
         {
+
             LoadedWindowCommand = new RelayCommand<Window>((p) => { return true; }, (p) =>
             {
                 IsLoaded = true;

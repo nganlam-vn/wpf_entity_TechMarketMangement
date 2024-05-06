@@ -14,9 +14,9 @@ namespace wpf_TechMarketMangement.Models
     
     public partial class OuputInfo
     {
-        public string Id { get; set; }
-        public string IdObject { get; set; }
-        public string IdOutput { get; set; }
+        public int Id { get; set; }
+        public int IdObject { get; set; }
+        public int IdOutput { get; set; }
         public Nullable<int> Counts { get; set; }
         public Nullable<int> IdCustomer { get; set; }
         public string Status { get; set; }

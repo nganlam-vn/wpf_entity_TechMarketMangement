@@ -67,7 +67,7 @@ namespace wpf_TechMarketMangement.ViewModels
             {
                 var obj = new Object()
                 {
-                    Id = Guid.NewGuid().ToString(),
+                    
                     DisplayName = ProductNameText,
                     Brand = BrandText,
                     //Type = TypeText.Type,

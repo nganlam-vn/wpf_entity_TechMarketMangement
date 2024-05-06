@@ -13,6 +13,13 @@
         DataContext="{StaticResource MainVM}"
         Name="mainWindow"
         Title="MainWindow" Height="600" Width="1200">
+    <i:Interaction.Triggers>
+        <!--truyen su kien loaded cua window vao viewmodel-->
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}"
+             CommandParameter="{Binding ElementName=mainWindow}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Window.Resources>
         <!--// Menu Style Templates //-->
         <Style x:Key="Main_MenuItem"
