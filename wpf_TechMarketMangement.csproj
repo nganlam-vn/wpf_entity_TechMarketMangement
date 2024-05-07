@@ -123,6 +123,7 @@
     <Compile Include="Models\UserRole.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Users.cs" />
     <Compile Include="UserControls\FBilling.xaml.cs">
       <DependentUpon>FBilling.xaml</DependentUpon>
     </Compile>
@@ -205,6 +206,7 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\PriceFilter.cs" />
     <Compile Include="ViewModels\SupplierViewModel.cs" />
+    <Compile Include="ViewModels\UCAccountViewModel.cs" />
     <Compile Include="ViewModels\UCInputInfoViewModel.cs" />
     <Compile Include="ViewModels\UCProductDetailViewModel.cs" />
     <Compile Include="ViewModels\UCProductUploadingViewModel.cs" />
