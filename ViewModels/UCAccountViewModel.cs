@@ -19,7 +19,7 @@ namespace wpf_TechMarketMangement.ViewModels
             // Load data from database
             LoadData();
         }
-        private Users currentUser;
+        //private Users currentUser;
         LoginViewModel login = new LoginViewModel();
         private void LoadData()
         {
