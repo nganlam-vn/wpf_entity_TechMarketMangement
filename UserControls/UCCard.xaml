@@ -26,9 +26,11 @@
                         </Border>
                     </StackPanel>
                     <TextBlock Name="txtId" Text="" FontSize="15" FontWeight="ExtraLight" HorizontalAlignment="Center" Foreground="Red"/>
-                    <TextBlock Name="txtType" Text="LAPTOP" FontSize="15" FontWeight="ExtraLight"  HorizontalAlignment="Center" Foreground="Gray" FontFamily="Source Code Pro"/>
                     <TextBlock Name="txtbName" Text="MACBOOK M3" FontSize="20" FontWeight="Bold"  HorizontalAlignment="Center" MaxWidth="150" TextWrapping="NoWrap"/>
-                    <TextBlock Name="txtbPrice" Text="30000000" FontSize="15" FontWeight="ExtraLight" HorizontalAlignment="Center"/>
+                    <TextBlock Name="txtbPrice" FontSize="15" FontWeight="ExtraLight" HorizontalAlignment="Center">
+                        <Run Text="30000000"/>
+                        <Run Text="HCM"/>
+                    </TextBlock>
                 </StackPanel>
             </Border>
         </Button>
