@@ -25,6 +25,7 @@
                             </Border.Background>
                         </Border>
                     </StackPanel>
+                    
                     <TextBlock Name="txtId" Text="" FontSize="15" FontWeight="ExtraLight" HorizontalAlignment="Center" Foreground="Red"/>
                     <TextBlock Name="txtbName" Text="MACBOOK M3" FontSize="20" FontWeight="Bold"  HorizontalAlignment="Center" MaxWidth="150" TextWrapping="NoWrap"/>
                     <TextBlock Name="txtbPrice" FontSize="15" FontWeight="ExtraLight" HorizontalAlignment="Center">
