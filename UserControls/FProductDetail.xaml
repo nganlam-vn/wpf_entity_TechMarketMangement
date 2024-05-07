@@ -65,7 +65,19 @@
                         <hc:Rate DefaultValue="4.5" IsReadOnly="True" AllowHalf="True" Margin="0,5,0,0" Foreground="{DynamicResource WarningBrush}"/>
                     </Grid>
                     <Grid Grid.Row="4">
-                        <TextBlock x:Name="price" FontFamily="Arial" FontSize="20" FontWeight="Bold" Text="40.000.000đ" VerticalAlignment="Center"/>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <TextBlock x:Name="price" FontFamily="Arial" FontSize="20" FontWeight="Bold" Text="40.000.000đ" VerticalAlignment="Center"/>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <TextBlock  FontFamily="Arial" FontSize="20"  VerticalAlignment="Center">
+                                <Run Text="Price when bought:"/>
+                                <Run Text="" x:Name="priceBought" FontWeight="Bold"/>
+                            </TextBlock>
+                        </Grid>
                     </Grid>
                     <Grid Grid.Row="5">
                         <TextBlock FontFamily="Arial" FontSize="14" FontWeight="Bold" VerticalAlignment="Center">
@@ -150,70 +162,37 @@
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="1">
                     <hc:TabControl IsAnimationEnabled="True" IsDraggable="True" IsTabFillEnabled="True" Width="1160" Height="500">
-                        <hc:TabItem Header="Description">
-                            <FlowDocumentReader UseLayoutRounding="True" SnapsToDevicePixels="True">
-                                <FlowDocumentReader.Resources>
-                                    <Style TargetType="TableCell">
-                                        <Setter Property="TextAlignment" Value="Center"/>
-                                    </Style>
-                                </FlowDocumentReader.Resources>
-                                <FlowDocument>
-                                    <Table CellSpacing="0">
-                                        <Table.Columns>
-                                            <TableColumn/>
-                                            <TableColumn/>
-                                            <TableColumn/>
-                                            <TableColumn/>
-                                        </Table.Columns>
-                                        <TableRowGroup>
-                                            <TableRow>
-                                                <TableCell BorderBrush="Black" BorderThickness="1">
-                                                    <Paragraph FontWeight="Bold">Category</Paragraph>
-                                                </TableCell>
-                                                <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
-                                                    <Paragraph FontWeight="Bold">A</Paragraph>
-                                                </TableCell>
-                                                <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
-                                                    <Paragraph FontWeight="Bold">B</Paragraph>
-                                                </TableCell>
-                                                <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
-                                                    <Paragraph FontWeight="Bold">C</Paragraph>
-                                                </TableCell>
-                                            </TableRow>
-                                            <TableRow>
-                                                <TableCell BorderBrush="Black" BorderThickness="1,0,1,1">
-                                                    <Paragraph FontWeight="Bold">Subscription</Paragraph>
-                                                </TableCell>
-                                                <TableCell BorderBrush="Black" BorderThickness="0,0,1,1">
-                                                    <Paragraph>Monthly</Paragraph>
-                                                </TableCell>
-                                                <TableCell BorderBrush="Black" BorderThickness="0,0,1,1">
-                                                    <Paragraph>Yearly</Paragraph>
-                                                </TableCell>
-                                                <TableCell BorderBrush="Black" BorderThickness="0,0,1,1">
-                                                    <Paragraph>Monthly</Paragraph>
-                                                </TableCell>
-                                            </TableRow>
-                                            <TableRow>
-                                                <TableCell BorderBrush="Black" BorderThickness="1,0,1,1" TextAlignment="Center">
-                                                    <Paragraph FontWeight="Bold">Price</Paragraph>
-                                                </TableCell>
-                                                <TableCell BorderBrush="Black" BorderThickness="0,0,1,1">
-                                                    <Paragraph>$120.00</Paragraph>
-                                                </TableCell>
-                                                <TableCell BorderBrush="Black" BorderThickness="0,0,1,1">
-                                                    <Paragraph>$1000.00</Paragraph>
-                                                </TableCell>
-                                                <TableCell BorderBrush="Black" BorderThickness="0,0,1,1">
-                                                    <Paragraph>$130.00</Paragraph>
-                                                </TableCell>
-                                            </TableRow>
-                                        </TableRowGroup>
-                                    </Table>
-                                </FlowDocument>
-                            </FlowDocumentReader>
+                        <hc:TabItem IsSelected="True" Header="Description">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Height="30"/>
+                                <TextBlock Height="22" FontSize="16" FontFamily="Arial">
+                                    <Run Text="        Random Access Memory (RAM) " FontWeight="Bold"/>
+                                    <Run Text="                                       "/>
+                                    <Run Text="8" x:Name="txtbRAM"/>
+                                    <Run Text="GB"/>
+                                </TextBlock>
+                                <TextBlock Height="22" FontSize="16" FontFamily="Arial">
+                                    <Run Text="        Read Only Menory (ROM)" FontWeight="Bold"/>
+                                    <Run Text="                                                  "/>
+                                    <Run Text="256" x:Name="txtbROM"/>
+                                    <Run Text="GB"/>
+                                </TextBlock>
+
+                                <TextBlock Height="22" FontSize="16" FontFamily="Arial">
+                                    <Run Text="        Battery capacity               " FontWeight="Bold"/>
+                                    <Run Text="                                                   "/>
+                                    <Run Text="90" x:Name="txtbBattery"/>
+                                    <Run Text="%"/>
+                                </TextBlock>
+                                <TextBlock Height="22" FontSize="16" FontFamily="Arial">
+                                    <Run Text="        Operating System               " FontWeight="Bold"/>
+                                    <Run Text="                                                "/>
+                                    <Run Text="" x:Name="txtbOS"/>
+                                </TextBlock>
+
+                            </StackPanel>
                         </hc:TabItem>
-                        <hc:TabItem IsSelected="True" Header="Comment" >
+                        <hc:TabItem  Header="Comment" >
                             <StackPanel Orientation="Vertical">
                                 <StackPanel Orientation="Horizontal" Height="135" Background="#F2F8EA" VerticalAlignment="Top" >
                                     <StackPanel Orientation="Vertical">
