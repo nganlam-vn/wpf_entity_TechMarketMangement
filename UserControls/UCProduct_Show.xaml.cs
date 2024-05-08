@@ -31,6 +31,9 @@ namespace wpf_TechMarketMangement.UserControls
         private List<Object> _ObjList; //link model to viewmodel
         public List<Object> ObjList { get => _ObjList; set { _ObjList = value; OnPropertyChanged(nameof(ObjList)); } }
 
+        private List<Cart> _CartList; //link model to viewmodel
+        public List<Cart> CartList { get => _CartList; set { _CartList = value; OnPropertyChanged(nameof(CartList)); } }
+
         private string _FilterName;
         public string FilterName { get => _FilterName; set { _FilterName = value; OnPropertyChanged(nameof(FilterName)); ObjList = Filter(value); LoadCardData(); } }
 
@@ -123,7 +126,18 @@ namespace wpf_TechMarketMangement.UserControls
                         ProductDetail.txtbROM.Text = item.ROM.ToString();
                         ProductDetail.txtbBattery.Text = item.Battery.ToString();
                         ProductDetail.txtbOS.Text = item.OS.ToString();
+                        ProductDetail.btnAddToCart.Click += (senders, t) =>
+                        {
+                            MessageBox.Show("Successfully add to cart!");
+                            var cart = new Cart()
+                            {
+                                IdObject = item.Id,
+                                IdUser = Properties.Settings.Default.idUser,
+                            };
+                            DataProvider.Ins.DB.Carts.Add(cart);
+                            DataProvider.Ins.DB.SaveChanges();
 
+                        };
                         //MessageBox.Show(item.DisplayName);
                     };
                     wpCard.Children.Add(uccard);

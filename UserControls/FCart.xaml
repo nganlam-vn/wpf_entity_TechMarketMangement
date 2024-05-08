@@ -30,8 +30,8 @@
                 <ColumnDefinition Width="380"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="1">
-                <StackPanel>
-                    <userControl:UCCart/>
+                <StackPanel Name="spCart">
+                    <!--<userControl:UCCart/>-->
                 </StackPanel>
             </Grid>
             <Grid Grid.Column="2">
