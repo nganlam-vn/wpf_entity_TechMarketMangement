@@ -98,7 +98,6 @@
                           Command="{Binding AddCommand}" 
                              CommandParameter="{Binding ElementName=InputView}"
                                 />
-
                     </Grid>
                 </Border>
             </ScrollViewer>

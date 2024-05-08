@@ -17,7 +17,7 @@
         <EntityTypeShape EntityType="TechMarketManagementModel.Unit" Width="1.5" PointX="5.25" PointY="22.25" IsExpanded="true" />
         <EntityTypeShape EntityType="TechMarketManagementModel.UserRole" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
         <EntityTypeShape EntityType="TechMarketManagementModel.User" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TechMarketManagementModel.Voucher" Width="1.5" PointX="1" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechMarketManagementModel.Voucher" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TechMarketManagementModel.WishList" Width="1.5" PointX="9.75" PointY="14.5" IsExpanded="true" />
         <AssociationConnector Association="TechMarketManagementModel.FK__Cart__IdObject__60A75C0F" ManuallyRouted="false" />
         <AssociationConnector Association="TechMarketManagementModel.FK__Cart__IdUser__5FB337D6" ManuallyRouted="false" />
