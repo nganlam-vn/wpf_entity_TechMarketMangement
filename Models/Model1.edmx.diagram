@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="aca01b9745574b6e9766ecef4c4e9565" Name="Diagram1" ZoomLevel="48">
+      <Diagram DiagramId="de892f4752df42a58662d3b084831a1a" Name="Diagram1">
         <EntityTypeShape EntityType="TechMarketManagementModel.Cart" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="TechMarketManagementModel.Comment" Width="1.5" PointX="8.25" PointY="8.375" IsExpanded="true" />
         <EntityTypeShape EntityType="TechMarketManagementModel.Customer" Width="1.5" PointX="5.25" PointY="13.875" IsExpanded="true" />
@@ -17,7 +17,7 @@
         <EntityTypeShape EntityType="TechMarketManagementModel.Unit" Width="1.5" PointX="5.25" PointY="22.25" IsExpanded="true" />
         <EntityTypeShape EntityType="TechMarketManagementModel.UserRole" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
         <EntityTypeShape EntityType="TechMarketManagementModel.User" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TechMarketManagementModel.Voucher" Width="1.5" PointX="1" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechMarketManagementModel.Voucher" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TechMarketManagementModel.WishList" Width="1.5" PointX="9.75" PointY="14.5" IsExpanded="true" />
         <AssociationConnector Association="TechMarketManagementModel.FK__Cart__IdObject__60A75C0F" ManuallyRouted="false" />
         <AssociationConnector Association="TechMarketManagementModel.FK__Cart__IdUser__5FB337D6" ManuallyRouted="false" />
