@@ -205,6 +205,8 @@
       <DependentUpon>UCUnit.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\FBillingViewModel.cs" />
+    <Compile Include="ViewModels\FCartViewModel.cs" />
     <Compile Include="ViewModels\FindViewModel.cs" />
     <Compile Include="ViewModels\FSupplierViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />

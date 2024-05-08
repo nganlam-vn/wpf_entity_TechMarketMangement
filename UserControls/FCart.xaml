@@ -6,6 +6,8 @@
              xmlns:local="clr-namespace:wpf_TechMarketMangement.UserControls"
              xmlns:userControl="clr-namespace:wpf_TechMarketMangement.UserControls.UCSingleItem"
              mc:Ignorable="d" 
+             DataContext="{StaticResource FCartVM}"
+             Name="FCartView"
              d:DesignHeight="500" d:DesignWidth="1200">
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -40,12 +42,14 @@
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="60"/>
                     <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <TextBlock FontFamily="Arial" FontSize="16" FontWeight="BOld">
                         <Run Text="Provisional:"/>
                         <Run Text="                "/>
-                        <Run x:Name="provisional" Text="850.000 đ"/>
+                        <Run x:Name="provisional" Text="{Binding AtFirstPrice}"/>
                     </TextBlock>
                     <Line X1="0" X2="250" Y2="50" Y1="50"/>
                 </Grid>
@@ -53,12 +57,14 @@
                     <TextBlock FontFamily="Arial" FontSize="16" FontWeight="Bold">
                         <Run Text="Into menoney:"/>
                         <Run Text="            "/>
-                        <Run x:Name="into_menoney" Text="850.000 đ"/>
+                        <Run x:Name="into_menoney" Text="{Binding PriceAfter}"/>
                     </TextBlock>
                 </Grid>
                 <Grid Grid.Row="2">
-                    <Button Content="ADD TO CART" Width="250" Height="54" Background="Black" Foreground="White" HorizontalAlignment="Left"/>
-                </Grid>
+                    <ComboBox x:Name="cbVoucher" Width="249" Height="40" HorizontalAlignment="Left" ItemsSource="{Binding VoucherList}" DisplayMemberPath="Syntax" SelectedValue="{Binding VoucherText}">
+                        
+                    </ComboBox>
+                     </Grid>
                 <Grid Grid.Row="3">
                     <Button Width="249" Height="50" HorizontalAlignment="Left">
                         <Button.Template>
@@ -69,10 +75,11 @@
                             </ControlTemplate>
                         </Button.Template>
                         <Button.Content>
-                            <TextBlock Text="CONTINUE TO BUY" Foreground="Black" FontWeight="Bold" FontSize="16"/>
+                            <TextBlock Text="CONTINUE TO PAY" Foreground="Black" FontWeight="Bold" FontSize="16"/>
                         </Button.Content>
                     </Button>
                 </Grid>
+                
             </Grid>
         </Grid>
     </Grid>

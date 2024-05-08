@@ -9,7 +9,7 @@
     <Grid>
         <Border CornerRadius="20" Cursor="Hand" Background="White" Height="120" Width="700" >
             <StackPanel Orientation="Horizontal">
-                <TextBlock Width="10"/>
+                <CheckBox x:Name="cbSelected" Width="20"/>
                 <Image Name="img" Source="/Asset/Products/Laptop/mac_air.jpg" Height="95" Width="97"></Image>
                 <TextBlock Width="10"/>
                 <StackPanel Orientation="Vertical" Width="248">
