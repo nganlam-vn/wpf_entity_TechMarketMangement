@@ -123,7 +123,6 @@
     <Compile Include="Models\UserRole.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Users.cs" />
     <Compile Include="UserControls\FBilling.xaml.cs">
       <DependentUpon>FBilling.xaml</DependentUpon>
     </Compile>
@@ -153,9 +152,6 @@
     </Compile>
     <Compile Include="UserControls\UCInput.xaml.cs">
       <DependentUpon>UCInput.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\UCInputInfo.xaml.cs">
-      <DependentUpon>UCInputInfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UCProductUploading.xaml.cs">
       <DependentUpon>UCProductUploading.xaml</DependentUpon>
@@ -207,11 +203,10 @@
     <Compile Include="ViewModels\PriceFilter.cs" />
     <Compile Include="ViewModels\SupplierViewModel.cs" />
     <Compile Include="ViewModels\UCAccountViewModel.cs" />
-    <Compile Include="ViewModels\UCInputInfoViewModel.cs" />
+    <Compile Include="ViewModels\UCInputViewModel.cs" />
     <Compile Include="ViewModels\UCProductDetailViewModel.cs" />
     <Compile Include="ViewModels\UCProductUploadingViewModel.cs" />
     <Compile Include="ViewModels\UCProductWareHouseViewModel.cs" />
-    <Compile Include="ViewModels\UCProduct_ShowViewModel.cs" />
     <Compile Include="ViewModels\UCUnitViewModel.cs" />
     <Page Include="UserControls\FBilling.xaml">
       <SubType>Designer</SubType>
@@ -262,10 +257,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\UCInput.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\UCInputInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
