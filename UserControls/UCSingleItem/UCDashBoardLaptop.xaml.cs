@@ -24,10 +24,5 @@ namespace wpf_TechMarketMangement.UserControls.UCSingleItem
         {
             InitializeComponent();
         }
-
-        private void Apple_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
