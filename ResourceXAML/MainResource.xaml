@@ -8,6 +8,6 @@
     <viewmodel:FSupplierViewModel x:Key="FSupplierVM"></viewmodel:FSupplierViewModel>
     <viewmodel:FindViewModel x:Key="FindVM"></viewmodel:FindViewModel>
     <viewmodel:UCProductDetailViewModel x:Key="UCProductDetailVM"></viewmodel:UCProductDetailViewModel>
-    <viewmodel:UCInputInfoViewModel x:Key="UCInputInfoVM"></viewmodel:UCInputInfoViewModel>
+    <viewmodel:UCInputViewModel x:Key="UCInputVM"></viewmodel:UCInputViewModel>
     <viewmodel:UCAccountViewModel x:Key="UCAccountVM"></viewmodel:UCAccountViewModel>
 </ResourceDictionary>

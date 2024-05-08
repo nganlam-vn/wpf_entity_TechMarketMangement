@@ -72,40 +72,37 @@
                    FontFamily="Arial"
                    FontSize="16">
                     <Run Text="ID:" FontWeight="Bold"/>
-                    <Run x:Name="txtId" Text=""  />
+                    <Run x:Name="txtId" Text="{Binding IdText}"  />
                 </TextBlock>
             </Grid>
             <Grid Grid.Row="3">
                 <TextBlock HorizontalAlignment="Left"  Height="29" TextWrapping="Wrap" Width="280"
                    FontFamily="Arial"
                    FontSize="16">
-                    <Run Text="Full Name:" FontWeight="Bold"/>
-                    <Run x:Name="txtFullName" Text="{Binding Path}"/>
+                    <Run Text="User Name:" FontWeight="Bold"/>
+                    <Run x:Name="txtFullName" Text="{Binding UserNameText}"/>
                 </TextBlock>
             </Grid>
             <Grid Grid.Row="4">
                 <TextBlock HorizontalAlignment="Left"  Height="29" TextWrapping="Wrap" Width="280"
                    FontFamily="Arial"
                    FontSize="16">
-                    <Run Text="Email:" FontWeight="Bold"/>
-                    <Run x:Name="txtEmail" Text="{Binding Path}"/>
+                    <Run Text="Full Name:" FontWeight="Bold"/>
+                    <Run x:Name="txtEmail" Text="{Binding FullNameText}"/>
                 </TextBlock>
             </Grid>
             <Grid Grid.Row="5">
                 <TextBlock HorizontalAlignment="Left"  Height="29" TextWrapping="Wrap" Width="280"
                    FontFamily="Arial"
                    FontSize="16">
-                    <Run Text="Phone Number:" FontWeight="Bold"/>
-                    <Run x:Name="txtPhone" Text="{Binding Path}"/>
+                    <Run Text="Role:" FontWeight="Bold"/>
+                    <Run x:Name="txtPhone" Text="{Binding RoleText}"/>
                 </TextBlock>
             </Grid>
             <Grid Grid.Row="6">
-                <TextBlock HorizontalAlignment="Left"  Height="29" TextWrapping="Wrap" Width="280"
+                <TextBlock Text="{Binding WelcomeText}" 
                    FontFamily="Arial"
-                   FontSize="16">
-                    <Run Text="Adress:" FontWeight="Bold"/>
-                    <Run x:Name="txtAdress" Text="{Binding Path}"/>
-                </TextBlock>
+                   FontSize="40" FontWeight="Bold" HorizontalAlignment="Center"/>
             </Grid>
             <Grid Grid.Row="7"/>
             <Grid Grid.Row="8">

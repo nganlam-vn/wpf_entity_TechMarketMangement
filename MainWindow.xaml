@@ -197,7 +197,7 @@
                        Stretch="Uniform" Margin="0,0,-5,0"/>
                             </MenuItem.Icon>
                             <MenuItem Header="Information" Style="{StaticResource Services_Sub_MenuItem}"  Click="Click_Account"/>
-                            <MenuItem Header="Logout" Style="{StaticResource Services_Sub_MenuItem}"/>
+                            <MenuItem Header="Logout" Style="{StaticResource Services_Sub_MenuItem}" Command="{Binding LogoutCommand}" />
                         </MenuItem>
                         <MenuItem Click="Click_Cart" Header="Cart" Height="40" Width="86" FontSize="11" Style="{StaticResource Main_MenuItem}">
 
@@ -207,12 +207,8 @@
                             </MenuItem.Icon>
                         </MenuItem>
 
-                        <MenuItem Click="MenuItem_Click_1" Width="43" Height="37">
-                            <MenuItem.Icon>
-                                <Image Source="/pngwing.com.png"/>
-                            </MenuItem.Icon>
-                        </MenuItem>
                     </Menu>
+                    <Button HorizontalAlignment="Right" Content="Sign in" Margin="10,0,61,0"  Foreground="White" Background="Black" FontWeight="DemiBold" Command="{Binding SignInCommand}" />
                 </Grid>
             </Grid>
             <Line X1="200" Y1="60" X2="1000" Y2="60" Stroke="WhiteSmoke" StrokeThickness="1"/>

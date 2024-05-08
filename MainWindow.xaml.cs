@@ -38,7 +38,7 @@ namespace wpf_TechMarketMangement
             fFind.Visibility = Visibility.Collapsed;
             userControl.Visibility = Visibility.Visible;
         }
-
+       
 
         private void Click_menu(object sender, MouseEventArgs e) 
         {
@@ -62,7 +62,16 @@ namespace wpf_TechMarketMangement
 
         private void Click_Account(object sender, RoutedEventArgs e)
         {
-            setActiveUserControl(fAccount);
+            if(Properties.Settings.Default.idUser >0 )
+            {
+                setActiveUserControl(fAccount);
+            }
+            else
+            {
+                MessageBox.Show("You need to login first!");
+            }
+
+            
         }
 
         private void Click_Cart(object sender, RoutedEventArgs e)
