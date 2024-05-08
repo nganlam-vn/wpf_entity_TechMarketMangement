@@ -28,6 +28,7 @@ namespace wpf_TechMarketMangement.UserControls
         private ObservableCollection<Cart> _CartList; //link model to viewmodel
         public ObservableCollection<Cart> CartList { get => _CartList; set { _CartList = value; OnPropertyChanged(nameof(CartList)); } }
 
+       
         public event PropertyChangedEventHandler PropertyChanged;
         public virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
@@ -35,27 +36,33 @@ namespace wpf_TechMarketMangement.UserControls
         }
         public FCart()
         {
+            
             InitializeComponent();
+            LoadCart();
         }
         public void LoadCart()
         {
+            
+        
             CartList = new ObservableCollection<Cart>();
             var cartlist = DataProvider.Ins.DB.Carts.Where(x => x.IdUser == Properties.Settings.Default.idUser);
             
             foreach (var item in cartlist)
             {
-            //    UCCart ucCart = new UCCart();
-            //    var objList = DataProvider.Ins.DB.Objects.Where(t => t.Id == item.IdObject).SingleOrDefault();
-            //    var inputInfoList = DataProvider.Ins.DB.InputInfoes.Where(z => z.IdObject == item.IdObject).SingleOrDefault();
+                UCCart ucCart = new UCCart();
+                var objList = DataProvider.Ins.DB.Objects.Where(t => t.Id == item.IdObject).SingleOrDefault();
+                var inputInfoList = DataProvider.Ins.DB.InputInfoes.Where(z => z.IdObject == item.IdObject).SingleOrDefault();
 
-            //    ucCart.tblDisplayName.Text = objList.DisplayName;
-            //    ucCart.tblColor.Text = inputInfoList.Color;
-            //    ucCart.tblPrice.Text = inputInfoList.OutputPrice.ToString();
-                
-
+                ucCart.tblDisplayName.Text = objList.DisplayName;
+                ucCart.tblColor.Text = inputInfoList.Color;
+                ucCart.tblPrice.Text = inputInfoList.OutputPrice.ToString();
+                spCart.Children.Add(ucCart);
+               
 
             }
 
         }
+        
+      
     }
 }
