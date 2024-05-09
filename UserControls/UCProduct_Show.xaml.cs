@@ -37,6 +37,9 @@ namespace wpf_TechMarketMangement.UserControls
         private string _FilterName;
         public string FilterName { get => _FilterName; set { _FilterName = value; OnPropertyChanged(nameof(FilterName)); ObjList = Filter(value); LoadCardData(); } }
 
+        private int _BrandChoice;
+        public int brandchoice { get => _BrandChoice; set { _BrandChoice = value; }}
+
         private ObservableCollection<UCCardModel> _CardList; //link model to viewmodel
         public ObservableCollection<UCCardModel> CardList { get => _CardList; set { _CardList = value; OnPropertyChanged(nameof(CardList)); } }
         public event PropertyChangedEventHandler PropertyChanged;
@@ -44,31 +47,20 @@ namespace wpf_TechMarketMangement.UserControls
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        public void setActiveUserControl(UserControl userControl)
-        {
-            dbPhone.Visibility = Visibility.Collapsed;
-            dbLaptop.Visibility = Visibility.Collapsed;
-            dbOther.Visibility = Visibility.Collapsed;
-            userControl.Visibility = Visibility.Visible;
-        }
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            setActiveUserControl(dbLaptop);
         }
         private void Click_Laptop(object sender, RoutedEventArgs e)
         {
-            setActiveUserControl(dbLaptop);
             LoadCardDataLaptop();
 
         }
         private void Click_Phone(object sender, RoutedEventArgs e)
         {
-            setActiveUserControl(dbPhone);
             LoadCardDataPhone();
         }
         private void Click_Other(object sender, RoutedEventArgs e)
         {
-            setActiveUserControl(dbOther);
             LoadCardDataOther();
         }
         public UCProduct_Show()
@@ -270,7 +262,6 @@ namespace wpf_TechMarketMangement.UserControls
         {
             ucProductDetail.Visibility = Visibility.Collapsed;
         }
-
     }
 
 }

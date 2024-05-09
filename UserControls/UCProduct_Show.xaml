@@ -58,9 +58,47 @@
                         </Grid>
                     </Grid>
                     <Grid Grid.Row="1">
-                        <userControl:UCDashBoardPhone x:Name="dbPhone" Visibility="Collapsed"/>
-                        <userControl:UCDashBoardLaptop x:Name="dbLaptop" Visibility="Visible" />
-                        <userControl:UCDashBoardOthers x:Name="dbOther" Visibility="Collapsed"/>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="26"/>
+                            <RowDefinition Height="26"/>
+                            <RowDefinition Height="180"/>
+                            <RowDefinition Height="26"/>
+                            <RowDefinition Height="160"/>
+                            <RowDefinition Height="26"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <TextBlock Text="Search" FontFamily="Arial" FontSize="16" FontWeight="Bold" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <TextBlock Text="Brand" FontFamily="Arial" FontSize="13" FontWeight="Bold" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <Grid Grid.Column="0">
+                                <ListBox >
+                                    <RadioButton Content="Apple" GroupName="Brands" IsChecked="{Binding BrandChoice, UpdateSourceTrigger=PropertyChanged}" />
+                                    <RadioButton Content="Asus" GroupName="Brands" IsChecked="{Binding BrandChoice, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <RadioButton Content="Acer" GroupName="Brands" IsChecked="{Binding BrandChoice, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <RadioButton Content="Lenovo" GroupName="Brands" IsChecked="{Binding BrandChoice, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <RadioButton Content="Dell" GroupName="Brands" IsChecked="{Binding BrandChoice, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <RadioButton Content="Samsung" GroupName="Brands" IsChecked="{Binding BrandChoice, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <RadioButton Content="Other" GroupName="Brands" IsChecked="{Binding BrandChoice, UpdateSourceTrigger=PropertyChanged}"/>
+                                </ListBox>
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Row="3">
+                            <TextBlock Text="Price" FontFamily="Arial" FontSize="13" FontWeight="Bold" Height="28"  Margin="0,6,0,0"/>
+                        </Grid>
+                        <Grid Grid.Row="4">
+                            <Grid Grid.Column="0">
+                                <ListBox>
+                                    <RadioButton Content="Under 10.000.000đ" GroupName="Brands" />
+                                    <RadioButton Content="10.000.000đ - 15.000.000đ" GroupName="Brands "/>
+                                    <RadioButton Content="15.000.000đ - 20.000.000đ" GroupName="Brands"/>
+                                    <RadioButton Content="20.000.000đ - 25.000.000đ" GroupName="Brands"/>
+                                    <RadioButton Content="Upper 25.000.000đ" GroupName="Brands"/>
+                                </ListBox>
+                            </Grid>
+                        </Grid>
                     </Grid>
                 </Grid>
                 <Grid Grid.Column="2">
