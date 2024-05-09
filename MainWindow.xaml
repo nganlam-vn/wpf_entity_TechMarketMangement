@@ -188,7 +188,7 @@
                 </Grid>
 
                 <Grid Grid.Column="2">
-                    <Menu HorizontalAlignment="Center" Height="32" VerticalAlignment="Center" Width="267">
+                    <Menu HorizontalAlignment="Center" Height="32" VerticalAlignment="Center" Width="288">
                         <MenuItem Header="Account"
                       Height="40" 
                       Width="112"  Style="{StaticResource Services_MenuItem_With_Dropdown}">
@@ -199,16 +199,18 @@
                             <MenuItem Header="Information" Style="{StaticResource Services_Sub_MenuItem}"  Click="Click_Account"/>
                             <MenuItem Header="Logout" Style="{StaticResource Services_Sub_MenuItem}" Command="{Binding LogoutCommand}" />
                         </MenuItem>
-                        <MenuItem Click="Click_Cart" Header="Cart" Height="40" Width="86" FontSize="11" Style="{StaticResource Main_MenuItem}">
+                        <MenuItem Click="Click_Cart" Header="Cart" Height="40" Width="86" Style="{StaticResource Main_MenuItem}">
 
                             <MenuItem.Icon>
                                 <Image Source="/Asset/Icons/add_to_basket.png" 
                            Stretch="Uniform" />
                             </MenuItem.Icon>
                         </MenuItem>
+                        <MenuItem Height="40" Width="88" Header="Wishlist" Style="{StaticResource Main_MenuItem}" RenderTransformOrigin="0.5,0.5" Click="MenuItem_Click_2"    >
+                            
+                        </MenuItem>
 
                     </Menu>
-                    <Button HorizontalAlignment="Right" Content="Sign in" Margin="10,0,61,0"  Foreground="White" Background="Black" FontWeight="DemiBold" Command="{Binding SignInCommand}" />
                 </Grid>
             </Grid>
             <Line X1="200" Y1="60" X2="1000" Y2="60" Stroke="WhiteSmoke" StrokeThickness="1"/>
@@ -242,6 +244,7 @@
                     <userControl:UCProductUploading x:Name="fAddProduct" Visibility="Collapsed"/>
                     <userControl:UCAccount x:Name="fAccount" Visibility="Collapsed"/>
                     <userControl:FCart x:Name="fCart" Visibility="Collapsed"/>
+                    <userControl:FWishList x:Name="fWishList" Visibility="Collapsed"/>
                 </StackPanel>
             </ScrollViewer>
         </Grid>
