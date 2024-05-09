@@ -83,5 +83,6 @@ namespace wpf_TechMarketMangement
         {
             setActiveFind(fFind);
         }
+
     }
 }
