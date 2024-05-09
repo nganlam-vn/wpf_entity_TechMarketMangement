@@ -24,5 +24,11 @@ namespace wpf_TechMarketMangement.UserControls
         {
             InitializeComponent();
         }
+
+        private void btnAddToCart_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Successfully add to cart!");
+        }
+
     }
 }

@@ -222,6 +222,7 @@
     <Compile Include="ViewModels\UCProductDetailViewModel.cs" />
     <Compile Include="ViewModels\UCProductUploadingViewModel.cs" />
     <Compile Include="ViewModels\UCProductWareHouseViewModel.cs" />
+    <Compile Include="ViewModels\UCSubmitComment.cs" />
     <Compile Include="ViewModels\UCUnitViewModel.cs" />
     <Page Include="UserControls\FBilling.xaml">
       <SubType>Designer</SubType>

@@ -97,7 +97,6 @@ namespace wpf_TechMarketMangement.ViewModels
 
             });
 
-
             BrowseCommand1 = new RelayCommand<object>((x) => { return true; }, (x) =>
             {
                 {

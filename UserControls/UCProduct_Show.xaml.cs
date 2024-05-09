@@ -147,7 +147,7 @@ namespace wpf_TechMarketMangement.UserControls
                         //detail.ShowDialog();
                         ucProductDetail.Visibility = Visibility.Visible;
                         ProductDetail.price.Text = item2.OutputPrice.ToString() + "VND";
-                        ProductDetail.priceBought.Text = item2.InputPrice.ToString() + "USD";
+                        ProductDetail.priceBought.Text = item2.InputPrice.ToString() + "VND";
                         ProductDetail.idProduct.Text = item.Id.ToString();
                         ProductDetail.brandProduct.Text = item.Brand;
                         ProductDetail.conditionProduct.Text = item2.Condition.ToString();
@@ -200,7 +200,7 @@ namespace wpf_TechMarketMangement.UserControls
                             //detail.ShowDialog();
                             ucProductDetail.Visibility = Visibility.Visible;
                             ProductDetail.price.Text = item2.OutputPrice.ToString() + "VND";
-                            ProductDetail.priceBought.Text = item2.InputPrice.ToString() +"USD";
+                            ProductDetail.priceBought.Text = item2.InputPrice.ToString() +"VND";
                             ProductDetail.idProduct.Text = item.Id.ToString();
                             ProductDetail.brandProduct.Text = item.Brand;
                             ProductDetail.conditionProduct.Text = item2.Condition.ToString();
@@ -280,7 +280,7 @@ namespace wpf_TechMarketMangement.UserControls
                             //detail.ShowDialog();
                             ucProductDetail.Visibility = Visibility.Visible;
                             ProductDetail.price.Text = item2.OutputPrice.ToString() + "VND";
-                            ProductDetail.priceBought.Text = item2.InputPrice.ToString() + "USD";
+                            ProductDetail.priceBought.Text = item2.InputPrice.ToString() + "VND";
                             ProductDetail.idProduct.Text = item.Id.ToString();
                             ProductDetail.brandProduct.Text = item.Brand;
                             ProductDetail.conditionProduct.Text = item2.Condition.ToString();
@@ -296,7 +296,6 @@ namespace wpf_TechMarketMangement.UserControls
                 }
             }
         }
-
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             ucProductDetail.Visibility = Visibility.Collapsed;
