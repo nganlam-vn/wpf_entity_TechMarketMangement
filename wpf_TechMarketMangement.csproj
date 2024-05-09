@@ -72,12 +72,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Cart.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Comment.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Customer.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Find.cs" />
     <Compile Include="Models\Input.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -122,6 +126,21 @@
     <Compile Include="Models\UserRole.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Voucher.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WishList.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FBilling.xaml.cs">
+      <DependentUpon>FBilling.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FCart.xaml.cs">
+      <DependentUpon>FCart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Fhome.xaml.cs">
+      <DependentUpon>Fhome.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\FProductDetail.xaml.cs">
       <DependentUpon>FProductDetail.xaml</DependentUpon>
     </Compile>
@@ -140,6 +159,9 @@
     <Compile Include="UserControls\UCCard.xaml.cs">
       <DependentUpon>UCCard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCInput.xaml.cs">
+      <DependentUpon>UCInput.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCProductUploading.xaml.cs">
       <DependentUpon>UCProductUploading.xaml</DependentUpon>
     </Compile>
@@ -155,6 +177,9 @@
     <Compile Include="UserControls\UCSingleItem\UCCarouselProduct.xaml.cs">
       <DependentUpon>UCCarouselProduct.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCSingleItem\UCCart.xaml.cs">
+      <DependentUpon>UCCart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCSingleItem\UCDashBoardLaptop.xaml.cs">
       <DependentUpon>UCDashBoardLaptop.xaml</DependentUpon>
     </Compile>
@@ -167,22 +192,44 @@
     <Compile Include="UserControls\UCSingleItem\UCDashBoardPhone.xaml.cs">
       <DependentUpon>UCDashBoardPhone.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCSingleItem\UCFind.xaml.cs">
+      <DependentUpon>UCFind.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCSingleItem\UCMenu.xaml.cs">
       <DependentUpon>UCMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCSingleItem\UCMiniCart.xaml.cs">
+      <DependentUpon>UCMiniCart.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UCUnit.xaml.cs">
       <DependentUpon>UCUnit.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\FindViewModel.cs" />
     <Compile Include="ViewModels\FSupplierViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\PriceFilter.cs" />
+    <Compile Include="ViewModels\RadioBoolToIntConverter.cs" />
     <Compile Include="ViewModels\SupplierViewModel.cs" />
-    <Compile Include="ViewModels\UCCardDetail.cs" />
+    <Compile Include="ViewModels\UCAccountViewModel.cs" />
+    <Compile Include="ViewModels\UCInputViewModel.cs" />
+    <Compile Include="ViewModels\UCProductDetailViewModel.cs" />
     <Compile Include="ViewModels\UCProductUploadingViewModel.cs" />
     <Compile Include="ViewModels\UCProductWareHouseViewModel.cs" />
-    <Compile Include="ViewModels\UCProduct_ShowViewModel.cs" />
     <Compile Include="ViewModels\UCUnitViewModel.cs" />
+    <Page Include="UserControls\FBilling.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\FCart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Fhome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\FProductDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -219,6 +266,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\UCInput.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\UCProductUploading.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -239,6 +290,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\UCSingleItem\UCCart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\UCSingleItem\UCDashBoardLaptop.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -255,7 +310,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\UCSingleItem\UCFind.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\UCSingleItem\UCMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UCSingleItem\UCMiniCart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -352,6 +415,16 @@
     <Resource Include="Asset\Products\Laptop\y70.jpg" />
     <Resource Include="Asset\Products\Laptop\yoga.jpg" />
     <Resource Include="Asset\Products\Laptop\zephyrus.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pngwing.com.png" />
+    <Resource Include="UserControls\UCSingleItem\—Pngtree—vector cross icon_4184842.png" />
+    <Resource Include="UserControls\UCSingleItem\kisspng-computer-icons-vector-graphics-christian-cross-x-m-multiplication-sign-svg-png-icon-free-download-2-5c036fab1589f1.3760144715437290670882.jpg" />
+    <Resource Include="UserControls\UCSingleItem\pngwing.com.png" />
+    <Resource Include="UserControls\UCSingleItem\find-icon-vector-13483346.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Asset\Carousel_Product\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Models\Model1.Context.tt">

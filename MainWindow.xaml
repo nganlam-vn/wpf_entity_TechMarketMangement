@@ -5,21 +5,245 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_TechMarketMangement"
         xmlns:hc="https://handyorg.github.io/handycontrol"
-        xmlns:uc="clr-namespace:wpf_TechMarketMangement.UserControls"
         xmlns:i= "http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:userControl="clr-namespace:wpf_TechMarketMangement.UserControls"
+        xmlns:userControll="clr-namespace:wpf_TechMarketMangement.UserControls.UCSingleItem"
         xmlns:vm="clr-namespace:wpf_TechMarketManagemnet.ViewModels"
         mc:Ignorable="d"
         DataContext="{StaticResource MainVM}"
         Name="mainWindow"
         Title="MainWindow" Height="600" Width="1200">
+    <i:Interaction.Triggers>
+        <!--truyen su kien loaded cua window vao viewmodel-->
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}"
+             CommandParameter="{Binding ElementName=mainWindow}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Window.Resources>
+        <!--// Menu Style Templates //-->
+        <Style x:Key="Main_MenuItem"
+               TargetType="{x:Type MenuItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type MenuItem}">
+                        <Border x:Name="border"
+                                BorderThickness="0">
+                            <Grid>
+                                <!--// Icon //-->
+                                <ContentPresenter ContentSource="Icon"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Height="22"
+                                                  Width="22"
+                                                  Margin="8,0,0,0" />
+                                <!--// Text //-->
+                                <ContentPresenter ContentSource="Header"
+                                                  TextBlock.Foreground="#1C1C1C"
+                                                  TextBlock.FontFamily="Rubik Medium"
+                                                  TextBlock.FontSize="14"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Margin="40,0,0,0" />
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsHighlighted"
+                                     Value="True"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="Services_MenuItem_With_Dropdown"
+               TargetType="{x:Type MenuItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type MenuItem}">
+                        <Border x:Name="border"
+                                BorderThickness="0"
+                                Height="30"
+                                Width="145">
+                            <Grid>
+                                <ContentPresenter ContentSource="Icon"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Height="25"
+                                                  Width="25"
+                                                  Margin="5,0,0,0" />
+                                <!--// Text //-->
+                                <ContentPresenter ContentSource="Header"
+                                                  TextBlock.Foreground="#1C1C1C"
+                                                  TextBlock.FontFamily="Arial"
+                                                  TextBlock.FontSize="13"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Margin="40,0,0,0" />
+                                <!--// Popup //-->
+                                <Popup x:Name="PART_Popup"
+                                       AllowsTransparency="True"
+                                       IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                       Placement="Bottom"
+                                       PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}">
+
+                                    <Border x:Name="SubMenuBorder">
+                                        <ScrollViewer x:Name="SubMenuScrollViewer"
+                                                      Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer, TypeInTargetAssembly={x:Type FrameworkElement}}}">
+
+                                            <Grid RenderOptions.ClearTypeHint="Enabled">
+
+                                                <Canvas HorizontalAlignment="Left"
+                                                        VerticalAlignment="Top" />
+
+                                                <ItemsPresenter x:Name="ItemsPresenter" />
+
+                                            </Grid>
+                                        </ScrollViewer>
+                                    </Border>
+                                </Popup>
+                            </Grid>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsSuspendingPopupAnimation"
+                                     Value="True">
+                                <Setter Property="PopupAnimation"
+                                        TargetName="PART_Popup"
+                                        Value="None" />
+                            </Trigger>
+                            <Trigger Property="IsHighlighted"
+                                     Value="True"/>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="Services_Sub_MenuItem"
+               TargetType="{x:Type MenuItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type MenuItem}">
+                        <Border x:Name="border"
+                                BorderThickness="0">
+                            <Grid>
+                                <!--// Text //-->
+                                <ContentPresenter ContentSource="Header"
+                                                  TextBlock.Foreground="#1C1C1C"
+                                                  TextBlock.FontFamily="Arial"
+                                                  TextBlock.FontSize="13"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Margin="35,0,0,0" />
+                                <Grid x:Name="Highlighter"
+                                      Height="16"
+                                      Width="2"
+                                      HorizontalAlignment="Left"
+                                      VerticalAlignment="Center"
+                                      Visibility="Collapsed" />
+
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsHighlighted"
+                                     Value="True">
+                                <Setter Property="Visibility"
+                                        TargetName="Highlighter"
+                                        Value="Visible" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <i:Interaction.Triggers>
-            <!--truyen su kien loaded cua window vao viewmodel-->
-            <i:EventTrigger EventName="Loaded">
-                <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}"
-                                       CommandParameter="{Binding ElementName=mainWindow}"/>
-            </i:EventTrigger>
-        </i:Interaction.Triggers>
-            <uc:UCProduct_Show x:Name="FProduct" Visibility="Visible"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Row="0">
+                    <TextBlock TextWrapping="Wrap" Text="HOTLINE: 090.000.000Thấy" Margin="28,20,28,6"
+                   FontSize="14"
+                   FontFamily="Arial"
+                   FontWeight="Bold"/>
+                </Grid>
+
+                <Grid Grid.Column="1">
+                    <Image Source="/Asset/Icons/logo.jpg"  Margin="84,-23,72,-25" MouseDown="Click_menu"/>
+                </Grid>
+
+                <Grid Grid.Column="2">
+                    <Menu HorizontalAlignment="Center" Height="32" VerticalAlignment="Center" Width="267">
+                        <MenuItem Header="Account"
+                      Height="40" 
+                      Width="112"  Style="{StaticResource Services_MenuItem_With_Dropdown}">
+                            <MenuItem.Icon>
+                                <Image Source="/Asset/Icons/avatar.png"
+                       Stretch="Uniform" Margin="0,0,-5,0"/>
+                            </MenuItem.Icon>
+                            <MenuItem Header="Information" Style="{StaticResource Services_Sub_MenuItem}"  Click="Click_Account"/>
+                            <MenuItem Header="Logout" Style="{StaticResource Services_Sub_MenuItem}" Command="{Binding LogoutCommand}" />
+                        </MenuItem>
+                        <MenuItem Click="Click_Cart" Header="Cart" Height="40" Width="86" FontSize="11" Style="{StaticResource Main_MenuItem}">
+
+                            <MenuItem.Icon>
+                                <Image Source="/Asset/Icons/add_to_basket.png" 
+                           Stretch="Uniform" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+
+                    </Menu>
+                    <Button HorizontalAlignment="Right" Content="Sign in" Margin="10,0,61,0"  Foreground="White" Background="Black" FontWeight="DemiBold" Command="{Binding SignInCommand}" />
+                </Grid>
+            </Grid>
+            <Line X1="200" Y1="60" X2="1000" Y2="60" Stroke="WhiteSmoke" StrokeThickness="1"/>
+
+            <Menu HorizontalAlignment="Center" Height="40" Grid.Row="1" VerticalAlignment="Center" Width="600">
+                <MenuItem Header="          HOME" HorizontalAlignment="Center"
+                    Height="40"
+                    Width="115" Click="Click_home"/>
+                <MenuItem Header="     PRODUCTS "
+                    Height="40"
+                    Width="115" Click="MenuItem_Click" >
+                </MenuItem>
+                <MenuItem Header=" POST A NEW PRODUCT"
+                    Height="40"
+                    Width="150" Click="Click_Product"/>
+                <MenuItem Header="   WARRANTY"
+                    Height="40"
+                    Width="110"/>
+                <MenuItem Header="   ABOUT US"
+                    Height="40"
+                    Width="95" />
+            </Menu>
+        </Grid>
+        <Grid Grid.Row="1">
+            <ScrollViewer>
+                <StackPanel Orientation="Vertical">
+                    <Line X1="100" Y1="10" X2="1100" Y2="10" Stroke="WhiteSmoke" StrokeThickness="2"/>
+                    <userControll:UCFind x:Name="fFind" Visibility="Collapsed"/>
+                    <userControl:Fhome x:Name="fHome" Visibility="Visible"/>
+                    <userControl:UCProduct_Show x:Name="fProduct" Visibility="Collapsed"/>
+                    <userControl:UCProductUploading x:Name="fAddProduct" Visibility="Collapsed"/>
+                    <userControl:UCAccount x:Name="fAccount" Visibility="Collapsed"/>
+                    <userControl:FCart x:Name="fCart" Visibility="Collapsed"/>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
     </Grid>
 </Window>

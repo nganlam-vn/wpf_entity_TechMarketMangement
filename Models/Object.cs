@@ -17,23 +17,28 @@ namespace wpf_TechMarketMangement.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Object()
         {
+            this.Carts = new HashSet<Cart>();
             this.Comments = new HashSet<Comment>();
             this.InputInfoes = new HashSet<InputInfo>();
             this.OuputInfoes = new HashSet<OuputInfo>();
+            this.WishLists = new HashSet<WishList>();
         }
     
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string DisplayName { get; set; }
         public string Brand { get; set; }
-        public string Type { get; set; }
         public int IdUnit { get; set; }
         public int IdSupplier { get; set; }
-        public string QRCode { get; set; }
-        public string BarCode { get; set; }
+        public Nullable<int> RAM { get; set; }
+        public Nullable<int> ROM { get; set; }
+        public Nullable<int> Battery { get; set; }
+        public string OS { get; set; }
         public string Img1 { get; set; }
         public string Img2 { get; set; }
         public string Img3 { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cart> Carts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment> Comments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -42,5 +47,7 @@ namespace wpf_TechMarketMangement.Models
         public virtual Unit Unit { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OuputInfo> OuputInfoes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<WishList> WishLists { get; set; }
     }
 }

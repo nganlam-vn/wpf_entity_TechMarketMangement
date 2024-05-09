@@ -25,6 +25,7 @@ namespace wpf_TechMarketMangement.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Cart> Carts { get; set; }
         public virtual DbSet<Comment> Comments { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Input> Inputs { get; set; }
@@ -36,5 +37,7 @@ namespace wpf_TechMarketMangement.Models
         public virtual DbSet<Unit> Units { get; set; }
         public virtual DbSet<UserRole> UserRoles { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Voucher> Vouchers { get; set; }
+        public virtual DbSet<WishList> WishLists { get; set; }
     }
 }

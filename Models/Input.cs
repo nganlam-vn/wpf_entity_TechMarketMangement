@@ -20,7 +20,7 @@ namespace wpf_TechMarketMangement.Models
             this.InputInfoes = new HashSet<InputInfo>();
         }
     
-        public string Id { get; set; }
+        public int Id { get; set; }
         public Nullable<System.DateTime> DateInput { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

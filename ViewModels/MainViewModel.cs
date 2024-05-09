@@ -16,8 +16,8 @@ namespace wpf_TechMarketMangement.ViewModels
     {
         public bool IsLoaded = false;
         public ICommand LoadedWindowCommand { get; set; } //load
-        public ICommand UnitCommand { get; set; }
-        public ICommand SupplierCommand { get; set; }
+        public ICommand LogoutCommand { get; set; }
+        public ICommand SignInCommand { get; set; }
         public ICommand CustomerCommand { get; set; }
         public ICommand ObjectCommand { get; set; }
         public ICommand InputCommand { get; set; }
@@ -25,6 +25,7 @@ namespace wpf_TechMarketMangement.ViewModels
         public ICommand UserCommand { get; set; }
         public MainViewModel()
         {
+
             LoadedWindowCommand = new RelayCommand<Window>((p) => { return true; }, (p) =>
             {
                 IsLoaded = true;
@@ -48,7 +49,40 @@ namespace wpf_TechMarketMangement.ViewModels
                     p.Close();
                 }
             });
-            
+
+            LogoutCommand = new RelayCommand<Window>((p) => { return true; }, (p) =>
+            {
+                Properties.Settings.Default.Reset();
+                Properties.Settings.Default.Save();
+                //if (p == null) //check null
+                //    return;
+                //p.Close();
+                
+                
+            });
+
+            SignInCommand = new RelayCommand<Window>((p) => { return true; }, (p) =>
+            {
+               
+                //bug 
+                p.Hide();
+                LoginWindow loginWindow = new LoginWindow();
+                loginWindow.ShowDialog(); /*chi tuong tac voi LoginWindow khong tuong tac voi mainWindow*/
+
+                if (loginWindow.DataContext == null)
+                    return;
+
+                var loginVM = loginWindow.DataContext as LoginViewModel;
+                if (loginVM.IsSignIn) //method in SignInViewModel
+                {
+                    p.Show();
+                }
+                else
+                {
+                    p.Close();
+                }
+            });
+
 
 
             //var a = DataProvider.Ins.DB.Users.First();

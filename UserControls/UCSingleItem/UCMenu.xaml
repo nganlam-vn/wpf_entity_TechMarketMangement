@@ -8,9 +8,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="1200">
     <UserControl.Resources>
-
         <!--// Menu Style Templates //-->
-
         <Style x:Key="Main_MenuItem"
                TargetType="{x:Type MenuItem}">
             <Setter Property="Template">

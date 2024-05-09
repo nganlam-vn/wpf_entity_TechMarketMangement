@@ -6,5 +6,11 @@
     <viewmodel:UCUnitViewModel x:Key="UCUnitVM"></viewmodel:UCUnitViewModel>
     <viewmodel:UCProductUploadingViewModel x:Key="UCProductUploadingVM"></viewmodel:UCProductUploadingViewModel>
     <viewmodel:FSupplierViewModel x:Key="FSupplierVM"></viewmodel:FSupplierViewModel>
-    <viewmodel:UCCardDetail x:Key="FProductDetail"></viewmodel:UCCardDetail>
+    <viewmodel:FindViewModel x:Key="FindVM"></viewmodel:FindViewModel>
+    <viewmodel:UCProductDetailViewModel x:Key="UCProductDetailVM"></viewmodel:UCProductDetailViewModel>
+    <viewmodel:UCInputViewModel x:Key="UCInputVM"></viewmodel:UCInputViewModel>
+    <viewmodel:UCAccountViewModel x:Key="UCAccountVM"></viewmodel:UCAccountViewModel>
+    <viewmodel:RadioBoolToIntConverter x:Key="radioBoolToIntConverter"></viewmodel:RadioBoolToIntConverter>
+    <viewmodel:FCartViewModel x:Key="FCartVM"></viewmodel:FCartViewModel>
+    <viewmodel:FBillingViewModel x:Key="FBillingVM"></viewmodel:FBillingViewModel>
 </ResourceDictionary>
