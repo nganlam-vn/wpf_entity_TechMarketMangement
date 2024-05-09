@@ -38,7 +38,11 @@ namespace wpf_TechMarketMangement.UserControls
         public string FilterName { get => _FilterName; set { _FilterName = value; OnPropertyChanged(nameof(FilterName)); ObjList = Filter(value); LoadCardData(); } }
 
         private int _BrandChoice;
-        public int brandchoice { get => _BrandChoice; set { _BrandChoice = value; }}
+        public int BrandChoice { get  => _BrandChoice;  set { _BrandChoice = value; OnPropertyChanged(nameof(Filters)); ObjList = Filters(value); LoadCardData(); } }
+
+        private int _PriceChoice;
+        public int priceChoice { get { return _PriceChoice; } set { _PriceChoice = value; } }
+
 
         private ObservableCollection<UCCardModel> _CardList; //link model to viewmodel
         public ObservableCollection<UCCardModel> CardList { get => _CardList; set { _CardList = value; OnPropertyChanged(nameof(CardList)); } }
@@ -84,7 +88,42 @@ namespace wpf_TechMarketMangement.UserControls
             }
             return objs;
         }
+        public List<Object> Filters(int brand)
+        {
+            var objs = DataProvider.Ins.DB.Objects.Where(t => t.Brand != null).ToList();
+            if (brand == 1)
+            {
+                objs = DataProvider.Ins.DB.Objects.Where(t => t.Brand == "APPLE").ToList(); 
+            }
+            else if (brand == 2)
+            {
+                objs = DataProvider.Ins.DB.Objects.Where(t => t.Brand == "ASUS").ToList();
+            }
+            else if (brand == 3)
+            {
+                objs = DataProvider.Ins.DB.Objects.Where(t => t.Brand == "ACER").ToList();
+            }
 
+            else if (brand == 4)
+            {
+                objs = DataProvider.Ins.DB.Objects.Where(t => t.Brand == "LENOVO").ToList();
+            }
+
+            else if (brand == 5)
+            {
+                objs = DataProvider.Ins.DB.Objects.Where(t => t.Brand == "DELL").ToList();
+            }
+
+            else if (brand == 6)
+            {
+                objs = DataProvider.Ins.DB.Objects.Where(t => t.Brand == "SAMSUNG").ToList();
+            }
+            else
+            {
+                objs = DataProvider.Ins.DB.Objects.Where(t => t.Brand != null).ToList();
+            }
+            return objs;
+        }
         private void LoadCardData()
         {
             wpCard.Children.Clear();

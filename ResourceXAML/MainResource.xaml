@@ -12,4 +12,5 @@
     <viewmodel:UCAccountViewModel x:Key="UCAccountVM"></viewmodel:UCAccountViewModel>
     <viewmodel:FCartViewModel x:Key="FCartVM"></viewmodel:FCartViewModel>
     <viewmodel:FBillingViewModel x:Key="FBillingVM"></viewmodel:FBillingViewModel>
+    <viewmodel:RadioBoolToIntConverter x:Key="radioBoolToIntConverter"></viewmodel:RadioBoolToIntConverter>
 </ResourceDictionary>
