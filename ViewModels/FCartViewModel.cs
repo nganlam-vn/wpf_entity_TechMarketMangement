@@ -13,12 +13,18 @@ namespace wpf_TechMarketMangement.ViewModels
     {
         private ObservableCollection<Voucher> _VoucherList; //link model to viewmodel
         public ObservableCollection<Voucher> VoucherList { get => _VoucherList; set { _VoucherList = value; OnPropertyChanged(nameof(VoucherList)); } }
-       
+
 
         public FCartViewModel()
         {
+            LoadData();
+
+        }
+
+        public void LoadData()
+        {
             VoucherList = new ObservableCollection<Voucher>(DataProvider.Ins.DB.Vouchers);
-            
+            var inputinfoList = DataProvider.Ins.DB.InputInfoes;
         }
     }
 }

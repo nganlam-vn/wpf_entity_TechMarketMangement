@@ -46,6 +46,21 @@
                             <TextBox  Text="{Binding AddressText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="323"/>
                             <TextBlock FontFamily="Arial" FontSize="16" FontWeight="Bold" Text="Note" Height="30" VerticalAlignment="Center"/>
                             <TextBox  Text="{Binding MoreInfoText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="323" TextWrapping="Wrap" Height="71"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                                <Button Name="btnBack" Width="238" Height="30" HorizontalAlignment="Left" >
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="White" BorderBrush="#FF4FBAE6" BorderThickness="1" CornerRadius="5">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                    <Button.Content>
+                                        <TextBlock Text="Back to cart" Foreground="#FF4FBAE6" FontWeight="Bold" FontSize="16"/>
+                                    </Button.Content>
+                                </Button>
+                                <Button x:Name="btnPay" Content="PLACE AN ORDER" Width="231" Height="31" Background="#FF4FBAE6" Foreground="White" HorizontalAlignment="Left" Margin="20,0,0,0" Command="{Binding PayCommand}" CommandParameter="{Binding FBillingView}"/>
+                            </StackPanel>
                         </StackPanel>
                     </Grid>
                 </Grid>
@@ -53,8 +68,8 @@
 
             <Grid Grid.Column="1" Background="#FAFAFA">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="281"/>
-                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <StackPanel VerticalAlignment="Top">
@@ -63,48 +78,35 @@
                             <Run x:Name="countItem" Text="(1 product)"/>
                         </TextBlock>
                         <Line X1="0" X2="480" Y1="10" Y2="10" StrokeThickness="2" Stroke="WhiteSmoke" />
-                        <userControl:UCMiniCart/>
-                        <Line X1="0" X2="480" Y1="10" Y2="10" StrokeThickness="2" Stroke="WhiteSmoke" />
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontFamily="Arial" Height="30" FontSize="16">
-                                 <Run Text="Total Discount"/>
-                                 <Run Text="           "/>
-                                 <Run x:Name="voucher" Text="8.000.000 đ"/>       
+                                     <Run Text="Total Discount"/>
+                                     <Run Text="           "/>
+                                     <Run x:Name="tblDiscount" Text="8.000.000 đ"/>
                             </TextBlock>
-                            </StackPanel>
+                        </StackPanel>
                         <TextBlock FontFamily="Arial" Height="30" FontSize="16">
-                        <Run Text="Provisional"/>
-                        <Run Text="                "/>
-                        <Run x:Name="price" Text="8.000.000 đ"/>
+                                    <Run Text="Provisional"/>
+                                    <Run Text="                "/>
+                                    <Run x:Name="tblProvisional" Text="8.000.000 đ"/>
                         </TextBlock>
                         <TextBlock FontFamily="Arial" FontSize="16" >
-                        <Run Text="Shipping fee"/>
-                        <Run Text="              "/>
-                        <Run Text="Free"/>
+                                    <Run Text="Shipping fee"/>
+                                    <Run Text="              "/>
+                                    <Run Text="Free"/>
                         </TextBlock>
                         <Line X1="0" X2="480" Y1="10" Y2="10" StrokeThickness="2" Stroke="WhiteSmoke" />
                         <TextBlock FontFamily="Arial" FontSize="16" Height="30">
-                        <Run Text="Total"/>
-                        <Run Text="                          "/>
-                        <Run x:Name="total" Text="8.000.000 đ" Foreground="SkyBlue"/>
+                                    <Run Text="Total"/>
+                                    <Run Text="                          "/>
+                                    <Run x:Name="tblTotal" Text="8.000.000 đ" Foreground="SkyBlue"/>
                         </TextBlock>
                     </StackPanel>
+                    <Line X1="0" X2="480" Y1="10" Y2="10" StrokeThickness="2" Stroke="WhiteSmoke" />
                 </Grid>
                 <Grid Grid.Row="1">
-                    <StackPanel Orientation="Horizontal">
-                        <Button Width="238" Height="30" HorizontalAlignment="Left">
-                            <Button.Template>
-                                <ControlTemplate TargetType="Button">
-                                    <Border Background="White" BorderBrush="#FF4FBAE6" BorderThickness="1" CornerRadius="5">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Button.Template>
-                            <Button.Content>
-                                <TextBlock Text="Back to cart" Foreground="#FF4FBAE6" FontWeight="Bold" FontSize="16"/>
-                            </Button.Content>
-                        </Button>
-                        <Button Content="PLACE AN ORDER" Width="231" Height="31" Background="#FF4FBAE6" Foreground="White" HorizontalAlignment="Left" Margin="20,0,0,0" Command="{Binding PayCommand}" CommandParameter="{Binding FBillingView}"/>
+                    <StackPanel x:Name="spBill" >
+                        
                     </StackPanel>
                 </Grid>
             </Grid>

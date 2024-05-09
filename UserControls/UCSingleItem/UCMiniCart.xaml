@@ -10,14 +10,18 @@
         <Border CornerRadius="20" Cursor="Hand" Background="White" Height="120" >
             <StackPanel Orientation="Horizontal">
                 <TextBlock Width="10"/>
-                <Image Source="/Asset/Products/Laptop/mac_air.jpg" Height="95" Width="97"></Image>
+                <Border Height="90" Width="90">
+                    <Border.Background>
+                        <ImageBrush x:Name="imgMiniCart" Stretch="UniformToFill" />
+                    </Border.Background>
+                </Border>
                 <TextBlock Width="10"/>
                 <StackPanel Orientation="Vertical" Width="248">
                     <TextBlock Height="20"/>
-                    <TextBlock Text="Macbook air M1" FontSize="14" Height="25" Width="244" FontWeight="Bold"/>
-                    <TextBlock Text="Silver" FontSize="12" FontFamily="Arial" Foreground="#B7B7B7" Height="37"/>
+                    <TextBlock  x:Name="tblDisplayName" Text="Macbook air M1" FontSize="14" Height="25" Width="244" FontWeight="Bold"/>
+                    <TextBlock Name="tblColor" Text="Silver" FontSize="12" FontFamily="Arial" Foreground="#B7B7B7" Height="37"/>
                 </StackPanel>
-                <TextBlock Text="8.000.000đ" FontSize="14" Height="24" Width="86" FontWeight="Bold" Foreground="#FF567798" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBlock x:Name="tblPrice" Text="8.000.000đ" FontSize="14" Height="24" Width="86" FontWeight="Bold" Foreground="#FF567798" VerticalAlignment="Center" HorizontalAlignment="Right"/>
             </StackPanel>
         </Border>
     </Grid>
