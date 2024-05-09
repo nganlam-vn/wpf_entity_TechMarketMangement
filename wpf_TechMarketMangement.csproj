@@ -210,6 +210,7 @@
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\PriceFilter.cs" />
+    <Compile Include="ViewModels\RadioBoolToIntConverter.cs" />
     <Compile Include="ViewModels\SupplierViewModel.cs" />
     <Compile Include="ViewModels\UCAccountViewModel.cs" />
     <Compile Include="ViewModels\UCInputViewModel.cs" />

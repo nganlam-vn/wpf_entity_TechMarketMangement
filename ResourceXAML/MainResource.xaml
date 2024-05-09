@@ -10,4 +10,5 @@
     <viewmodel:UCProductDetailViewModel x:Key="UCProductDetailVM"></viewmodel:UCProductDetailViewModel>
     <viewmodel:UCInputViewModel x:Key="UCInputVM"></viewmodel:UCInputViewModel>
     <viewmodel:UCAccountViewModel x:Key="UCAccountVM"></viewmodel:UCAccountViewModel>
+    <viewmodel:RadioBoolToIntConverter x:Key="radioBoolToIntConverter"></viewmodel:RadioBoolToIntConverter>
 </ResourceDictionary>

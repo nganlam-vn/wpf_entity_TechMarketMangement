@@ -24,8 +24,8 @@
         <Grid Grid.Row="2">
             <Grid Grid.Column="0">
                     <ListBox x:Name="BrandListBox">
-                        <RadioButton Content="Apple" GroupName="Brands" Checked="Apple_Checked" Unchecked="Apple_Checked" />
-                        <RadioButton Content="Asus" GroupName="Brands"/>
+                    <RadioButton Content="Apple" GroupName="Brands" />
+                    <RadioButton Content="Asus" GroupName="Brands"/>
                         <RadioButton Content="Acer" GroupName="Brands"/>
                         <RadioButton Content="Lenovo" GroupName="Brands"/>
                         <RadioButton Content="Dell" GroupName="Brands"/>
