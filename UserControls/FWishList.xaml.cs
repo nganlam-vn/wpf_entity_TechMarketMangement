@@ -25,8 +25,8 @@ namespace wpf_TechMarketMangement.UserControls
     /// </summary>
     public partial class FWishList : UserControl
     {
-        private ObservableCollection<Cart> _CartList; //link model to viewmodel
-        public ObservableCollection<Cart> CartList { get => _CartList; set { _CartList = value; OnPropertyChanged(nameof(CartList)); } }
+        private ObservableCollection<WishList> _WishList; //link model to viewmodel
+        public ObservableCollection<WishList> WishList { get => _WishList; set { _WishList = value; OnPropertyChanged(nameof(WishList)); } }
 
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -38,20 +38,18 @@ namespace wpf_TechMarketMangement.UserControls
         public FWishList()
         {
             InitializeComponent();
+            LoadCart(); 
         }
         public void LoadCart()
         {
+            WishList = new ObservableCollection<WishList>();
+            var wishLists = DataProvider.Ins.DB.WishLists.Where(x => x.IdUser == Properties.Settings.Default.idUser);
 
-
-            CartList = new ObservableCollection<Cart>();
-            var cartlist = DataProvider.Ins.DB.Carts.Where(x => x.IdUser == Properties.Settings.Default.idUser);
-
-            foreach (var item in cartlist)
+            foreach (var item in wishLists)
             {
                 UCCart ucCart = new UCCart();
                 var objList = DataProvider.Ins.DB.Objects.Where(t => t.Id == item.IdObject).SingleOrDefault();
                 var inputInfoList = DataProvider.Ins.DB.InputInfoes.Where(z => z.IdObject == item.IdObject).SingleOrDefault();
-
                 ucCart.tblDisplayName.Text = objList.DisplayName;
                 ucCart.tblColor.Text = inputInfoList.Color;
                 ucCart.tblPrice.Text = inputInfoList.OutputPrice.ToString();

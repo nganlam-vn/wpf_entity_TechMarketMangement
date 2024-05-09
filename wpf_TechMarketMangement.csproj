@@ -156,6 +156,9 @@
     <Compile Include="Models\DataProvider.cs" />
     <Compile Include="Models\ProductWareHouse.cs" />
     <Compile Include="Models\UCCardModel.cs" />
+    <Compile Include="UserControls\FWishList.xaml.cs">
+      <DependentUpon>FWishList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCAccount.xaml.cs">
       <DependentUpon>UCAccount.xaml</DependentUpon>
     </Compile>
@@ -265,6 +268,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ResourceXAML\MainResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\FWishList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
