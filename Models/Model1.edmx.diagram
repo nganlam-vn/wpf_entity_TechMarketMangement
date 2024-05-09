@@ -13,7 +13,7 @@
         <EntityTypeShape EntityType="TechMarketManagementModel.Object" Width="1.5" PointX="7.5" PointY="17.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TechMarketManagementModel.OuputInfo" Width="1.5" PointX="7.5" PointY="13.875" IsExpanded="true" />
         <EntityTypeShape EntityType="TechMarketManagementModel.Output" Width="1.5" PointX="5.25" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TechMarketManagementModel.Supplier" Width="1.5" PointX="5.25" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechMarketManagementModel.Supplier" Width="1.5" PointX="5.125" PointY="17.5" IsExpanded="true" />
         <EntityTypeShape EntityType="TechMarketManagementModel.Unit" Width="1.5" PointX="5.25" PointY="22.25" IsExpanded="true" />
         <EntityTypeShape EntityType="TechMarketManagementModel.UserRole" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
         <EntityTypeShape EntityType="TechMarketManagementModel.User" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />

@@ -157,6 +157,12 @@ namespace wpf_TechMarketMangement.UserControls
                         ProductDetail.txtbROM.Text = item.ROM.ToString();
                         ProductDetail.txtbBattery.Text = item.Battery.ToString();
                         ProductDetail.txtbOS.Text = item.OS.ToString();
+                        int i = item.IdSupplier;
+                        var obj = DataProvider.Ins.DB.Suppliers.Where(t => t.Id == i);
+                        foreach (var item3 in obj)
+                        {
+                            ProductDetail.Seller.Text = item3.DisplayName.ToString();
+                        }
                         ProductDetail.btnAddToCart.Click += (senders, t) =>
                         {
                             MessageBox.Show("Successfully add to cart!");
