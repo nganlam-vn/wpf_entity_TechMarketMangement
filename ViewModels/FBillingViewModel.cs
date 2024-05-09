@@ -27,8 +27,9 @@ namespace wpf_TechMarketMangement.ViewModels
         public string MoreInfoText { get => _MoreInfoText; set { _MoreInfoText = value; OnPropertyChanged(); } }
 
         public ICommand PayCommand { get; set; }
-         public FBillingViewModel()
-         {
+        public ICommand BackCommand { get; set; }
+        public FBillingViewModel()
+        {
             PayCommand = new RelayCommand<object>((p) =>
             {
                 if (string.IsNullOrEmpty(EmailText) || string.IsNullOrEmpty(PhoneText) || string.IsNullOrEmpty(AddressText) || string.IsNullOrEmpty(DisplayNameText))
@@ -49,8 +50,16 @@ namespace wpf_TechMarketMangement.ViewModels
                 };
                 DataProvider.Ins.DB.Customers.Add(customer);
                 DataProvider.Ins.DB.SaveChanges();
+                
                 MessageBox.Show("Payment success");
+
+                var outputInfo = new OuputInfo()
+                {
+
+                };
             });
+
+            
 
          }
     }
