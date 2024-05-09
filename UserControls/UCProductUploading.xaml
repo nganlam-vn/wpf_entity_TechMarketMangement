@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              DataContext="{StaticResource UCProductUploadingVM}"
              Name="UCProductUploadingView"
-             d:DesignHeight="500" d:DesignWidth="1200">
+             d:DesignHeight="5000" d:DesignWidth="1200">
     <Grid>
         <ScrollViewer >
             <Border Style="{StaticResource BorderRegion}" Width="800" Height="1200" Background="White" >
@@ -112,7 +112,7 @@
 
                                 </StackPanel>
                             </Grid>
-
+                                
                             <Grid Grid.Row="5">
                                 <StackPanel Orientation="Horizontal" Height="100" Grid.ColumnSpan="2" Margin="0,19,0,20">
                                     <Image x:Name="img2" Source="{Binding Img2Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Stretch="UniformToFill" Width="100" Margin="0,0,10,0"/>

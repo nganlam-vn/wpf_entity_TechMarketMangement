@@ -25,7 +25,6 @@ namespace wpf_TechMarketMangement.ViewModels
         {
             AddCartCommand = new RelayCommand<UserControl>((p) => { return true; }, (p) =>
             {
-                MessageBox.Show("Successfully add to cart!");
             });
 
         }
