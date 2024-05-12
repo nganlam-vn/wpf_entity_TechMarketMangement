@@ -12,12 +12,11 @@
         <Button Height="225" Width="170" Background="WhiteSmoke" x:Name="btnDetail" Margin="10,10,10,10">
             <Border Background="White"  CornerRadius="20" Height="225" Width="196" Cursor="Hand" >
                 <StackPanel Height="210" Width="190">
-                    <StackPanel Height="140" VerticalAlignment="Top">
+                    <StackPanel Height="140">
                         <Border
                                                 Width="150"
-                                                Height="134"
+                                                Height="142"
                                                 Padding="3,0,3,0"
-                                                BorderBrush="Gray"
                                                 BorderThickness="1.6"
                                                 CornerRadius="10">
                             <Border.Background>
@@ -25,11 +24,10 @@
                             </Border.Background>
                         </Border>
                     </StackPanel>
-                    
-                    <TextBlock Name="txtId" Text="" FontSize="15" FontWeight="ExtraLight" HorizontalAlignment="Center" Foreground="Red"/>
+
+                    <TextBlock Name="txtbPrice" Text="300000000" FontSize="15" FontWeight="Light" HorizontalAlignment="Center" />
                     <TextBlock Name="txtbName" Text="MACBOOK M3" FontSize="20" FontWeight="Bold"  HorizontalAlignment="Center" MaxWidth="150" TextWrapping="NoWrap"/>
                     <TextBlock  FontSize="15" FontWeight="ExtraLight" HorizontalAlignment="Center">
-                        <Run Text="30000000" x:Name="txtbPrice"/>
                         <Run Text="HCM" x:Name="txtbAdress"/>
                     </TextBlock>
                 </StackPanel>

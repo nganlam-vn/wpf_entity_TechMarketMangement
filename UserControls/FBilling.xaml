@@ -67,7 +67,7 @@
                     </Grid>
                 </Grid>
 
-                <Grid Grid.Column="1" Background="#FAFAFA">
+                <Grid Grid.Column="1" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
@@ -103,7 +103,6 @@
                         <Run x:Name="tblTotal" Text="8.000.000 đ" Foreground="SkyBlue"/>
                             </TextBlock>
                         </StackPanel>
-                        <Line X1="0" X2="480" Y1="10" Y2="10" StrokeThickness="2" Stroke="WhiteSmoke" />
                     </Grid>
                     <Grid Grid.Row="1">
                         <StackPanel x:Name="spBill" >

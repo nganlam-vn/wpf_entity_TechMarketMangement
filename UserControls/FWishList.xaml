@@ -42,6 +42,7 @@
                         <TextBlock Text="ADD TO CART" Foreground="Black" FontWeight="Bold" FontSize="16"/>
                     </Button.Content>
                 </Button>
+                <Image Source="/UserControls/1.jpg" Margin="0,32,0,-32"/>
             </Grid>
         </Grid>
     </ScrollViewer>

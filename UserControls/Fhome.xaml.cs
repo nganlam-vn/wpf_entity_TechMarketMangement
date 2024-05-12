@@ -85,8 +85,6 @@ namespace wpf_TechMarketMangement.UserControls
                             };
                             DataProvider.Ins.DB.Carts.Add(cart);
                             DataProvider.Ins.DB.SaveChanges();
-                           
-
                         };
 
                         ProductDetail.btnAddWishList.Click += (senders, t) =>
@@ -99,8 +97,6 @@ namespace wpf_TechMarketMangement.UserControls
                             };
                             DataProvider.Ins.DB.WishLists.Add(wishlist);
                             DataProvider.Ins.DB.SaveChanges();
-                            
-
                         };
                         int i = item.IdSupplier;
                         var obj = DataProvider.Ins.DB.Suppliers.Where(t => t.Id == i);
