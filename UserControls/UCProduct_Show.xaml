@@ -35,10 +35,12 @@
                     Text="{Binding FilterName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                              Padding="10 6"
 
+
                              Margin="5,0,18,0"
                              VerticalAlignment="Center"
                              hc:InfoElement.Placeholder="🔎 Find your product..."
                              Style="{StaticResource TextBoxExtend}"/>
+
 
                         </Grid>
                         <Grid Grid.Row="1">
@@ -67,7 +69,7 @@
                             <RowDefinition Height="26"/>
                         </Grid.RowDefinitions>
                         <Grid Grid.Row="0">
-                            <TextBlock Text="Search" FontFamily="Arial" FontSize="16" FontWeight="Bold" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                            <TextBlock Text="Search" FontFamily="Arial" FontSize="16" FontWeight="Bold" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                         </Grid>
                         <Grid Grid.Row="1">
                             <TextBlock Text="Brand" FontFamily="Arial" FontSize="13" FontWeight="Bold" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left"/>

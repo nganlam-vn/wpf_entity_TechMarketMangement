@@ -53,6 +53,7 @@ namespace wpf_TechMarketMangement.UserControls
         }
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
+            LoadCardData();
         }
         private void Click_Laptop(object sender, RoutedEventArgs e)
         {
