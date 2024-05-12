@@ -6,19 +6,4 @@
              xmlns:local="clr-namespace:wpf_TechMarketMangement.UserControls.UCSingleItem"
              mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="1200">
-    <Grid Background="White">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="450"/>
-            <ColumnDefinition Width="350"/>
-            <ColumnDefinition Width="50"/>
-            <ColumnDefinition Width="250"/>
-            <ColumnDefinition Width="100"/>
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Column="1">
-            <TextBox Text="What do you want to find today?" Margin="0,10,0,10" BorderBrush="White"/>
-        </Grid>
-        <Grid Grid.Column="2">
-            <Image Source="/UserControls/UCSingleItem/pngwing.com.png" Margin="15,15,15,15" />
-        </Grid>
-    </Grid>
 </UserControl>

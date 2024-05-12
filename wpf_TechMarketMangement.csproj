@@ -453,6 +453,8 @@
   <ItemGroup>
     <Resource Include="blackgray.jpg" />
     <Resource Include="Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

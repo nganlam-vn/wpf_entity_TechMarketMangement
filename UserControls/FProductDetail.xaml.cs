@@ -86,8 +86,7 @@ namespace wpf_TechMarketMangement.UserControls
                     //uc.img3.Source = new BitmapImage(uri);
                     //copy file to path
                     string sourceFile = ofd.FileName; //lay duong dan file tu bat ki vi tri trong may
-                    string destinationFile = "D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + System.IO.Path.GetFileName(ofd.FileName);
-                    System.IO.File.Copy(sourceFile, destinationFile, true);
+                    //string destinationFile = "D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + System.IO.Path.GetFileName(ofd.FileName);
                     Img1Text = System.IO.Path.GetFileName(ofd.FileName);
                 }
             };
@@ -108,8 +107,8 @@ namespace wpf_TechMarketMangement.UserControls
                     //uc.img3.Source = new BitmapImage(uri);
                     //copy file to path
                     string sourceFile = ofd.FileName; //lay duong dan file tu bat ki vi tri trong may
-                    string destinationFile = "D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + System.IO.Path.GetFileName(ofd.FileName);
-                    System.IO.File.Copy(sourceFile, destinationFile, true);
+                    //string destinationFile = "D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + System.IO.Path.GetFileName(ofd.FileName);
+                    //System.IO.File.Copy(sourceFile, destinationFile, true);
                     Img2Text = System.IO.Path.GetFileName(ofd.FileName);
                 }
             };
@@ -130,8 +129,8 @@ namespace wpf_TechMarketMangement.UserControls
                     //uc.img3.Source = new BitmapImage(uri);
                     //copy file to path
                     string sourceFile = ofd.FileName; //lay duong dan file tu bat ki vi tri trong may
-                    string destinationFile = "D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + System.IO.Path.GetFileName(ofd.FileName);
-                    System.IO.File.Copy(sourceFile, destinationFile, true);
+                    //string destinationFile = "D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + System.IO.Path.GetFileName(ofd.FileName);
+                    //System.IO.File.Copy(sourceFile, destinationFile, true);
                     Img3Text = System.IO.Path.GetFileName(ofd.FileName);
                 }
             };
