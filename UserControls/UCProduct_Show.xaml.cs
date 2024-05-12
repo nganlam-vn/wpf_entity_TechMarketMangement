@@ -177,6 +177,11 @@ namespace wpf_TechMarketMangement.UserControls
 
                         };
 
+                        ProductDetail.btnBack.Click += (senders, t) =>
+                        {
+                            ucProductDetail.Visibility = Visibility.Collapsed;
+                        };
+
                         ProductDetail.btnAddWishList.Click += (senders, t) =>
                         {
                             MessageBox.Show("Successfully add to Wish List!");
@@ -196,19 +201,8 @@ namespace wpf_TechMarketMangement.UserControls
                         {
                             ProductDetail.Seller.Text = item3.DisplayName.ToString();
                         }
-                        ProductDetail.btnAddToCart.Click += (senders, t) =>
-                        {
-                            MessageBox.Show("Successfully add to cart!");
-                            var cart = new Cart()
-                            {
-                                IdObject = item.Id,
-                                IdUser = Properties.Settings.Default.idUser,
-                            };
-                            DataProvider.Ins.DB.Carts.Add(cart);
-                            DataProvider.Ins.DB.SaveChanges();
-
-                        };
-                        //MessageBox.Show(item.DisplayName);
+                       
+                    
                     };
                     wpCard.Children.Add(uccard);
                 }
@@ -248,9 +242,49 @@ namespace wpf_TechMarketMangement.UserControls
                             ProductDetail.txtbROM.Text = item.ROM.ToString();
                             ProductDetail.txtbBattery.Text = item.Battery.ToString();
                             ProductDetail.txtbOS.Text = item.OS.ToString();
+                            //ProductDetail.imgCart1.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img1, UriKind.Relative));
+                            //ProductDetail.imgCart2.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img2, UriKind.Relative));
+                            //ProductDetail.imgCart3.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img3, UriKind.Relative));
+                            ProductDetail.btnBack.Click += (senders, t) =>
+                            {
+                                ucProductDetail.Visibility = Visibility.Collapsed;
+                            };
+                            ProductDetail.btnAddToCart.Click += (senders, t) =>
+                            {
+                                MessageBox.Show("Successfully add to cart!");
+                                var cart = new Cart()
+                                {
+                                    IdObject = item.Id,
+                                    IdUser = Properties.Settings.Default.idUser,
+                                };
+                                DataProvider.Ins.DB.Carts.Add(cart);
+                                DataProvider.Ins.DB.SaveChanges();
+                                OnPropertyChanged(nameof(CartList));
+
+                            };
+
+                            ProductDetail.btnAddWishList.Click += (senders, t) =>
+                            {
+                                MessageBox.Show("Successfully add to Wish List!");
+                                var wishlist = new WishList()
+                                {
+                                    IdObject = item.Id,
+                                    IdUser = Properties.Settings.Default.idUser,
+                                };
+                                DataProvider.Ins.DB.WishLists.Add(wishlist);
+                                DataProvider.Ins.DB.SaveChanges();
+                                OnPropertyChanged(nameof(WishList));
+
+                            };
+                            int i = item.IdSupplier;
+                            var obj = DataProvider.Ins.DB.Suppliers.Where(t => t.Id == i);
+                            foreach (var item3 in obj)
+                            {
+                                ProductDetail.Seller.Text = item3.DisplayName.ToString();
+                            }
                            
 
-                            //MessageBox.Show(item.DisplayName);
+
                         };
                         wpCard.Children.Add(uccard);
                     }
@@ -290,7 +324,50 @@ namespace wpf_TechMarketMangement.UserControls
                             ProductDetail.txtbBattery.Text = item.Battery.ToString();
                             ProductDetail.txtbOS.Text = item.OS.ToString();
                             ProductDetail.priceBought.Text = item2.InputPrice.ToString();
-                            //MessageBox.Show(item.DisplayName);
+                            //ProductDetail.imgCart1.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img1, UriKind.Relative));
+                            //ProductDetail.imgCart2.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img2, UriKind.Relative));
+                            //ProductDetail.imgCart3.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img3, UriKind.Relative));
+
+                            ProductDetail.btnBack.Click += (senders, t) =>
+                            {
+
+                                ucProductDetail.Visibility = Visibility.Collapsed;
+                            };
+                            ProductDetail.btnAddToCart.Click += (senders, t) =>
+                            {
+                                MessageBox.Show("Successfully add to cart!");
+                                var cart = new Cart()
+                                {
+                                    IdObject = item.Id,
+                                    IdUser = Properties.Settings.Default.idUser,
+                                };
+                                DataProvider.Ins.DB.Carts.Add(cart);
+                                DataProvider.Ins.DB.SaveChanges();
+                                OnPropertyChanged(nameof(CartList));
+
+                            };
+
+                            ProductDetail.btnAddWishList.Click += (senders, t) =>
+                            {
+                                MessageBox.Show("Successfully add to Wish List!");
+                                var wishlist = new WishList()
+                                {
+                                    IdObject = item.Id,
+                                    IdUser = Properties.Settings.Default.idUser,
+                                };
+                                DataProvider.Ins.DB.WishLists.Add(wishlist);
+                                DataProvider.Ins.DB.SaveChanges();
+                                OnPropertyChanged(nameof(WishList));
+
+                            };
+                            int i = item.IdSupplier;
+                            var obj = DataProvider.Ins.DB.Suppliers.Where(t => t.Id == i);
+                            foreach (var item3 in obj)
+                            {
+                                ProductDetail.Seller.Text = item3.DisplayName.ToString();
+                            }
+                           
+
                         };
                         wpCard.Children.Add(uccard);
                     }
@@ -329,7 +406,49 @@ namespace wpf_TechMarketMangement.UserControls
                             ProductDetail.txtbROM.Text = item.ROM.ToString();
                             ProductDetail.txtbBattery.Text = item.Battery.ToString();
                             ProductDetail.priceBought.Text = item2.InputPrice.ToString();
-                            //MessageBox.Show(item.DisplayName);
+                            //ProductDetail.imgCart1.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img1, UriKind.Relative));
+                            //ProductDetail.imgCart2.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img2, UriKind.Relative));
+                            //ProductDetail.imgCart3.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img3, UriKind.Relative));
+                            ProductDetail.btnBack.Click += (senders, t) =>
+                            {
+
+                                ucProductDetail.Visibility = Visibility.Collapsed;
+                            };
+                            ProductDetail.btnAddToCart.Click += (senders, t) =>
+                            {
+                                MessageBox.Show("Successfully add to cart!");
+                                var cart = new Cart()
+                                {
+                                    IdObject = item.Id,
+                                    IdUser = Properties.Settings.Default.idUser,
+                                };
+                                DataProvider.Ins.DB.Carts.Add(cart);
+                                DataProvider.Ins.DB.SaveChanges();
+                                OnPropertyChanged(nameof(CartList));
+
+                            };
+
+                            ProductDetail.btnAddWishList.Click += (senders, t) =>
+                            {
+                                MessageBox.Show("Successfully add to Wish List!");
+                                var wishlist = new WishList()
+                                {
+                                    IdObject = item.Id,
+                                    IdUser = Properties.Settings.Default.idUser,
+                                };
+                                DataProvider.Ins.DB.WishLists.Add(wishlist);
+                                DataProvider.Ins.DB.SaveChanges();
+                                OnPropertyChanged(nameof(WishList));
+
+                            };
+                            int i = item.IdSupplier;
+                            var obj = DataProvider.Ins.DB.Suppliers.Where(t => t.Id == i);
+                            foreach (var item3 in obj)
+                            {
+                                ProductDetail.Seller.Text = item3.DisplayName.ToString();
+                            }
+                            
+
                         };
                         wpCard.Children.Add(uccard);
                     }
