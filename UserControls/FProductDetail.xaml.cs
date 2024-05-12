@@ -36,11 +36,6 @@ namespace wpf_TechMarketMangement.UserControls
             LoadData();
         }
 
-        private void btnBack_Click(object sender, RoutedEventArgs e)
-        {
-            this.Visibility = Visibility.Collapsed;
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             fsubmitComment.Visibility = Visibility.Visible;

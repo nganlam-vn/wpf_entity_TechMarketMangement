@@ -20,7 +20,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
-                <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="30" Click="btnBack_Click"/>
+                <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="30"/>
             </Grid>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
