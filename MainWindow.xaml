@@ -227,10 +227,10 @@
                     Width="150" Click="Click_Product"/>
                 <MenuItem Header="   WARRANTY"
                     Height="40"
-                    Width="110"/>
+                    Width="110" Click="MenuItem_Click_1"/>
                 <MenuItem Header="   ABOUT US"
                     Height="40"
-                    Width="95" />
+                    Width="95" Click="MenuItem_Click_3" />
             </Menu>
         </Grid>
         <Grid Grid.Row="1">
@@ -247,6 +247,8 @@
                     <userControl:UCAccount x:Name="fAccount" Visibility="Collapsed"/>
                     <userControl:FCart x:Name="fCart" Visibility="Collapsed"/>
                     <userControl:FWishList x:Name="fWishList" Visibility="Collapsed"/>
+                    <userControl:FWarranty x:Name="fWarranty" Visibility="Collapsed"/>
+                    <userControl:FAboutUs x:Name="fAboutUs" Visibility="Collapsed"/>
                 </StackPanel>
             </ScrollViewer>
         </Grid>

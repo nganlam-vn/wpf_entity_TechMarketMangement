@@ -132,6 +132,9 @@
     <Compile Include="Models\WishList.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\FAboutUs.xaml.cs">
+      <DependentUpon>FAboutUs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\FBilling.xaml.cs">
       <DependentUpon>FBilling.xaml</DependentUpon>
     </Compile>
@@ -233,6 +236,10 @@
     <Compile Include="ViewModels\UCProductWareHouseViewModel.cs" />
     <Compile Include="ViewModels\UCSubmitComment.cs" />
     <Compile Include="ViewModels\UCUnitViewModel.cs" />
+    <Page Include="UserControls\FAboutUs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\FBilling.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -472,6 +479,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="UserControls\pro_m2.jpg" />
     <Resource Include="UserControls\BaConMeo.jpg" />
     <Resource Include="UserControls\7.jpg" />
     <Resource Include="UserControls\1.jpg" />
