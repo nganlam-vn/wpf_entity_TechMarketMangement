@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using wpf_TechMarketMangement.Models;
+using wpf_TechMarketMangement.UserControls;
 
 namespace wpf_TechMarketMangement
 {
@@ -32,7 +33,9 @@ namespace wpf_TechMarketMangement
             fProduct.Visibility = Visibility.Collapsed;
             fAddProduct.Visibility = Visibility.Collapsed;
             fCart.Visibility = Visibility.Collapsed;
-            fWishList.Visibility = Visibility.Collapsed;    
+            fWarranty.Visibility = Visibility.Collapsed;
+            fWishList.Visibility = Visibility.Collapsed;
+            fAboutUs.Visibility= Visibility.Collapsed;
             userControl.Visibility = Visibility.Visible;
         }
         public void setActiveFind(UserControl userControl)
@@ -86,6 +89,14 @@ namespace wpf_TechMarketMangement
             setActiveUserControl(fWishList);
         }
 
-       
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            setActiveUserControl(fWarranty);
+        }
+
+        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
+        {
+            setActiveUserControl(fAboutUs);
+        }
     }
 }
