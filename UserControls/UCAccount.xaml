@@ -47,6 +47,7 @@
                         <MenuItem Header="Order History" FontFamily="Arial" FontSize="14"/>
                         <MenuItem Header="Change Your Password" FontFamily="Arial" FontSize="14"/>
                     </Menu>
+                    <Image Source="/UserControls/7.jpg" Margin="-12,17,0,-108" />
                 </Grid>
             </Grid>
         </Grid>
@@ -61,6 +62,13 @@
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="80"/>
             </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <TextBlock Text="{Binding WelcomeText}" 
+                    FontFamily="Arial"
+                    FontSize="40" FontWeight="Bold" Margin="50,0,0,0" />
+            </Grid>
+            
             <Grid Grid.Row="1">
                 <TextBlock HorizontalAlignment="Left"  Height="29" TextWrapping="Wrap" Text="Account Information" Width="280"
                    FontFamily="Arial"
@@ -100,13 +108,11 @@
                 </TextBlock>
             </Grid>
             <Grid Grid.Row="6">
-                <TextBlock Text="{Binding WelcomeText}" 
-                   FontFamily="Arial"
-                   FontSize="40" FontWeight="Bold" HorizontalAlignment="Center"/>
+               
             </Grid>
             <Grid Grid.Row="7"/>
             <Grid Grid.Row="8">
-                <Button x:Name="sellproduct_Form" Content="Add a new product to your shop" FontFamily="Arial" FontSize="18" FontWeight="Bold" Width="332" Height="46" />
+                <Button x:Name="sellproduct_Form" Content="Add a new product to your shop" FontFamily="Arial" FontSize="18" FontWeight="Bold" Width="332" Height="46" HorizontalAlignment="Left" Margin="178,0,0,0" />
             </Grid>
         </Grid>
     </Grid>
