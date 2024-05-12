@@ -156,6 +156,9 @@
     <Compile Include="Models\DataProvider.cs" />
     <Compile Include="Models\ProductWareHouse.cs" />
     <Compile Include="Models\UCCardModel.cs" />
+    <Compile Include="UserControls\FWarranty.xaml.cs">
+      <DependentUpon>FWarranty.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\FWishList.xaml.cs">
       <DependentUpon>FWishList.xaml</DependentUpon>
     </Compile>
@@ -271,6 +274,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ResourceXAML\MainResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\FWarranty.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -465,6 +472,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="UserControls\BaConMeo.jpg" />
     <Resource Include="UserControls\7.jpg" />
     <Resource Include="UserControls\1.jpg" />
   </ItemGroup>
