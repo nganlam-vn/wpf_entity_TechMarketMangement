@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using wpf_TechMarketMangement.Models;
 
 namespace wpf_TechMarketMangement
 {
@@ -84,5 +85,7 @@ namespace wpf_TechMarketMangement
         {
             setActiveUserControl(fWishList);
         }
+
+       
     }
 }

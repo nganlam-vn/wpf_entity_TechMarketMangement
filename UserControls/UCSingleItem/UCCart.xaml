@@ -23,9 +23,6 @@
                     <Button x:Name="btnRemove" Content="Remove" Height="30" FontSize="14" HorizontalAlignment="Left"/>
                 </StackPanel>
                 <TextBlock x:Name="tblPrice" Text="8.000.000đ" FontSize="14" Height="24" Width="164" FontWeight="Bold" Foreground="#FF567798" VerticalAlignment="Center"/>
-                <Button Content="-" />
-                <TextBox Width="40" TextAlignment="Center" Text="{Binding Number, UpdateSourceTrigger=PropertyChanged}" Height="30"/>
-                <Button Content="+"/>
             </StackPanel>
         </Border>
     </Grid>

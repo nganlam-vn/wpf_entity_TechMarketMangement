@@ -207,7 +207,7 @@
                             </MenuItem.Icon>
                         </MenuItem>
                         <MenuItem Height="40" Width="88" Header="Wishlist" Style="{StaticResource Main_MenuItem}" RenderTransformOrigin="0.5,0.5" Click="MenuItem_Click_2"    >
-                            
+
                         </MenuItem>
 
                     </Menu>
@@ -235,7 +235,11 @@
             </Menu>
         </Grid>
         <Grid Grid.Row="1">
-            <ScrollViewer>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="113*"/>
+            </Grid.ColumnDefinitions>
+            <ScrollViewer Grid.ColumnSpan="2">
                 <StackPanel Orientation="Vertical">
                     <Line X1="100" Y1="10" X2="1100" Y2="10" Stroke="WhiteSmoke" StrokeThickness="2"/>
                     <userControll:UCFind x:Name="fFind" Visibility="Collapsed"/>
@@ -248,5 +252,6 @@
                 </StackPanel>
             </ScrollViewer>
         </Grid>
+       
     </Grid>
 </Window>

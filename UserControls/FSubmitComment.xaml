@@ -6,6 +6,8 @@
              xmlns:local="clr-namespace:wpf_TechMarketMangement.UserControls"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              mc:Ignorable="d" 
+             DataContext="{StaticResource UCSubmitComment}"
+             x:Name="UCSubmitCommentView"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White" Margin="0,0,0,0">
         <Grid.RowDefinitions>
@@ -27,39 +29,59 @@
         <Grid Grid.Row="2">
             <StackPanel Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" Text="Your review of the product:        " FontSize="16" HorizontalAlignment="Center" FontFamily="Arial"/>
-                <hc:Rate Foreground="{DynamicResource WarningBrush}" Margin="10" AllowHalf="True" Value="{Binding UserRate, UpdateSourceTrigger=PropertyChanged}" ShowText="True" Count="5"/>
+                <hc:Rate Foreground="{DynamicResource WarningBrush}" Margin="10" AllowHalf="True" x:Name="txtRate" ShowText="True" Count="5"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="3">
-            <TextBox Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="24,0,66,0"/>
+            <TextBox x:Name="txtUserName"  Margin="24,0,66,0"  hc:InfoElement.Placeholder="Enter your Full Name..." Style="{StaticResource TextBoxExtend}"/>
         </Grid>
         <Grid Grid.Row="4">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                <TextBox Text="{Binding UserEmail, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="24,0,30,0" Width="344"/>
-                <TextBox Text="{Binding UserPhone, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="335" />
+                <TextBox x:Name="txtEmail" Margin="24,0,30,0" Width="344" hc:InfoElement.Placeholder="Enter your Email..." Style="{StaticResource TextBoxExtend}"/>
+                <TextBox x:Name="txtPhone"  Width="335" hc:InfoElement.Placeholder="Enter your Phone Numeber..." Style="{StaticResource TextBoxExtend}"/>
             </StackPanel>
-            <Grid Grid.Row="5" VerticalAlignment="Center">
-                <TextBox TextWrapping="Wrap" Text="{Binding UserComment, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="24,20,67,-164" />
+        </Grid>
+        <Grid Grid.Row='5'>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <TextBox x:Name="txtComment" TextWrapping="Wrap"  hc:InfoElement.Placeholder="N, let us know your experiences..." Style="{StaticResource TextBoxExtend}" Margin="24,0,33,0" />
+            </Grid>
+            <Grid Grid.Column="1">
+                <StackPanel Orientation="Horizontal">
+                    <Border Width="120" Height="100" Margin="0,0,10,0">
+                        <Border.Background>
+                            <ImageBrush x:Name="img1" Stretch="UniformToFill" ImageSource="{Binding Img1Text}" />
+                        </Border.Background>
+                    </Border>
+                    <Border  Width="120" Height="100" Margin="0,0,10,0">
+                        <Border.Background>
+                            <ImageBrush x:Name="img2" Stretch="UniformToFill" ImageSource="{Binding Img2Text}"  />
+                        </Border.Background>
+                    </Border>
+                    <Border  Width="120" Height="100" Margin="0,0,10,0">
+                        <Border.Background>
+                            <ImageBrush x:Name="img3" Stretch="UniformToFill" ImageSource="{Binding Img3Text}" />
+                        </Border.Background>
+                    </Border>
+                </StackPanel>
             </Grid>
         </Grid>
         <Grid Grid.Row="6">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
-                <Button Content="Image1" Height="28" Width="159" Foreground="White" Background="#0fab2c" FontWeight="DemiBold" Command="{Binding BrowseCommand1}" CommandParameter="{Binding ElementName=UCSubmitCommentVM}"/>
-            </Grid>
-            <Grid Grid.Column="1">
-                <Button Content="Image1" Height="28" Width="159" Foreground="White" Background="#0fab2c" FontWeight="DemiBold" Command="{Binding BrowseCommand2}"  CommandParameter="{Binding ElementName=UCSubmitCommentVM}"/>
-            </Grid>
-            <Grid Grid.Column="2">
-                <Button Content="Image1" Height="28" Width="159" Foreground="White" Background="#0fab2c" FontWeight="DemiBold" Command="{Binding BrowseCommand3}"  CommandParameter="{Binding ElementName=UCSubmitCommentVM}"/>
-            </Grid>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                <Button x:Name="btnImg1" Content="Image1" Height="28" Width="120" Foreground="White" Background="#0fab2c" FontWeight="DemiBold" />
+                <Button x:Name="btnImg2" Content="Image2" Height="28" Width="120" Foreground="White" Background="#0fab2c" FontWeight="DemiBold"  Margin="0,0,20,0"/>
+                <Button x:Name="btnImg3" Content="Image3" Height="28" Width="120" Foreground="White" Background="#0fab2c" FontWeight="DemiBold"  Margin="0,0,20,0"/>
+            </StackPanel>
+
         </Grid>
         <Grid Grid.Row="7">
-            <Button Content="Submit your review" VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="231" Height="31" Background="Green" Foreground="White" Command="{Binding AddComment}" CommandParameter="{Binding ElementName=UCSubmitCommentVM}"/>
+            <Button Content="Submit your review" VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="231" Height="31" Background="Green" Foreground="White" x:Name="btnSubmit"/>
+            <Button Content="x" VerticalAlignment="Top" HorizontalContentAlignment="Center" Background="Red" Foreground="White" x:Name="btnX" HorizontalAlignment="Left" Margin="726,-367,0,0"/>
+
         </Grid>
     </Grid>
 </UserControl>

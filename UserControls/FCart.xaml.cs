@@ -65,7 +65,7 @@ namespace wpf_TechMarketMangement.UserControls
                 ucCart.tblColor.Text = inputInfoList.Color;
                 ucCart.tblPrice.Text = inputInfoList.OutputPrice.ToString();
                 ucCart.tblColor.Text = inputInfoList.Color;
-                //ucCart.imgCart.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + objList.Img1, UriKind.Relative));
+                ucCart.imgCart.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + objList.Img1, UriKind.Relative));
                 ucCart.cbSelected.Checked += (sender, e) =>
                 {
                     
@@ -117,11 +117,11 @@ namespace wpf_TechMarketMangement.UserControls
                     FBillingView.tblDiscount.Text = tblDiscount.Text;
                     FBillingView.btnBack.Click += (sender3, e3) =>
                     {
-                        FBillingView.Visibility = Visibility.Collapsed;
-                        this.Visibility = Visibility.Visible;
+                       FBillingView.Visibility = Visibility.Hidden;
                     };
+                   
                     UCMiniCart uc = new UCMiniCart();
-                    //uc.imgMiniCart.ImageSource = ucCart.imgCart.ImageSource;
+                    uc.imgMiniCart.ImageSource = ucCart.imgCart.ImageSource;
                     uc.tblDisplayName.Text = ucCart.tblDisplayName.Text;
                     uc.tblColor.Text = ucCart.tblColor.Text;
                     uc.tblPrice.Text = ucCart.tblPrice.Text;

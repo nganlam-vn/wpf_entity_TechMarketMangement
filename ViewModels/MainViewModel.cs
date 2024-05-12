@@ -18,7 +18,7 @@ namespace wpf_TechMarketMangement.ViewModels
         public ICommand LoadedWindowCommand { get; set; } //load
         public ICommand LogoutCommand { get; set; }
         public ICommand SignInCommand { get; set; }
-        public ICommand CustomerCommand { get; set; }
+        public ICommand BackCommand { get; set; }
         public ICommand ObjectCommand { get; set; }
         public ICommand InputCommand { get; set; }
         public ICommand OutputCommand { get; set; }
@@ -82,6 +82,8 @@ namespace wpf_TechMarketMangement.ViewModels
                     p.Close();
                 }
             });
+
+           
 
 
 

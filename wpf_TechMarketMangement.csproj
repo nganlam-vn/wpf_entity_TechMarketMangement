@@ -186,6 +186,9 @@
     <Compile Include="UserControls\UCSingleItem\UCCart.xaml.cs">
       <DependentUpon>UCCart.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCSingleItem\UCCommentCard.xaml.cs">
+      <DependentUpon>UCCommentCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCSingleItem\UCDashBoardLaptop.xaml.cs">
       <DependentUpon>UCDashBoardLaptop.xaml</DependentUpon>
     </Compile>
@@ -308,6 +311,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\UCSingleItem\UCCart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UCSingleItem\UCCommentCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -444,6 +451,8 @@
     <Folder Include="Asset\Carousel_Product\" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="blackgray.jpg" />
+    <Resource Include="Image1.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

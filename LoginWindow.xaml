@@ -70,7 +70,7 @@ Width="337" Height="66" VerticalAlignment="Top" />
 
 
         <Grid Grid.Column="4">
-            <Image Stretch="Fill"/>
+            <Image Stretch="Fill" Source="/blackgray.jpg"/>
             <TextBlock x:Name="lblNewHere" Text="New Here?" FontSize="30" FontWeight="ExtraBold" Foreground="LightGray" Background="Transparent"
                      HorizontalAlignment="Center" Height="75" Margin="0,65,0,274"  />
             <TextBlock x:Name="lblSignUpNote1" Text="Sign up and discover"  Background="Transparent"

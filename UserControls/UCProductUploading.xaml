@@ -112,7 +112,7 @@
 
                                 </StackPanel>
                             </Grid>
-                                
+
                             <Grid Grid.Row="5">
                                 <StackPanel Orientation="Horizontal" Height="100" Grid.ColumnSpan="2" Margin="0,19,0,20">
                                     <Image x:Name="img2" Source="{Binding Img2Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Stretch="UniformToFill" Width="100" Margin="0,0,10,0"/>
@@ -121,13 +121,16 @@
                                 </StackPanel>
                             </Grid>
                         </Grid>
-                        <Button x:Name="btnSignUp" Content="Send" Height="40" Width="100" Foreground="White" Background="Black" FontWeight="DemiBold"
-                             Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Margin="202,826,0,0" VerticalAlignment="Top" 
+                        <Button x:Name="btnSignUp" Content="Send" Height="40" Width="100" Foreground="White" Background="Black" FontWeight="DemiBold" Grid.Column="1" HorizontalAlignment="Left" Margin="182,810,0,0" VerticalAlignment="Top" 
                              Command="{Binding AddCommand}" 
-                                CommandParameter="{Binding ElementName=UCProductUploadingView}"/>
+                                CommandParameter="{Binding ElementName=UCProductUploading}" Grid.ColumnSpan="2"/>
+
+                        <Button x:Name="btnNext" Content="Next" Height="40" Width="100" Foreground="White" Background="Black" FontWeight="DemiBold" Grid.Column="2" HorizontalAlignment="Left" Margin="121,822,0,0" VerticalAlignment="Top" Click="btnNext_Click"/>
                     </Grid>
+
                 </ScrollViewer>
             </Border>
         </ScrollViewer>
+        <local:UCInput x:Name="ucInput" Visibility="Collapsed"/>
     </Grid>
 </UserControl>
