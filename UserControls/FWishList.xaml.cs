@@ -53,7 +53,7 @@ namespace wpf_TechMarketMangement.UserControls
                 ucCart.tblDisplayName.Text = objList.DisplayName;
                 ucCart.tblColor.Text = inputInfoList.Color;
                 ucCart.tblPrice.Text = inputInfoList.OutputPrice.ToString();
-                //ucCart.imgCart.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + objList.Img1, UriKind.Relative));
+                ucCart.imgCart.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + objList.Img1, UriKind.Relative));
                 stCart.Children.Add(ucCart);
             }
         }

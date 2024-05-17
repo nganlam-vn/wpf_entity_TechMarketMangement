@@ -24,7 +24,7 @@
             <TextBlock Text="Product reviews" FontSize="20" HorizontalAlignment="Center" FontFamily="Arial"/>
         </Grid>
         <Grid Grid.Row="1">
-            <TextBlock Text="Macbook air M1" FontWeight="Bold" FontSize="20" HorizontalAlignment="Center" FontFamily="Arial"/>
+            <TextBlock Text="MacBook M3" FontWeight="Bold" FontSize="20" HorizontalAlignment="Center" FontFamily="Arial"/>
         </Grid>
         <Grid Grid.Row="2">
             <StackPanel Orientation="Horizontal">

@@ -215,7 +215,12 @@
                                     <Run Text="                                                "/>
                                     <Run Text="" x:Name="txtbOS"/>
                                 </TextBlock>
+                                <TextBlock Text="" FontSize="16" >
+                                        <Run Text="        More Information" FontWeight="Bold"/>
+                                         <Run x:Name="moreInfo"/>
+                                </TextBlock>
                             </StackPanel>
+                            
                         </hc:TabItem>
                         <hc:TabItem  Header="Comment" >
                             <StackPanel Orientation="Vertical">

@@ -65,7 +65,7 @@ namespace wpf_TechMarketMangement.UserControls
                 ucCart.tblColor.Text = inputInfoList.Color;
                 ucCart.tblPrice.Text = inputInfoList.OutputPrice.ToString();
                 ucCart.tblColor.Text = inputInfoList.Color;
-                //ucCart.imgCart.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + objList.Img1, UriKind.Relative));
+                ucCart.imgCart.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + objList.Img1, UriKind.Relative));
                 ucCart.cbSelected.Checked += (sender, e) =>
                 {
                     
