@@ -13,18 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace wpf_TechMarketMangement.UserControls
+namespace wpf_TechMarketMangement.UserControls.UCSingleItem
 {
     /// <summary>
-    /// Interaction logic for FBilling.xaml
+    /// Interaction logic for UCCommentCard.xaml
     /// </summary>
-    public partial class FBilling : UserControl
+    public partial class UCCommentCard : UserControl
     {
-        public FBilling()
+        public UCCommentCard()
         {
             InitializeComponent();
         }
-
-       
     }
 }

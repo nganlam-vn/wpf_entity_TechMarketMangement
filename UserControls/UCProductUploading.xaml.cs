@@ -44,6 +44,13 @@ namespace wpf_TechMarketMangement.UserControls
 
         }
 
+        private void btnNext_Click(object sender, RoutedEventArgs e)
+        {
+            ucInput.Visibility = Visibility.Visible;
+        }
+
+
+
         //private void LoadCardData()
         //{
 

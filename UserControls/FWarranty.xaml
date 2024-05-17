@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="wpf_TechMarketMangement.UserControls.FWarranty"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:wpf_TechMarketMangement.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="1200">
+    <Grid Background="White">
+        <StackPanel Orientation="Vertical">
+            <TextBlock FontFamily="Arial" FontSize="30" FontWeight="Bold" Text="Warranty Policy" HorizontalAlignment="Center"/>
+            <TextBlock FontFamily="Arial" TextWrapping="Wrap" Height="30">
+                <Run Text="Kicap" FontWeight="Bold"/>
+                <Run Text="warrants via your order phone number. Since leaving the warehouse, the system will automatically create a warranty card for your product according to the warranty period announced on the website (except for non-electrical products such as keycaps, rotary knobs, mods, switches, etc.)"/>
+            </TextBlock>
+            <TextBlock Text="A. Warranty location:" FontWeight="Bold"/>
+            <TextBlock Text="- All products distributed and retailed by Kicap are warranted at Kicap's address"/>
+            <TextBlock Text="- For remote purchase orders, please call, message via Fanpage, Shopee, Zalo to be supported by Kicap to determine product status"/>
+            <TextBlock Text="- For remote warranty cases, the warranty process is as follows:"/>
+            <TextBlock Text="+ Please pack the product carefully to ensure safety when transporting goods. Kicap will not be liable for defects arising from the shipping process."/>
+            <TextBlock Text="+ Outside the package, please write your Name, Phone Number and Address for the shop to conveniently contact and send the goods back."/>
+            <TextBlock Text="- Send products to Kicap's address. The cost of afternoon delivery is kindly paid by yourself."/>
+            <TextBlock Text="- After the warranty is completed, Kicap will contact to send the product back to the address you provided. Return shipping costs are paid by Kicap"/>
+            <TextBlock Text="B. The following cases are not covered by the warranty:" FontWeight="Bold"/>
+            <TextBlock Text="- Products no longer have their seals or QC stamps, there is a phenomenon of being disassembled to arbitrarily interfere with the internal structure of the product." TextWrapping="Wrap" />
+            <TextBlock Text="- Using a direct charging source for wireless devices, leading to component failure and battery function of the keyboard" TextWrapping="Wrap" />
+            <TextBlock Text="- Damage caused by physical effects of consumers such as breakage, impact, water, dampness, fire." TextWrapping="Wrap" />
+            <TextBlock Text="- Damage caused by natural disasters, animals, insects and man-made;" TextWrapping="Wrap" />
+            <Image Source="/UserControls/BaConMeo.jpg" Height="162" Width="242" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

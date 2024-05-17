@@ -9,19 +9,20 @@
     <Grid>
         <Border CornerRadius="20" Cursor="Hand" Background="White" Height="120" Width="700" >
             <StackPanel Orientation="Horizontal">
-                <TextBlock Width="10"/>
-                <Image Name="img" Source="/Asset/Products/Laptop/mac_air.jpg" Height="95" Width="97"></Image>
+                <CheckBox x:Name="cbSelected" Width="20" />
+                <Border Height="90" Width="90">
+                    <Border.Background>
+                        <ImageBrush x:Name="imgCart" Stretch="UniformToFill" />
+                    </Border.Background>
+                </Border>
                 <TextBlock Width="10"/>
                 <StackPanel Orientation="Vertical" Width="248">
                     <TextBlock Height="10"/>
                     <TextBlock x:Name="tblDisplayName" Text="Macbook air M1" FontSize="14" Height="23" Width="244" FontWeight="Bold"/>
                     <TextBlock x:Name="tblColor" Text="Silver" FontSize="12" FontFamily="Arial" Foreground="#B7B7B7" Height="33"/>
-                    <Button Content="Remove" Height="30" FontSize="14" HorizontalAlignment="Left"/>
+                    <Button x:Name="btnRemove" Content="Remove" Height="30" FontSize="14" HorizontalAlignment="Left"/>
                 </StackPanel>
                 <TextBlock x:Name="tblPrice" Text="8.000.000đ" FontSize="14" Height="24" Width="164" FontWeight="Bold" Foreground="#FF567798" VerticalAlignment="Center"/>
-                <Button Content="-" />
-                <TextBox Width="40" TextAlignment="Center" Text="{Binding Number, UpdateSourceTrigger=PropertyChanged}" Height="30"/>
-                <Button Content="+"/>
             </StackPanel>
         </Border>
     </Grid>

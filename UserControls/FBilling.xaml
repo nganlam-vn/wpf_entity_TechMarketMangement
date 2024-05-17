@@ -6,100 +6,112 @@
              xmlns:local="clr-namespace:wpf_TechMarketMangement.UserControls"
              xmlns:userControl="clr-namespace:wpf_TechMarketMangement.UserControls.UCSingleItem"
              mc:Ignorable="d" 
+             DataContext="{StaticResource FBillingVM}"
+             Name="FBillingView"
              d:DesignHeight="500" d:DesignWidth="1200">
     <ScrollViewer>
         <Grid Background="White">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="700"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="700"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
 
-            <Grid Grid.Column="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <TextBlock Text="Kicap" FontSize="25" FontFamily="Arial" FontWeight="Bold" Foreground="SkyBlue"/>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <TextBlock Text="Kicap" FontSize="25" FontFamily="Arial" FontWeight="Bold" Foreground="SkyBlue"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <TextBlock Text="Devivery Information" FontSize="20" FontFamily="Arial" FontWeight="Bold"/>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1">
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                                <TextBlock Name="username" FontFamily="Arial" FontSize="16" FontWeight="Bold"  Height="30" VerticalAlignment="Center" />
+                                <TextBlock FontFamily="Arial" FontSize="16" FontWeight="Bold" Text="Email" Height="30" VerticalAlignment="Center" />
+                                <TextBox  Text="{Binding EmailText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="323"/>
+                                <TextBlock FontFamily="Arial" FontSize="16" FontWeight="Bold" Text="Full name" Height="30" VerticalAlignment="Center"/>
+                                <TextBox   Text="{Binding DisplayNameText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="323"/>
+                                <TextBlock FontFamily="Arial" FontSize="16" FontWeight="Bold" Text="Phone number" Height="30" VerticalAlignment="Center"/>
+                                <TextBox  Text="{Binding PhoneText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="323"/>
+                                <TextBlock FontFamily="Arial" FontSize="16" FontWeight="Bold" Text="Address" Height="30" VerticalAlignment="Center"/>
+                                <TextBox  Text="{Binding AddressText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="323"/>
+                                <TextBlock FontFamily="Arial" FontSize="16" FontWeight="Bold" Text="Note" Height="30" VerticalAlignment="Center"/>
+                                <TextBox  Text="{Binding MoreInfoText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="323" TextWrapping="Wrap" Height="71"/>
+                                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                                    <Button Name="btnBack" Width="238" Height="30" HorizontalAlignment="Left" >
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="White" BorderBrush="#FF4FBAE6" BorderThickness="1" CornerRadius="5">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                        <Button.Content>
+                                            <TextBlock Text="Back to cart" Foreground="#FF4FBAE6" FontWeight="Bold" FontSize="16"/>
+                                        </Button.Content>
+                                    </Button>
+                                    <Button x:Name="btnPay" Content="PLACE AN ORDER" Width="231" Height="31" Background="#FF4FBAE6" Foreground="White" HorizontalAlignment="Left" Margin="20,0,0,0" Command="{Binding PayCommand}" CommandParameter="{Binding FBillingView}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
                 </Grid>
-                <Grid Grid.Row="1">
-                    <TextBlock Text="Devivery Information" FontSize="20" FontFamily="Arial" FontWeight="Bold"/>
-                </Grid>
-                <Grid Grid.Row="2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="1">
-                        <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
-                            <TextBlock FontFamily="Arial" FontSize="16" FontWeight="Bold" Text="Email" Height="30" VerticalAlignment="Center" />
-                            <TextBox Width="323"/>
-                            <TextBlock FontFamily="Arial" FontSize="16" FontWeight="Bold" Text="Full name" Height="30" VerticalAlignment="Center"/>
-                            <TextBox Width="323"/>
-                            <TextBlock FontFamily="Arial" FontSize="16" FontWeight="Bold" Text="Phone number" Height="30" VerticalAlignment="Center"/>
-                            <TextBox Width="323"/>
-                            <TextBlock FontFamily="Arial" FontSize="16" FontWeight="Bold" Text="Note" Height="30" VerticalAlignment="Center"/>
-                            <TextBox Width="323" TextWrapping="Wrap" Height="71"/>
+
+                <Grid Grid.Column="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <StackPanel VerticalAlignment="Top">
+                            <TextBlock FontFamily="Arial" FontSize="20" FontWeight="Bold">
+                <Run Text="Orders"/>
+                
+                            </TextBlock>
+                            <Line X1="0" X2="480" Y1="10" Y2="10" StrokeThickness="2" Stroke="WhiteSmoke" />
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Arial" Height="30" FontSize="16">
+                         <Run Text="Total Discount"/>
+                         <Run Text="           "/>
+                         <Run x:Name="tblDiscount" Text="8.000.000 đ"/>
+                                </TextBlock>
+                            </StackPanel>
+                            <TextBlock FontFamily="Arial" Height="30" FontSize="16">
+                        <Run Text="Provisional"/>
+                        <Run Text="                "/>
+                        <Run x:Name="tblProvisional" Text="8.000.000 đ"/>
+                            </TextBlock>
+                            <TextBlock FontFamily="Arial" FontSize="16" >
+                        <Run Text="Shipping fee"/>
+                        <Run Text="              "/>
+                        <Run Text="Free"/>
+                            </TextBlock>
+                            <Line X1="0" X2="480" Y1="10" Y2="10" StrokeThickness="2" Stroke="WhiteSmoke" />
+                            <TextBlock FontFamily="Arial" FontSize="16" Height="30">
+                        <Run Text="Total"/>
+                        <Run Text="                          "/>
+                        <Run x:Name="tblTotal" Text="8.000.000 đ" Foreground="SkyBlue"/>
+                            </TextBlock>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <StackPanel x:Name="spBill" >
+
                         </StackPanel>
                     </Grid>
                 </Grid>
             </Grid>
-
-            <Grid Grid.Column="1" Background="#FAFAFA">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="281"/>
-                    <RowDefinition Height="28"/>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <StackPanel VerticalAlignment="Top">
-                        <TextBlock FontFamily="Arial" FontSize="20" FontWeight="Bold">
-                            <Run Text="Orders"/>
-                            <Run x:Name="countItem" Text="(1 product)"/>
-                        </TextBlock>
-                        <Line X1="0" X2="480" Y1="10" Y2="10" StrokeThickness="2" Stroke="WhiteSmoke" />
-                        <userControl:UCMiniCart/>
-                        <Line X1="0" X2="480" Y1="10" Y2="10" StrokeThickness="2" Stroke="WhiteSmoke" />
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Text="Enter your voucher" Width="329" HorizontalAlignment="Left"/>
-                            <Button Content="PLACE AN ORDER" Width="153" Height="31" Background="#FF4FBAE6" Foreground="White" HorizontalAlignment="Right"/>
-                        </StackPanel>
-                        <TextBlock FontFamily="Arial" Height="30" FontSize="16">
-                        <Run Text="Provisional"/>
-                        <Run Text="                "/>
-                        <Run x:Name="price" Text="8.000.000 đ"/>
-                        </TextBlock>
-                        <TextBlock FontFamily="Arial" FontSize="16" >
-                        <Run Text="Shipping fee"/>
-                        <Run Text="              "/>
-                        <Run Text="Free"/>
-                        </TextBlock>
-                        <Line X1="0" X2="480" Y1="10" Y2="10" StrokeThickness="2" Stroke="WhiteSmoke" />
-                        <TextBlock FontFamily="Arial" FontSize="16" Height="30">
-                        <Run Text="Total"/>
-                        <Run Text="                          "/>
-                        <Run x:Name="total" Text="8.000.000 đ" Foreground="SkyBlue"/>
-                        </TextBlock>
-                    </StackPanel>
-                </Grid>
-                <Grid Grid.Row="1">
-                    <StackPanel Orientation="Horizontal">
-                        <Button Width="238" Height="30" HorizontalAlignment="Left">
-                            <Button.Template>
-                                <ControlTemplate TargetType="Button">
-                                    <Border Background="White" BorderBrush="#FF4FBAE6" BorderThickness="1" CornerRadius="5">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Button.Template>
-                            <Button.Content>
-                                <TextBlock Text="Back to cart" Foreground="#FF4FBAE6" FontWeight="Bold" FontSize="16"/>
-                            </Button.Content>
-                        </Button>
-                        <Button Content="PLACE AN ORDER" Width="231" Height="31" Background="#FF4FBAE6" Foreground="White" HorizontalAlignment="Left"/>
-                    </StackPanel>
-                </Grid>
-            </Grid>
+            <!--<local:FCart x:Name="fCart" Visibility="Collapsed"></local:FCart>-->
         </Grid>
     </ScrollViewer>
 </UserControl>

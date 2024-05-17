@@ -132,6 +132,9 @@
     <Compile Include="Models\WishList.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\FAboutUs.xaml.cs">
+      <DependentUpon>FAboutUs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\FBilling.xaml.cs">
       <DependentUpon>FBilling.xaml</DependentUpon>
     </Compile>
@@ -144,6 +147,9 @@
     <Compile Include="UserControls\FProductDetail.xaml.cs">
       <DependentUpon>FProductDetail.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\FSubmitComment.xaml.cs">
+      <DependentUpon>FSubmitComment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\FSupplier.xaml.cs">
       <DependentUpon>FSupplier.xaml</DependentUpon>
     </Compile>
@@ -153,6 +159,12 @@
     <Compile Include="Models\DataProvider.cs" />
     <Compile Include="Models\ProductWareHouse.cs" />
     <Compile Include="Models\UCCardModel.cs" />
+    <Compile Include="UserControls\FWarranty.xaml.cs">
+      <DependentUpon>FWarranty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FWishList.xaml.cs">
+      <DependentUpon>FWishList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCAccount.xaml.cs">
       <DependentUpon>UCAccount.xaml</DependentUpon>
     </Compile>
@@ -180,6 +192,9 @@
     <Compile Include="UserControls\UCSingleItem\UCCart.xaml.cs">
       <DependentUpon>UCCart.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCSingleItem\UCCommentCard.xaml.cs">
+      <DependentUpon>UCCommentCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCSingleItem\UCDashBoardLaptop.xaml.cs">
       <DependentUpon>UCDashBoardLaptop.xaml</DependentUpon>
     </Compile>
@@ -205,6 +220,8 @@
       <DependentUpon>UCUnit.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\FBillingViewModel.cs" />
+    <Compile Include="ViewModels\FCartViewModel.cs" />
     <Compile Include="ViewModels\FindViewModel.cs" />
     <Compile Include="ViewModels\FSupplierViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
@@ -217,7 +234,12 @@
     <Compile Include="ViewModels\UCProductDetailViewModel.cs" />
     <Compile Include="ViewModels\UCProductUploadingViewModel.cs" />
     <Compile Include="ViewModels\UCProductWareHouseViewModel.cs" />
+    <Compile Include="ViewModels\UCSubmitComment.cs" />
     <Compile Include="ViewModels\UCUnitViewModel.cs" />
+    <Page Include="UserControls\FAboutUs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\FBilling.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -231,6 +253,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\FProductDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\FSubmitComment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -255,6 +281,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ResourceXAML\MainResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\FWarranty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\FWishList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -291,6 +325,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\UCSingleItem\UCCart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UCSingleItem\UCCommentCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -427,6 +465,10 @@
     <Folder Include="Asset\Carousel_Product\" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="blackgray.jpg" />
+    <Resource Include="Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -437,6 +479,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="UserControls\pro_m2.jpg" />
+    <Resource Include="UserControls\BaConMeo.jpg" />
+    <Resource Include="UserControls\7.jpg" />
+    <Resource Include="UserControls\1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

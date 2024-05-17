@@ -16,15 +16,13 @@ using System.Windows.Shapes;
 namespace wpf_TechMarketMangement.UserControls
 {
     /// <summary>
-    /// Interaction logic for FBilling.xaml
+    /// Interaction logic for FSubmitComment.xaml
     /// </summary>
-    public partial class FBilling : UserControl
+    public partial class FSubmitComment : UserControl
     {
-        public FBilling()
+        public FSubmitComment()
         {
             InitializeComponent();
         }
-
-       
     }
 }

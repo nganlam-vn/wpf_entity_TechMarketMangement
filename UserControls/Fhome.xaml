@@ -11,64 +11,71 @@
              d:DesignHeight="2000" d:DesignWidth="1200">
     <ScrollViewer >
         <Grid Background="White">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="500"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="245"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="245"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="245"/>
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
-                <userControl:UCCarousel/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="500"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="245"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="245"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="245"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <userControl:UCCarousel/>
+                </Grid>
+                <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock  FontSize="20">
+        <Run Text="LAPTOPS" FontWeight="Bold"/>
+
+                    </TextBlock>
+                </Grid>
+                <Grid Grid.Row="2" Margin="50,0,50,0">
+                    <Border BorderThickness="1" BorderBrush="{DynamicResource BorderBrush}">
+                        <hc:ScrollViewer  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" IsInertiaEnabled="True">
+                            <StackPanel Orientation="Horizontal"  VerticalAlignment="Top" x:Name="spLaptop">
+
+                            </StackPanel>
+                        </hc:ScrollViewer>
+                    </Border>
+                </Grid>
+                <Grid Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock  FontSize="20">
+        <Run Text="PHONES" FontWeight="Bold"/>
+                    </TextBlock>
+                </Grid>
+                <Grid Grid.Row="4" Margin="50,0,50,0">
+                    <Border BorderThickness="1" BorderBrush="{DynamicResource BorderBrush}">
+                        <hc:ScrollViewer  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" IsInertiaEnabled="True">
+                            <StackPanel Orientation="Horizontal" x:Name="spPhone" VerticalAlignment="Top">
+
+                            </StackPanel>
+                        </hc:ScrollViewer>
+                    </Border>
+                </Grid>
+                <Grid Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock  FontSize="20">
+        <Run Text="OTHER" FontWeight="Bold"/>
+        <Run Text="PRODUCTS"/>
+                    </TextBlock>
+                </Grid>
+                <Grid Grid.Row="6" Margin="50,0,50,0">
+                    <Border BorderThickness="1" BorderBrush="{DynamicResource BorderBrush}">
+                        <hc:ScrollViewer  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" IsInertiaEnabled="True">
+                            <StackPanel Orientation="Horizontal"  VerticalAlignment="Top" x:Name="spOther">
+
+                            </StackPanel>
+                        </hc:ScrollViewer>
+                    </Border>
+                </Grid>
             </Grid>
-            <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock  FontSize="20">
-                <Run Text="Interesting" FontWeight="Bold"/>
-                <Run Text="Products"/>
-                </TextBlock>
+            <Grid x:Name="ucProductDetail" Visibility="Collapsed">
+                <local:FProductDetail x:Name="ProductDetail"/>
             </Grid>
-            <Grid Grid.Row="2" Margin="50,0,50,0">
-                <Border BorderThickness="1" BorderBrush="{DynamicResource BorderBrush}">
-                    <hc:ScrollViewer  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" IsInertiaEnabled="True">
-                        <StackPanel Orientation="Horizontal" x:Name="stInrestingProduct" VerticalAlignment="Top">
-                            <usercontroll:UCCard/>
-                        </StackPanel>
-                    </hc:ScrollViewer>
-                </Border>
-            </Grid>
-            <Grid Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock  FontSize="20">
-                <Run Text="New" FontWeight="Bold"/>
-                <Run Text="Products"/>
-                </TextBlock>
-            </Grid>
-            <Grid Grid.Row="4" Margin="50,0,50,0">
-                <Border BorderThickness="1" BorderBrush="{DynamicResource BorderBrush}">
-                    <hc:ScrollViewer  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" IsInertiaEnabled="True">
-                        <StackPanel Orientation="Horizontal" x:Name="stNewProduct" VerticalAlignment="Top">
-                            <usercontroll:UCCard/>
-                        </StackPanel>
-                    </hc:ScrollViewer>
-                </Border>
-            </Grid>
-            <Grid Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock  FontSize="20">
-                <Run Text="New" FontWeight="Bold"/>
-                <Run Text="Products"/>
-                </TextBlock>
-            </Grid>
-            <Grid Grid.Row="6" Margin="50,0,50,0">
-                <Border BorderThickness="1" BorderBrush="{DynamicResource BorderBrush}">
-                    <hc:ScrollViewer  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" IsInertiaEnabled="True">
-                        <StackPanel Orientation="Horizontal" x:Name="stOrther" VerticalAlignment="Top">
-                            <usercontroll:UCCard/>
-                        </StackPanel>
-                    </hc:ScrollViewer>
-                </Border>
-            </Grid>
+           
         </Grid>
+           
+       
 
     </ScrollViewer>
 </UserControl>

@@ -16,15 +16,13 @@ using System.Windows.Shapes;
 namespace wpf_TechMarketMangement.UserControls
 {
     /// <summary>
-    /// Interaction logic for FBilling.xaml
+    /// Interaction logic for FAboutUs.xaml
     /// </summary>
-    public partial class FBilling : UserControl
+    public partial class FAboutUs : UserControl
     {
-        public FBilling()
+        public FAboutUs()
         {
             InitializeComponent();
         }
-
-       
     }
 }

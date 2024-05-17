@@ -92,11 +92,10 @@ namespace wpf_TechMarketMangement.ViewModels
                 DataProvider.Ins.DB.SaveChanges(); //luu lai tron database
                 List.Add(obj); //add vao list
                 MessageBox.Show("Your information is saved!");
-                //UCInput uc = new UCInput();
-                //uc.Show();
+                UCInput uc = new UCInput();
+                uc.Visibility=Visibility.Visible;
 
             });
-
 
             BrowseCommand1 = new RelayCommand<object>((x) => { return true; }, (x) =>
             {

@@ -177,7 +177,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Row="0">
-                    <TextBlock TextWrapping="Wrap" Text="HOTLINE: 090.000.000Thấy" Margin="28,20,28,6"
+                    <TextBlock TextWrapping="Wrap" Text="HOTLINE: 090.000.0000" Margin="28,20,28,6"
                    FontSize="14"
                    FontFamily="Arial"
                    FontWeight="Bold"/>
@@ -188,7 +188,7 @@
                 </Grid>
 
                 <Grid Grid.Column="2">
-                    <Menu HorizontalAlignment="Center" Height="32" VerticalAlignment="Center" Width="267">
+                    <Menu HorizontalAlignment="Center" Height="32" VerticalAlignment="Center" Width="288">
                         <MenuItem Header="Account"
                       Height="40" 
                       Width="112"  Style="{StaticResource Services_MenuItem_With_Dropdown}">
@@ -199,20 +199,21 @@
                             <MenuItem Header="Information" Style="{StaticResource Services_Sub_MenuItem}"  Click="Click_Account"/>
                             <MenuItem Header="Logout" Style="{StaticResource Services_Sub_MenuItem}" Command="{Binding LogoutCommand}" />
                         </MenuItem>
-                        <MenuItem Click="Click_Cart" Header="Cart" Height="40" Width="86" FontSize="11" Style="{StaticResource Main_MenuItem}">
+                        <MenuItem Click="Click_Cart" Header="Cart" Height="40" Width="86" Style="{StaticResource Main_MenuItem}">
 
                             <MenuItem.Icon>
                                 <Image Source="/Asset/Icons/add_to_basket.png" 
                            Stretch="Uniform" />
                             </MenuItem.Icon>
                         </MenuItem>
+                        <MenuItem Height="40" Width="88" Header="Wishlist" Style="{StaticResource Main_MenuItem}" RenderTransformOrigin="0.5,0.5" Click="MenuItem_Click_2"    >
+
+                        </MenuItem>
 
                     </Menu>
-                    <Button HorizontalAlignment="Right" Content="Sign in" Margin="10,0,61,0"  Foreground="White" Background="Black" FontWeight="DemiBold" Command="{Binding SignInCommand}" />
                 </Grid>
             </Grid>
             <Line X1="200" Y1="60" X2="1000" Y2="60" Stroke="WhiteSmoke" StrokeThickness="1"/>
-
             <Menu HorizontalAlignment="Center" Height="40" Grid.Row="1" VerticalAlignment="Center" Width="600">
                 <MenuItem Header="          HOME" HorizontalAlignment="Center"
                     Height="40"
@@ -226,22 +227,28 @@
                     Width="150" Click="Click_Product"/>
                 <MenuItem Header="   WARRANTY"
                     Height="40"
-                    Width="110"/>
+                    Width="110" Click="MenuItem_Click_1"/>
                 <MenuItem Header="   ABOUT US"
                     Height="40"
-                    Width="95" />
+                    Width="95" Click="MenuItem_Click_3" />
             </Menu>
         </Grid>
         <Grid Grid.Row="1">
-            <ScrollViewer>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="113*"/>
+            </Grid.ColumnDefinitions>
+            <ScrollViewer Grid.ColumnSpan="2">
                 <StackPanel Orientation="Vertical">
-                    <Line X1="100" Y1="10" X2="1100" Y2="10" Stroke="WhiteSmoke" StrokeThickness="2"/>
                     <userControll:UCFind x:Name="fFind" Visibility="Collapsed"/>
                     <userControl:Fhome x:Name="fHome" Visibility="Visible"/>
                     <userControl:UCProduct_Show x:Name="fProduct" Visibility="Collapsed"/>
                     <userControl:UCProductUploading x:Name="fAddProduct" Visibility="Collapsed"/>
                     <userControl:UCAccount x:Name="fAccount" Visibility="Collapsed"/>
                     <userControl:FCart x:Name="fCart" Visibility="Collapsed"/>
+                    <userControl:FWishList x:Name="fWishList" Visibility="Collapsed"/>
+                    <userControl:FWarranty x:Name="fWarranty" Visibility="Collapsed"/>
+                    <userControl:FAboutUs x:Name="fAboutUs" Visibility="Collapsed"/>
                 </StackPanel>
             </ScrollViewer>
         </Grid>
