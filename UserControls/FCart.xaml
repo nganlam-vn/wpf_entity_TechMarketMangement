@@ -23,7 +23,7 @@
             <Grid Grid.Row="1">
                 <TextBlock FontSize="16" FontFamily="Arial" VerticalAlignment="Center">
         <Run Text="CART" FontWeight="Bold"/>
-        <Run Text="(1 product)"/>
+        
                 </TextBlock>
             </Grid>
             <Grid Grid.Row="2">

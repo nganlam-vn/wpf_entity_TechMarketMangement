@@ -76,7 +76,7 @@
                         <StackPanel VerticalAlignment="Top">
                             <TextBlock FontFamily="Arial" FontSize="20" FontWeight="Bold">
                 <Run Text="Orders"/>
-                <Run x:Name="countItem" Text="(1 product)"/>
+                
                             </TextBlock>
                             <Line X1="0" X2="480" Y1="10" Y2="10" StrokeThickness="2" Stroke="WhiteSmoke" />
                             <StackPanel Orientation="Horizontal">

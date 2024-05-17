@@ -107,7 +107,6 @@
                     <Line X1="0" X2="0" Y1="0" Y2="1000" StrokeThickness="1" Stroke="WhiteSmoke"/>
 
                     <Grid  Visibility="Hidden" x:Name="ucProductDetail" Panel.ZIndex="9999">
-
                         <uc:FProductDetail FontSize="14" x:Name="ProductDetail" Visibility="Visible" />
                     </Grid>
                     <WrapPanel Name="wpCard">

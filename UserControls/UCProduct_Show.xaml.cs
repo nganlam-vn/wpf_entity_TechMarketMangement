@@ -140,7 +140,7 @@ namespace wpf_TechMarketMangement.UserControls
                     
                     uccard.txtbName.Text = item.DisplayName;
                     uccard.txtbPrice.Text = item2.OutputPrice.ToString() + "VND";
-                    //uccard.imgCard.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img1, UriKind.Relative));
+                    uccard.imgCard.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img1, UriKind.Relative));
                     uccard.txtbAdress.Text = item2.Address;
                     uccard.btnDetail.Click += (sender, e) =>
                     {
@@ -159,9 +159,10 @@ namespace wpf_TechMarketMangement.UserControls
                         ProductDetail.txtbROM.Text = item.ROM.ToString();
                         ProductDetail.txtbBattery.Text = item.Battery.ToString();
                         ProductDetail.txtbOS.Text = item.OS.ToString();
-                        //ProductDetail.imgCart1.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img1, UriKind.Relative));
-                        //ProductDetail.imgCart2.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img2, UriKind.Relative));
-                        //ProductDetail.imgCart3.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img3, UriKind.Relative));
+                        ProductDetail.imgCart1.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img1, UriKind.Relative));
+                        ProductDetail.imgCart2.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img2, UriKind.Relative));
+                        ProductDetail.imgCart3.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img3, UriKind.Relative));
+                        ProductDetail.moreInfo.Text = item2.Description.ToString();
 
                         ProductDetail.btnAddToCart.Click += (senders, t) =>
                         {
@@ -226,6 +227,7 @@ namespace wpf_TechMarketMangement.UserControls
                         UCCard uccard = new UCCard(); //ui element
                         uccard.txtbName.Text = item.DisplayName;
                         uccard.txtbPrice.Text = item2.OutputPrice.ToString() + "VND";
+                        uccard.imgCard.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img1, UriKind.Relative));
                         uccard.btnDetail.Click += (sender, e) =>
                         {
                             //var detail = new UCProduct_Detail();
@@ -242,9 +244,9 @@ namespace wpf_TechMarketMangement.UserControls
                             ProductDetail.txtbROM.Text = item.ROM.ToString();
                             ProductDetail.txtbBattery.Text = item.Battery.ToString();
                             ProductDetail.txtbOS.Text = item.OS.ToString();
-                            //ProductDetail.imgCart1.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img1, UriKind.Relative));
-                            //ProductDetail.imgCart2.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img2, UriKind.Relative));
-                            //ProductDetail.imgCart3.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img3, UriKind.Relative));
+                            ProductDetail.imgCart1.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img1, UriKind.Relative));
+                            ProductDetail.imgCart2.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img2, UriKind.Relative));
+                            ProductDetail.imgCart3.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img3, UriKind.Relative));
                             ProductDetail.btnBack.Click += (senders, t) =>
                             {
                                 ucProductDetail.Visibility = Visibility.Collapsed;
@@ -308,6 +310,7 @@ namespace wpf_TechMarketMangement.UserControls
                         UCCard uccard = new UCCard(); //ui element
                         uccard.txtbName.Text = item.DisplayName;
                         uccard.txtbPrice.Text = item2.OutputPrice.ToString() + "VND";
+                        uccard.imgCard.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img1, UriKind.Relative));
                         uccard.btnDetail.Click += (sender, e) =>
                         {
                             //var detail = new UCProduct_Detail();
@@ -324,9 +327,9 @@ namespace wpf_TechMarketMangement.UserControls
                             ProductDetail.txtbBattery.Text = item.Battery.ToString();
                             ProductDetail.txtbOS.Text = item.OS.ToString();
                             ProductDetail.priceBought.Text = item2.InputPrice.ToString();
-                            //ProductDetail.imgCart1.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img1, UriKind.Relative));
-                            //ProductDetail.imgCart2.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img2, UriKind.Relative));
-                            //ProductDetail.imgCart3.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img3, UriKind.Relative));
+                            ProductDetail.imgCart1.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img1, UriKind.Relative));
+                            ProductDetail.imgCart2.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img2, UriKind.Relative));
+                            ProductDetail.imgCart3.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img3, UriKind.Relative));
 
                             ProductDetail.btnBack.Click += (senders, t) =>
                             {
@@ -390,6 +393,7 @@ namespace wpf_TechMarketMangement.UserControls
                         UCCard uccard = new UCCard(); //ui element
                         uccard.txtbName.Text = item.DisplayName;
                         uccard.txtbPrice.Text = item2.OutputPrice.ToString() + "VND";
+                        uccard.imgCard.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img1, UriKind.Relative));
                         uccard.btnDetail.Click += (sender, e) =>
                         {
                             //var detail = new UCProduct_Detail();
@@ -406,9 +410,9 @@ namespace wpf_TechMarketMangement.UserControls
                             ProductDetail.txtbROM.Text = item.ROM.ToString();
                             ProductDetail.txtbBattery.Text = item.Battery.ToString();
                             ProductDetail.priceBought.Text = item2.InputPrice.ToString();
-                            //ProductDetail.imgCart1.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img1, UriKind.Relative));
-                            //ProductDetail.imgCart2.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img2, UriKind.Relative));
-                            //ProductDetail.imgCart3.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img3, UriKind.Relative));
+                            ProductDetail.imgCart1.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img1, UriKind.Relative));
+                            ProductDetail.imgCart2.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img2, UriKind.Relative));
+                            ProductDetail.imgCart3.ImageSource = new BitmapImage(new Uri("D:\\baitap\\HK2_2023-2024\\WindowsDev\\Win_Ex\\DoAnCuoiKy\\wpf_entity_TechMarketMangement\\Asset\\Products\\Laptop\\" + item.Img3, UriKind.Relative));
                             ProductDetail.btnBack.Click += (senders, t) =>
                             {
 
