@@ -1,4 +1,6 @@
 # wpf_entity_TechMarketMangement
+Some pictures about our project 
+
 ![image](https://github.com/nganlam-vn/wpf_entity_TechMarketMangement/assets/154851017/6494ffec-85b8-4e76-95f3-a4893cbd2406)
 
 ![image](https://github.com/nganlam-vn/wpf_entity_TechMarketMangement/assets/154851017/866e9222-90cd-4d1e-9c52-43696343dc6c)
