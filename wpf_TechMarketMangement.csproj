@@ -408,7 +408,6 @@
     <Resource Include="Asset\Carousel\laptop_ultra_4k_hd_desktop_background-3840x2160.jpg" />
     <Resource Include="Asset\Carousel\wp5485213.jpg" />
     <Resource Include="Asset\Background\65c247234c9ca9c9c29b795085f5db67.jpg" />
-    <Resource Include="Asset\Background\blackgray.jpg" />
     <Resource Include="Asset\Cats\1.jpg" />
     <Resource Include="Asset\Cats\2.jpg" />
     <Resource Include="Asset\Cats\3.jpg" />
@@ -455,7 +454,7 @@
     <Resource Include="Asset\Products\Laptop\zephyrus.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="pngwing.com.png" />
+    <Resource Include="Asset\Icons\pngwing.com.png" />
     <Resource Include="UserControls\UCSingleItem\—Pngtree—vector cross icon_4184842.png" />
     <Resource Include="UserControls\UCSingleItem\kisspng-computer-icons-vector-graphics-christian-cross-x-m-multiplication-sign-svg-png-icon-free-download-2-5c036fab1589f1.3760144715437290670882.jpg" />
     <Resource Include="UserControls\UCSingleItem\pngwing.com.png" />
@@ -465,8 +464,7 @@
     <Folder Include="Asset\Carousel_Product\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="blackgray.jpg" />
-    <Resource Include="Image1.png" />
+    <Resource Include="Asset\Background\blackgray.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Models\Model1.Context.tt">
